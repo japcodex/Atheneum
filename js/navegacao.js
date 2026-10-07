@@ -21,6 +21,7 @@ function mostrarPagina(pagina, registrar = true) {
   window.scrollTo({ top: 0, behavior: "instant" });
   requestAnimationFrame(atualizarCarrosseis);
   if (movimentoSuave()) requestAnimationFrame(() => document.getElementById(pagina).classList.add("pagina--entrando"));
+  if (registrar) document.getElementById(pagina).focus({ preventScroll: true });
   document.dispatchEvent(new CustomEvent("pagina:alterada"));
 }
 document.getElementById("navegacao").addEventListener("click", ({ target }) => {

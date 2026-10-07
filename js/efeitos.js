@@ -76,6 +76,7 @@ function criarLivro3D(livro, { largura = 120, altura = 180, espessura = 28, abre
   botao.type = "button";
   if (sugestao) botao.dataset.sugestao = livro.id; else botao.dataset.abrir = livro.id;
   botao.title = livro.autor ? `${livro.titulo}, de ${livro.autor}` : livro.titulo;
+  botao.setAttribute("aria-label", botao.title);
   botao.style.cssText = `--matiz:${matiz};--l:${largura}px;--a:${altura}px;--e:${espessura}px;--n:${indice}`;
 
   const giro = criar("span", "book3d__giro");
@@ -135,7 +136,7 @@ function renderizarMarquee(livros) {
   const janela = document.getElementById("inicio-prateleiras");
   if (!livros.length) { janela.replaceChildren(criar("p", "inicio__vazio", "A estante está vazia. Adicione o primeiro livro na biblioteca.")); return; }
   // Mistura estável (sempre a mesma) e divide entre as duas faixas.
-  const mistura = [...livros].sort((a, b) => hash(a.id + "x") - hash(b.id + "x")).slice(0, 36);
+  const mistura = [...livros].sort((a, b) => hash(a.id + "x") - hash(b.id + "x"));
   const metade = Math.ceil(mistura.length / 2);
   const cima = mistura.slice(0, metade), baixo = mistura.slice(metade);
   // Repete a lista até o grupo ser mais largo que a tela: nunca aparece buraco, mesmo com poucos livros ou tela larga.
@@ -151,8 +152,8 @@ window.addEventListener("resize", () => {
 
 /* ---------- Tilt card: o cartão se inclina e uma luz segue o mouse ---------- */
 
-const TILT = { limite: 12, escala: 1.04 };   // graus e zoom máximos
-const semMovimento = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const TILT = { limite: 3, escala: 1.005 };   // graus e zoom máximos
+const semMovimento = () => !movimentoSuave();
 let tiltAtivo = null;
 
 function inclinar(cartao, evento) {
@@ -199,8 +200,7 @@ document.getElementById("inicio-outra-frase").addEventListener("click", (e) => {
 });
 mostrarFraseInicio();
 
-/* O Santuário usa os mesmos cartões inclináveis. */
-document.querySelectorAll(".santuario__numeros > div, .santuario__reflexao").forEach((el) => { el.dataset.tilt = ""; });
+/* Métricas e citações ficam estáveis para facilitar a leitura. */
 
 /* ---------- Números que contam até o valor ---------- */
 function contarAte(elemento) {

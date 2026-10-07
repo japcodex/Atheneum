@@ -12,9 +12,24 @@ const CHAVE_CRONOMETRO = "atheneum:cronometro";
 let relogio = null;    // intervalo que atualiza o número na tela
 
 const dataISO = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-const lerCronometro = () => { try { return JSON.parse(localStorage.getItem(CHAVE_CRONOMETRO)); } catch { return null; } };
-const gravarCronometro = (c) => { try { c ? localStorage.setItem(CHAVE_CRONOMETRO, JSON.stringify(c)) : localStorage.removeItem(CHAVE_CRONOMETRO); } catch { /* sem armazenamento: o tempo vale só nesta aba */ } };
-const msDecorrido = (c) => (c ? c.acumulado + (c.inicio ? Date.now() - c.inicio : 0) : 0);
+// O estado temporário mantém o relógio funcional se o navegador bloquear a gravação.
+let cronometroTemporario;
+function lerCronometro() {
+  try {
+    const c = cronometroTemporario !== undefined ? cronometroTemporario : JSON.parse(localStorage.getItem(CHAVE_CRONOMETRO));
+    if (!c || typeof c.livroId !== "string" || !Number.isFinite(c.acumulado) || c.acumulado < 0
+        || (c.inicio !== null && (!Number.isFinite(c.inicio) || c.inicio < 0))) return null;
+    return c;
+  } catch { return null; }
+}
+function gravarCronometro(c) {
+  cronometroTemporario = c;
+  try {
+    c ? localStorage.setItem(CHAVE_CRONOMETRO, JSON.stringify(c)) : localStorage.removeItem(CHAVE_CRONOMETRO);
+    cronometroTemporario = undefined;
+  } catch { mostrarErroLeitura("O cronômetro funciona nesta aba, mas não será recuperado ao recarregar. Libere espaço para salvar sua sessão."); }
+}
+const msDecorrido = (c) => c ? c.acumulado + (c.inicio ? Math.max(0, Date.now() - c.inicio) : 0) : 0;
 
 function formatarTempo(ms) {
   const s = Math.floor(ms / 1000), h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
@@ -25,17 +40,20 @@ function formatarTempo(ms) {
 
 /* Grava a sessão e avança a página atual. Lança erro com mensagem legível se falhar. */
 function registrarSessao(livroId, minutos, paginas) {
-  const livro = obterLivrosUsuario().find((l) => l.id === livroId);
-  if (!livro) throw new Error("Esse livro não está mais na estante.");
-  if (livro.status === "quero-ler") alterarStatusLivro(livroId, "lendo");   // concede XP e avisa as outras telas
-
+  if (!Number.isSafeInteger(minutos) || minutos < 0 || minutos > 1440
+      || !Number.isSafeInteger(paginas) || paginas < 0 || paginas > 5000
+      || (!minutos && !paginas)) throw new Error("Registre ao menos uma página ou um minuto de leitura.");
   const dados = carregarDadosUsuario();
-  const atual = obterLivrosUsuario(dados).find((l) => l.id === livroId);
-  const total = atual.totalPaginas || 0;
-  let pagina = (atual.paginaAtual || 0) + paginas;
-  if (total > 0) pagina = Math.min(pagina, total);
-
-  definirRegistro(dados.detalhes, livroId, validarLeitura({ paginaAtual: pagina, totalPaginas: total, anotacoes: atual.anotacoes || "" }));
+  const livro = obterLivrosUsuario(dados).find((l) => l.id === livroId);
+  if (!livro) throw new Error("Esse livro não está mais na estante.");
+  const total = livro.totalPaginas || 0, pagina = (livro.paginaAtual || 0) + paginas;
+  if (total && pagina > total) throw new Error(`Restam ${total - livro.paginaAtual} páginas neste livro. Confira o número informado.`);
+  definirRegistro(dados.detalhes, livroId, validarLeitura({ paginaAtual: pagina, totalPaginas: total, anotacoes: livro.anotacoes || "" }));
+  // Status, recompensa e páginas pertencem à mesma gravação: tudo salva ou nada muda.
+  if (livro.status === "quero-ler") {
+    definirRegistro(dados.livros, livroId, "lendo");
+    document.dispatchEvent(new CustomEvent("livro:status-preparando", { detail: { livroId, anterior: livro.status, atual: "lendo", dados } }));
+  }
   const id = criarIdUsuario("sessao");
   dados.sessoes.push({ id, livroId, data: dataISO(), minutos, paginas });
   if (minutos >= 10) concederXp(dados, `foco:${id}`, 5);
@@ -56,7 +74,7 @@ function calcularSequencia(sessoes) {
 
 function resumoRitmo(sessoes, livroId) {
   const limite = new Date(); limite.setDate(limite.getDate() - 13);
-  const recentes = sessoes.filter((s) => s.data >= dataISO(limite));
+  const recentes = sessoes.filter((s) => s.livroId === livroId && s.data >= dataISO(limite) && s.data <= dataISO());
   const semana = new Date(); semana.setDate(semana.getDate() - 6);
   const minutosSemana = sessoes.filter((s) => s.data >= dataISO(semana)).reduce((t, s) => t + s.minutos, 0);
   const paginasPorDia = recentes.reduce((t, s) => t + s.paginas, 0) / 14;
@@ -77,7 +95,9 @@ function resumoRitmo(sessoes, livroId) {
 const $L = (id) => document.getElementById(id);
 
 function montarSeletorLivros() {
-  const livros = obterLivrosUsuario().filter((l) => l.status !== "lido");
+  const ativo = lerCronometro();
+  const livros = obterLivrosUsuario().filter((l) => l.status !== "lido" || l.id === ativo?.livroId);
+  if (ativo && !livros.some((l) => l.id === ativo.livroId)) gravarCronometro(null);
   const seletor = $L("leitura-livro"), anterior = seletor.value, c = lerCronometro();
   const grupo = (rotulo, itens) => { const g = criar("optgroup"); g.label = rotulo; g.append(...itens.map((l) => Object.assign(criar("option", "", l.titulo), { value: l.id }))); return g; };
   const lendo = livros.filter((l) => l.status === "lendo"), querer = livros.filter((l) => l.status === "quero-ler");
@@ -106,16 +126,22 @@ function desenharMapaDeCalor(sessoes) {
 }
 
 function renderizarLeitura() {
-  const dados = carregarDadosUsuario(), c = lerCronometro();
-  const temLivros = montarSeletorLivros() > 0;
+  clearInterval(relogio);
+  const dados = carregarDadosUsuario();
+  const temLivros = montarSeletorLivros() > 0, c = lerCronometro();
   $L("leitura-vazio").hidden = temLivros;
   $L("leitura-conteudo").hidden = !temLivros;
   if (!temLivros) return;
 
   const rodando = Boolean(c?.inicio), pausado = Boolean(c) && !rodando;
   $L("leitura-iniciar").hidden = Boolean(c);
-  $L("leitura-pausar").hidden = !c; $L("leitura-pausar").textContent = pausado ? "Continuar" : "Pausar";
-  $L("leitura-encerrar").hidden = !c;
+  $L("leitura-pausar").hidden = !c || Boolean(c.finalizando); $L("leitura-pausar").textContent = pausado ? "Continuar" : "Pausar";
+  $L("leitura-encerrar").hidden = !c || Boolean(c.finalizando);
+  $L("leitura-registro").hidden = !c?.finalizando;
+  if (c?.finalizando) {
+    const minutos = Math.min(1440, Math.floor(c.acumulado / 60000));
+    $L("leitura-minutos").textContent = minutos ? `${minutos} min` : "menos de um minuto";
+  }
   $L("leitura-tempo").textContent = formatarTempo(msDecorrido(c));
   $L("leitura-cartao").classList.toggle("relogio--ativo", rodando);
 
@@ -146,8 +172,8 @@ $L("leitura-pausar").addEventListener("click", () => {
 });
 $L("leitura-encerrar").addEventListener("click", () => {
   const c = lerCronometro(); if (!c) return;
-  gravarCronometro({ ...c, acumulado: msDecorrido(c), inicio: null });
-  const minutos = Math.max(1, Math.round(msDecorrido(lerCronometro()) / 60000));
+  gravarCronometro({ ...c, acumulado: msDecorrido(c), inicio: null, finalizando: true });
+  const minutos = Math.floor(msDecorrido(lerCronometro()) / 60000);
   $L("leitura-minutos").textContent = `${minutos} ${minutos === 1 ? "minuto" : "minutos"}`;
   $L("leitura-registro").hidden = false; $L("leitura-paginas").value = ""; $L("leitura-paginas").focus();
   renderizarLeitura();
@@ -155,8 +181,8 @@ $L("leitura-encerrar").addEventListener("click", () => {
 $L("leitura-descartar").addEventListener("click", () => { gravarCronometro(null); $L("leitura-registro").hidden = true; mostrarErroLeitura(""); renderizarLeitura(); });
 $L("leitura-registro").addEventListener("submit", (e) => {
   e.preventDefault();
-  const c = lerCronometro(); if (!c) return;
-  const paginas = Number($L("leitura-paginas").value), minutos = Math.max(1, Math.round(c.acumulado / 60000));
+  const c = lerCronometro(); if (!c?.finalizando) return;
+  const paginas = Number($L("leitura-paginas").value), minutos = Math.floor(c.acumulado / 60000);
   if (!Number.isInteger(paginas) || paginas < 0 || paginas > 5000) { mostrarErroLeitura("Digite quantas páginas você leu (0 se foi só o tempo)."); return; }
   try {
     registrarSessao(c.livroId, Math.min(minutos, 1440), paginas);
@@ -168,3 +194,6 @@ $L("leitura-registro").addEventListener("submit", (e) => {
 $L("leitura-livro").addEventListener("change", renderizarLeitura);
 $L("leitura-ir-biblioteca").addEventListener("click", () => mostrarPagina("biblioteca"));
 document.addEventListener("colecao:alterada", () => { if (!$L("leitura").hidden) renderizarLeitura(); });
+
+// Não atualiza números de uma tela escondida; o horário salvo continua contando.
+document.addEventListener("pagina:alterada", () => { if ($L("leitura").hidden) clearInterval(relogio); });

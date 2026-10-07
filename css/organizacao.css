@@ -4,7 +4,7 @@
    1. Barra lateral: Todos > Situação > Categorias > Listas > Removidos
    2. Selo PDF e leitor de PDF
    3. Cor da lombada vinda da capa
-   4. Carrossel da tela inicial (nunca para por "movimento reduzido" do sistema)
+   4. Carrossel respeita movimento reduzido (edicao.css)
    5. Animações: abas, diálogos, listas, livros, botões
    ========================================================================== */
 
@@ -52,19 +52,6 @@
 /* ---------- 3. Lombada com a cor da capa ---------- */
 .book3d__lombada { background: var(--cor-lombada, hsl(var(--matiz) 34% 24%)); transition: background-color 0.9s ease; }
 .book3d__fundo { background: var(--cor-fundo, hsl(var(--matiz) 34% 14%)); transition: background-color 0.9s ease; }
-
-/* ---------- 4. Carrossel da tela inicial ----------
-   O sistema operacional pode pedir "reduzir movimento" (comum no Windows com animações desligadas).
-   Isso desligava o carrossel e deixava só uma fileira parada. Agora ele continua andando, na
-   metade da velocidade, com o botão Pausar sempre à vista. Só para se VOCÊ desligar as
-   animações nas configurações do próprio Atheneum. */
-html .marquee__trilha { animation: marquee var(--duracao, 60s) linear infinite !important; }
-html .marquee--reverso .marquee__trilha { animation-direction: reverse !important; }
-@media (prefers-reduced-motion: reduce) { html .marquee__trilha { animation-duration: calc(var(--duracao, 60s) * 2) !important; } }
-html .passeio:hover .marquee__trilha, html .passeio--pausado .marquee__trilha, html .marquee:focus-within .marquee__trilha, html body:has(dialog[open]) .marquee__trilha { animation-play-state: paused !important; }
-html[data-movimento="reduzido"] .marquee__trilha { animation: none !important; }
-html[data-movimento="reduzido"] .marquee { overflow-x: auto; }
-@media (prefers-reduced-motion: reduce) { .marquee .book3d__giro { animation: flutuar 14s ease-in-out infinite !important; animation-delay: calc(var(--n, 0) * -1.8s); } }
 
 /* ---------- 5. Animações ---------- */
 /* Indicador que desliza entre as abas (computador) */

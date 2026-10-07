@@ -13,7 +13,8 @@ const pdfExiste = new Map();   // id -> true/false (resultado da busca automáti
 
 /* Caminho conhecido sem fazer pedido de rede. Vazio se não houver. */
 function caminhoPdf(livro) {
-  if (livro.pdf) return livro.pdf;
+  if (!livro) return "";
+  if (livro.pdf) return /^(https?:\/\/|pdfs\/)\S+$/i.test(livro.pdf) ? livro.pdf : "";
   return (typeof PDFS !== "undefined" && PDFS[livro.id]) || "";
 }
 
@@ -33,6 +34,8 @@ async function localizarPdf(livro) {
 }
 
 function abrirLeitorPdf(livro, caminho) {
+  if (!/^(https?:\/\/|pdfs\/)\S+$/i.test(caminho)) return;
+  caminho = caminho.split("#")[0];
   const pagina = Math.max(1, Number(livro.paginaAtual) || 1);
   document.getElementById("leitor-pdf-titulo").textContent = livro.titulo;
   document.getElementById("leitor-pdf-pagina").textContent = livro.paginaAtual ? `Abrindo na página ${pagina}, onde você parou.` : "Abrindo na primeira página.";
@@ -51,15 +54,17 @@ leitorPdf.addEventListener("click", (e) => { if (e.target === leitorPdf) fecharL
 leitorPdf.addEventListener("cancel", (e) => { e.preventDefault(); fecharLeitorPdf(); });
 
 /* Botões "Ler PDF" e "Abrir em nova aba" do editor de livro. */
+let pedidoPdf = 0;
 async function atualizarBotoesPdf(livro) {
+  const pedido = ++pedidoPdf;
   const ler = document.getElementById("ler-pdf"), nova = document.getElementById("abrir-pdf");
   ler.hidden = nova.hidden = true;
   if (!livro) return;
   const digitado = document.getElementById("livro-pdf").value.trim();
-  const caminho = await localizarPdf({ ...livro, pdf: digitado || livro.pdf });
-  if (!caminho || livroEmEdicao?.id !== livro.id) return;
+  const caminho = digitado ? caminhoPdf({ ...livro, pdf: digitado }) : await localizarPdf({ ...livro, pdf: "" });
+  if (!caminho || pedido !== pedidoPdf || livroEmEdicao?.id !== livro.id) return;
   ler.hidden = nova.hidden = false;
-  ler.onclick = () => abrirLeitorPdf({ ...livro, paginaAtual: Number(document.getElementById("livro-pagina").value) || livro.paginaAtual }, caminho);
+  ler.onclick = () => abrirLeitorPdf({ ...livro, paginaAtual: Number(document.getElementById("livro-pagina").value) || 0 }, caminho);
   nova.href = `${caminho}#page=${Math.max(1, Number(document.getElementById("livro-pagina").value) || 1)}`;
 }
 document.getElementById("livro-pdf").addEventListener("change", () => atualizarBotoesPdf(livroEmEdicao));

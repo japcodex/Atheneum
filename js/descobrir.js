@@ -7,7 +7,7 @@
      vazio       -> você já tem tudo do gênero escolhido
    ========================================================================== */
 
-const descobrir = { genero: "todos", dados: new Map(), erro: false, carregando: false };
+const descobrir = { genero: "todos", limite: 12, dados: new Map(), erro: false, carregando: false };
 
 /* Monta a "capa" de uma sugestão: usa a imagem online quando existe. */
 function livroDeSugestao(sug) {
@@ -74,7 +74,7 @@ function renderizarDescobrir() {
   const livros = obterLivrosUsuario();
   const semana = escolherSugestao(livros, "semana");
   const disponiveis = sugestoesDisponiveis(livros);
-  const filtradas = disponiveis.filter((s) => s.id !== semana?.id && (descobrir.genero === "todos" || s.genero === descobrir.genero));
+
 
   const caixaSemana = document.getElementById("descobrir-semana");
   caixaSemana.replaceChildren(...(semana ? [criarSemana(semana)] : []));
@@ -82,6 +82,7 @@ function renderizarDescobrir() {
 
   const generos = ["todos", ...GENEROS_SUGESTOES.filter((g) => disponiveis.some((s) => s.genero === g))];
   if (!generos.includes(descobrir.genero)) descobrir.genero = "todos";
+  const filtradas = disponiveis.filter((s) => s.id !== semana?.id && (descobrir.genero === "todos" || s.genero === descobrir.genero));
   document.getElementById("descobrir-generos").replaceChildren(...generos.map((g) => {
     const botao = criar("button", "chip chip--pequeno", g === "todos" ? "Todos os gêneros" : g);
     botao.type = "button"; botao.dataset.genero = g; botao.setAttribute("aria-pressed", String(g === descobrir.genero));
@@ -102,16 +103,19 @@ function renderizarDescobrir() {
   if (!filtradas.length) {
     const vazio = criar("li", "vazio");
     vazio.append(criar("p", "vazio__titulo", disponiveis.length ? "Nada mais neste gênero." : "Você já tem todas as sugestões."),
-      criar("p", "vazio__texto", disponiveis.length ? "Tudo o que sugerimos aqui já está na sua estante. Escolha outro gênero." : "Volte mais tarde: novas sugestões entram com o tempo."));
+      criar("p", "vazio__texto", disponiveis.length ? "Tudo o que sugerimos aqui já está na sua estante. Escolha outro gênero." : "Você pode adicionar outros títulos diretamente na Biblioteca."));
     lista.replaceChildren(vazio);
-  } else lista.replaceChildren(...filtradas.map(criarLinha));
+  } else lista.replaceChildren(...filtradas.slice(0, descobrir.limite).map(criarLinha));
+  const mais = document.getElementById("descobrir-mais");
+  mais.hidden = filtradas.length <= descobrir.limite;
+  mais.textContent = `Mostrar mais ${Math.min(12, Math.max(0, filtradas.length - descobrir.limite))} livros`;
 }
 
 /* Busca capas de todas as sugestões visíveis, uma de cada vez para não sobrecarregar o serviço. */
 async function carregarCapasDescobrir() {
   if (descobrir.carregando) return;
   const livros = obterLivrosUsuario();
-  const pendentes = [escolherSugestao(livros, "semana"), ...sugestoesDisponiveis(livros)].filter((s, i, v) => s && v.indexOf(s) === i && !descobrir.dados.has(s.id));
+  const pendentes = [escolherSugestao(livros, "semana"), ...sugestoesDisponiveis(livros).filter((s) => s.id !== escolherSugestao(livros, "semana")?.id && (descobrir.genero === "todos" || s.genero === descobrir.genero)).slice(0, descobrir.limite)].filter((s, i, v) => s && v.indexOf(s) === i && !descobrir.dados.has(s.id));
   if (!pendentes.length) return;
   descobrir.carregando = true; descobrir.erro = false; renderizarDescobrir();
   let falhas = 0;
@@ -126,10 +130,14 @@ async function carregarCapasDescobrir() {
 
 document.getElementById("descobrir-generos").addEventListener("click", ({ target }) => {
   const botao = target.closest("[data-genero]"); if (!botao) return;
-  descobrir.genero = botao.dataset.genero; renderizarDescobrir();
+  descobrir.genero = botao.dataset.genero; descobrir.limite = 12; renderizarDescobrir(); carregarCapasDescobrir();
 });
 document.getElementById("descobrir-status").addEventListener("click", ({ target }) => { if (target.closest("[data-acao='tentar']")) carregarCapasDescobrir(); });
 document.getElementById("descobrir").addEventListener("click", ({ target }) => {
   const livro = target.closest("[data-sugestao]"); if (livro) document.getElementById("descobrir-semana").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 document.addEventListener("colecao:alterada", () => { if (!document.getElementById("descobrir").hidden) renderizarDescobrir(); });
+
+document.getElementById("descobrir-mais").addEventListener("click", () => {
+  descobrir.limite += 12; renderizarDescobrir(); carregarCapasDescobrir();
+});

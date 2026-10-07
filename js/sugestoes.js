@@ -41,8 +41,7 @@ async function buscarDadosOnline(sugestao) {
     if (!resposta.ok) throw new Error("Serviço indisponível");
     const [achado] = (await resposta.json()).docs ?? [];
     const dados = achado?.cover_i ? { capa: `https://covers.openlibrary.org/b/id/${achado.cover_i}-M.jpg`, paginas: achado.number_of_pages_median || 0, ano: achado.first_publish_year || 0 } : null;
-    cache[sugestao.id] = dados;
-    gravarCacheCapas(cache);
+    gravarCacheCapas({ ...lerCacheCapas(), [sugestao.id]: dados });
     return dados;
   } finally { clearTimeout(limite); }
 }
