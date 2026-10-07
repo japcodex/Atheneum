@@ -1,0 +1,117 @@
+/* ==========================================================================
+   ORGANIZAÇÃO  (barra lateral da biblioteca, leitor de PDF e mais movimento)
+
+   1. Barra lateral: Todos > Situação > Categorias > Listas > Removidos
+   2. Selo PDF e leitor de PDF
+   3. Cor da lombada vinda da capa
+   4. Carrossel da tela inicial (nunca para por "movimento reduzido" do sistema)
+   5. Animações: abas, diálogos, listas, livros, botões
+   ========================================================================== */
+
+/* ---------- 1. Barra lateral ---------- */
+.biblioteca__lateral { display: grid; align-content: start; gap: 1.1rem; padding: 1.2rem; max-height: calc(100vh - 7rem); overflow-y: auto; scrollbar-width: thin; }
+.biblioteca__lateral .menu-item { margin: 0; min-height: 44px; transition: background-color 0.25s, color 0.25s, translate 0.35s var(--mola); }
+.biblioteca__lateral .menu-item:hover { translate: 5px 0; }
+.biblioteca__lateral .menu-item span:last-child { min-width: 2ch; text-align: right; font: 600 0.8rem var(--fonte-texto); font-variant-numeric: lining-nums tabular-nums; color: var(--ouro); }
+.menu-item--principal { font: 600 1.15rem var(--fonte-literaria); background: var(--vidro-forte); }
+.lateral__bloco { display: grid; gap: 0.2rem; padding-top: 0.9rem; border-top: 1.5px dashed rgba(244, 233, 209, 0.2); }
+.lateral__bloco > summary, .lateral__titulo h2 { font: 700 1.3rem/1 var(--fonte-mao); color: var(--coral); letter-spacing: 0; text-transform: none; cursor: pointer; list-style: none; }
+.lateral__bloco > summary::-webkit-details-marker { display: none; }
+.lateral__bloco > summary::after { content: "−"; float: right; color: var(--marmore-suave); font-family: var(--fonte-texto); transition: rotate 0.3s var(--mola); }
+.lateral__bloco:not([open]) > summary::after { content: "+"; }
+.lateral__bloco nav { display: grid; gap: 0.15rem; padding-top: 0.5rem; }
+.lateral__titulo { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.3rem; }
+#minhas-listas { display: grid; gap: 0.15rem; }
+.menu-item--discreto { border-top: 1.5px dashed rgba(244, 233, 209, 0.2); border-radius: 0; padding-top: 1rem; color: var(--marmore-suave); }
+.lateral__bloco nav > :nth-child(1), .lateral__bloco--listas nav > :nth-child(1) { --i: 1; }
+.lateral__bloco nav > :nth-child(2), .lateral__bloco--listas nav > :nth-child(2) { --i: 2; }
+.lateral__bloco nav > :nth-child(3), .lateral__bloco--listas nav > :nth-child(3) { --i: 3; }
+.lateral__bloco nav > :nth-child(4), .lateral__bloco--listas nav > :nth-child(4) { --i: 4; }
+.lateral__bloco nav > :nth-child(5), .lateral__bloco--listas nav > :nth-child(5) { --i: 5; }
+.lateral__bloco nav > :nth-child(6), .lateral__bloco--listas nav > :nth-child(6) { --i: 6; }
+.lateral__bloco nav > :nth-child(7), .lateral__bloco--listas nav > :nth-child(7) { --i: 7; }
+.lateral__bloco nav > :nth-child(8), .lateral__bloco--listas nav > :nth-child(8) { --i: 8; }
+
+@media (max-width: 860px) { .biblioteca__lateral { max-height: none; overflow: visible; } }
+
+/* ---------- 2. Selo PDF e leitor ---------- */
+.livro { position: relative; }
+.livro__pdf { position: absolute; top: 0.55rem; left: 0.55rem; z-index: 4; padding: 0.15rem 0.55rem; border-radius: 999px; background: var(--coral); color: #2a1d1a; font: 700 0.72rem var(--fonte-texto); letter-spacing: 0.04em; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); }
+.editor__pdf { display: grid; gap: 0.3rem; justify-items: start; margin-top: 0.8rem; }
+.editor__pdf [hidden] { display: none; }
+.leitor-pdf { width: min(70rem, calc(100% - 1.5rem)); height: min(92vh, 60rem); padding: 0; background: #241a1d; color: var(--marmore); border: 0; border-radius: 22px; box-shadow: 0 0 0 1.5px rgba(244, 233, 209, 0.2), 0 40px 80px rgba(0, 0, 0, 0.7); overflow: hidden; }
+.leitor-pdf[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.leitor-pdf::backdrop { background: rgba(5, 8, 12, 0.78); backdrop-filter: blur(6px); }
+.leitor-pdf__topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem 1.5rem; padding: 1rem 1.4rem; border-bottom: 1.5px dashed rgba(244, 233, 209, 0.2); }
+.leitor-pdf__topo h2 { font: 500 clamp(1.4rem, 3vw, 2rem)/1.1 var(--fonte-literaria); }
+.leitor-pdf__acoes { display: flex; align-items: center; gap: 1rem; }
+.leitor-pdf__acoes .editor__fechar { position: static; }
+#leitor-pdf-quadro { width: 100%; height: 100%; border: 0; background: #fff; }
+.leitor-pdf__dica { padding: 0.6rem 1.4rem; font-size: 0.9rem; }
+
+/* ---------- 3. Lombada com a cor da capa ---------- */
+.book3d__lombada { background: var(--cor-lombada, hsl(var(--matiz) 34% 24%)); transition: background-color 0.9s ease; }
+.book3d__fundo { background: var(--cor-fundo, hsl(var(--matiz) 34% 14%)); transition: background-color 0.9s ease; }
+
+/* ---------- 4. Carrossel da tela inicial ----------
+   O sistema operacional pode pedir "reduzir movimento" (comum no Windows com animações desligadas).
+   Isso desligava o carrossel e deixava só uma fileira parada. Agora ele continua andando, na
+   metade da velocidade, com o botão Pausar sempre à vista. Só para se VOCÊ desligar as
+   animações nas configurações do próprio Atheneum. */
+html .marquee__trilha { animation: marquee var(--duracao, 60s) linear infinite !important; }
+html .marquee--reverso .marquee__trilha { animation-direction: reverse !important; }
+@media (prefers-reduced-motion: reduce) { html .marquee__trilha { animation-duration: calc(var(--duracao, 60s) * 2) !important; } }
+html .passeio:hover .marquee__trilha, html .passeio--pausado .marquee__trilha, html .marquee:focus-within .marquee__trilha, html body:has(dialog[open]) .marquee__trilha { animation-play-state: paused !important; }
+html[data-movimento="reduzido"] .marquee__trilha { animation: none !important; }
+html[data-movimento="reduzido"] .marquee { overflow-x: auto; }
+@media (prefers-reduced-motion: reduce) { .marquee .book3d__giro { animation: flutuar 14s ease-in-out infinite !important; animation-delay: calc(var(--n, 0) * -1.8s); } }
+
+/* ---------- 5. Animações ---------- */
+/* Indicador que desliza entre as abas (computador) */
+@media (min-width: 761px) {
+  #navegacao { position: relative; }
+  #navegacao::before { content: ""; position: absolute; top: 3px; bottom: 3px; left: 0; width: var(--w, 0); transform: translateX(var(--x, 0)) rotate(-2deg); background: var(--ouro);
+    border-radius: 55% 45% 50% 50% / 50% 55% 45% 50%; box-shadow: 0 3px 0 #a87a12; opacity: 0; transition: transform 0.65s var(--mola), width 0.65s var(--mola), opacity 0.3s; z-index: 0; }
+  #navegacao.abas--pronta::before { opacity: 1; }
+  #navegacao .aba { position: relative; z-index: 1; }
+  #navegacao .aba[aria-pressed="true"] { background: transparent !important; box-shadow: none !important; transform: none !important; color: var(--tinta-papel) !important; }
+}
+@media (max-width: 760px) { #navegacao::before { display: none; } }
+
+/* Diálogos: entram com mola e o fundo escurece */
+.editor[open], .lista-editor[open], .leitor-pdf[open] { animation: abrirDialogo 0.6s var(--mola) both; }
+.editor::backdrop, .lista-editor::backdrop, .leitor-pdf::backdrop { animation: escurecer 0.45s ease both; }
+@keyframes abrirDialogo { from { opacity: 0; transform: translateY(30px) scale(0.93); } to { opacity: 1; transform: none; } }
+@keyframes escurecer { from { opacity: 0; } to { opacity: 1; } }
+
+/* Barra lateral e livros entram em sequência */
+.lateral__bloco .menu-item, #minhas-listas .menu-item { animation: deslizar 0.55s var(--suave) both; animation-delay: calc(var(--i, 0) * 45ms); }
+@keyframes deslizar { from { opacity: 0; translate: -14px 0; } to { opacity: 1; translate: 0 0; } }
+.prateleira__item { animation: subir 0.6s var(--suave) both; animation-delay: calc(var(--i, 0) * 45ms); }
+.prateleira__livros > :nth-child(1) { --i: 1; }
+.prateleira__livros > :nth-child(2) { --i: 2; }
+.prateleira__livros > :nth-child(3) { --i: 3; }
+.prateleira__livros > :nth-child(4) { --i: 4; }
+.prateleira__livros > :nth-child(5) { --i: 5; }
+.prateleira__livros > :nth-child(6) { --i: 6; }
+.prateleira__livros > :nth-child(7) { --i: 7; }
+.prateleira__livros > :nth-child(8) { --i: 8; }
+.prateleira__livros > :nth-child(9) { --i: 9; }
+.prateleira__livros > :nth-child(10) { --i: 10; }
+.prateleira__livros > :nth-child(11) { --i: 11; }
+.prateleira__livros > :nth-child(12) { --i: 12; }
+.prateleira__livros > :nth-child(13) { --i: 13; }
+.prateleira__livros > :nth-child(14) { --i: 14; }
+
+/* Respostas ao toque e ao mouse */
+.chip, .botao-texto, .menu-item { transition: transform 0.45s var(--mola), background-color 0.25s, color 0.25s; }
+.chip:hover { transform: translateY(-2px) rotate(-1deg); }
+.chip:active, .menu-item:active { transform: scale(0.96); }
+.livro:hover .capa { transition: transform 0.6s var(--mola); }
+.livro__pdf { animation: aparecer 0.5s var(--mola) both; }
+.notificacao:not([hidden]) { animation: abrirDialogo 0.5s var(--mola) both; }
+.calor__dia { animation: aparecer 0.5s var(--mola) both; animation-delay: calc(var(--i, 0) * 8ms); }
+
+/* Acertos finos */
+.menu-item--principal { white-space: nowrap; font-size: 1.05rem; }
+.editor__pdf .botao { width: 100%; justify-content: center; white-space: nowrap; }

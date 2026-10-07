@@ -1,0 +1,12 @@
+.entrada { position: fixed; inset: 0; z-index: 100; display: flex; pointer-events: none; }
+.entrada span { flex: 1; background: var(--noite); border: 1px solid rgba(201, 168, 92, 0.25); animation: abrir-porta-esquerda 0.85s ease-in-out forwards; }
+.entrada span + span { animation-name: abrir-porta-direita; }
+@keyframes abrir-porta-esquerda { to { transform: translateX(-100%); } }
+@keyframes abrir-porta-direita { to { transform: translateX(100%); } }
+.revelar { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.revelar--visivel, .revelar:focus-within { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .entrada { display: none; }
+  .revelar { opacity: 1; transform: none; transition: none; }
+  .hero__texto, .detalhes[open] { animation: none; }
+}

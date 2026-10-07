@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64" fill="none" stroke="#c9a85c" stroke-width="1.6" stroke-linejoin="round">
+  <!-- Coruja de Atena: corpo, olhos, pupilas e bico -->
+  <path d="M16 3 11 8c-3 2-4 6-4 10 0 6 4 11 9 11s9-5 9-11c0-4-1-8-4-10Z"/>
+  <circle cx="12.5" cy="15" r="3.5"/>
+  <circle cx="19.5" cy="15" r="3.5"/>
+  <circle cx="12.5" cy="15" r="1" fill="#c9a85c"/>
+  <circle cx="19.5" cy="15" r="1" fill="#c9a85c"/>
+  <path d="m16 17-1.5 4h3Z" fill="#c9a85c"/>
+</svg>

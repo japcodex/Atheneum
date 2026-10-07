@@ -1,0 +1,139 @@
+Arquivo de Organização para capas.
+
+a-abolicao-do-homem.jpg   <-   A Abolição do Homem
+as-cronicas-de-narnia.jpg   <-   As Crônicas de Nárnia
+cartas-de-um-diabo-a-seu-aprendiz.jpg   <-   Cartas de um Diabo a seu Aprendiz
+cristianismo-puro-e-simples.jpg   <-   Cristianismo Puro e Simples
+o-grande-divorcio.jpg   <-   O Grande Divórcio
+o-peso-da-gloria.jpg   <-   O Peso da Glória
+o-problema-da-dor.jpg   <-   O Problema da Dor
+os-quatro-amores.jpg   <-   Os Quatro Amores
+reflexoes-cristas.jpg   <-   Reflexões Cristãs
+a-senhoria.jpg   <-   A Senhoria
+crime-e-castigo.jpg   <-   Crime e Castigo
+memorias-do-subsolo.jpg   <-   Memórias do Subsolo
+noites-brancas.jpg   <-   Noites Brancas
+o-idiota.jpg   <-   O Idiota
+os-irmaos-karamazov.jpg   <-   Os Irmãos Karamazov
+gente-pobre.jpg   <-   Gente Pobre
+a-inocencia-do-padre-brown.jpg   <-   A Inocência do Padre Brown
+a-sabedoria-do-padre-brown.jpg   <-   A Sabedoria do Padre Brown
+o-homem-eterno.jpg   <-   O Homem Eterno
+o-homem-que-era-quinta-feira.jpg   <-   O Homem que era Quinta-Feira
+o-que-ha-de-errado-com-o-mundo.jpg   <-   O Que Há de Errado com o Mundo
+ortodoxia.jpg   <-   Ortodoxia
+a-morte-de-ivan-ilitch.jpg   <-   A Morte de Ivan Ilitch
+guerra-e-paz.jpg   <-   Guerra e Paz
+de-quanta-terra-precisa-o-homem.jpg   <-   De Quanta Terra Precisa o Homem
+anna-karienina.jpg   <-   Anna Karienina
+a-hora-da-estrela.jpg   <-   A Hora da Estrela
+agua-viva.jpg   <-   Água Viva
+a-paixao-segundo-g-h.jpg   <-   A Paixão Segundo G.H
+perto-do-coracao-selvagem.jpg   <-   Perto do Coração Selvagem
+iliada.jpg   <-   Ilíada
+odisseia.jpg   <-   Odisseia
+meditacoes.jpg   <-   Meditações
+alem-do-bem-e-do-mal.jpg   <-   Além do Bem e do Mal
+a-arte-de-ter-razao.jpg   <-   A Arte de Ter Razão
+a-republica.jpg   <-   A República
+o-mito-de-sisifo.jpg   <-   O Mito de Sísifo
+o-estrangeiro.jpg   <-   O Estrangeiro
+o-heroi-de-mil-faces.jpg   <-   O Herói de Mil Faces
+confissoes.jpg   <-   Confissões
+decadencia-do-ocidente.jpg   <-   Decadência do Ocidente
+as-ideias-tem-consequencias.jpg   <-   As Ideias Têm Consequências
+a-ultima-supersticao-refutando-o-neoateismo.jpg   <-   A Última Superstição: Refutando o Neoateísmo
+o-ego-e-seu-inimigo.jpg   <-   O Ego é Seu Inimigo
+o-erro-de-descartes.jpg   <-   O Erro de Descartes
+walden.jpg   <-   Walden
+o-principe.jpg   <-   O Príncipe
+a-arte-da-guerra.jpg   <-   A Arte da Guerra
+1984.jpg   <-   1984
+o-conde-de-monte-cristo.jpg   <-   O Conde de Monte Cristo
+caninos-brancos.jpg   <-   Caninos Brancos
+cacando-carneiros.jpg   <-   Caçando Carneiros
+o-retrato-de-dorian-gray.jpg   <-   O Retrato de Dorian Gray
+o-velho-e-o-mar.jpg   <-   O Velho e o Mar
+sidarta.jpg   <-   Sidarta
+o-despertar-da-menina-prim.jpg   <-   O Despertar da Menina Prim
+sapiens.jpg   <-   Sapiens
+a-jornada-da-humanidade.jpg   <-   A Jornada da Humanidade
+principios.jpg   <-   Princípios
+the-witcher-a-espada-do-destino.jpg   <-   The Witcher — A Espada do Destino
+the-witcher-a-senhora-do-lago.jpg   <-   The Witcher — A Senhora do Lago
+the-witcher-a-torre-da-andorinha.jpg   <-   The Witcher — A Torre da Andorinha
+the-witcher-batismo-de-fogo.jpg   <-   The Witcher — Batismo de Fogo
+the-witcher-o-sangue-dos-elfos.jpg   <-   The Witcher — O Sangue dos Elfos
+the-witcher-o-ultimo-desejo.jpg   <-   The Witcher — O Último Desejo
+the-witcher-tempo-de-desprezo.jpg   <-   The Witcher — Tempo de Desprezo
+the-witcher-tempo-de-tempestade.jpg   <-   The Witcher — Tempo de Tempestade
+harry-potter-e-a-camara-secreta.jpg   <-   Harry Potter e a Câmara Secreta
+harry-potter-e-a-ordem-da-fenix.jpg   <-   Harry Potter e a Ordem da Fênix
+harry-potter-e-a-pedra-filosofal.jpg   <-   Harry Potter e a Pedra Filosofal
+harry-potter-e-as-reliquias-da-morte.jpg   <-   Harry Potter e as Relíquias da Morte
+harry-potter-e-o-calice-de-fogo.jpg   <-   Harry Potter e o Cálice de Fogo
+harry-potter-e-o-enigma-do-principe.jpg   <-   Harry Potter e o Enigma do Príncipe
+harry-potter-e-o-prisioneiro-de-azkaban.jpg   <-   Harry Potter e o Prisioneiro de Azkaban
+o-hobbit.jpg   <-   O Hobbit
+senhor-dos-aneis-a-sociedade-do-anel.jpg   <-   Senhor dos Anéis — A Sociedade do Anel
+senhor-dos-aneis-as-duas-torres.jpg   <-   Senhor dos Anéis — As Duas Torres
+senhor-dos-aneis-o-retorno-do-rei.jpg   <-   Senhor dos Anéis — O Retorno do Rei
+o-silmarillion.jpg   <-   O Silmarillion
+contos-inacabados.jpg   <-   Contos Inacabados
+os-filhos-de-hurin.jpg   <-   Os Filhos de Húrin
+beren-e-luthien.jpg   <-   Beren e Luthien
+a-queda-de-gondolin.jpg   <-   A Queda de Gondolin
+a-queda-de-numenor.jpg   <-   A Queda de Númenor
+a-loja-de-tudo.jpg   <-   A Loja de Tudo
+a-startup-enxuta.jpg   <-   A Startup Enxuta
+a-venda-desafiadora.jpg   <-   A Venda Desafiadora
+antifragile.jpg   <-   Antifragile
+confissoes-de-um-publicitario.jpg   <-   Confissões de um Publicitário
+elon-musk-lideres-e-numeros.jpg   <-   Elon Musk: Líderes e Números
+habitos-atomicos.jpg   <-   Hábitos Atômicos
+made-in-america.jpg   <-   Made in America
+misbehaving.jpg   <-   Misbehaving
+nada-pode-me-ferir.jpg   <-   Nada Pode me Ferir
+never-split-the-difference.jpg   <-   Never Split the Difference
+o-homem-mais-rico-da-babilonia.jpg   <-   O Homem mais Rico da Babilônia
+o-investidor-inteligente.jpg   <-   O Investidor Inteligente
+principios-para-a-ordem-mundial-em-transformacao.jpg   <-   Princípios para a Ordem Mundial em Transformação
+rapido-e-devagar-duas-formas-de-pensar.jpg   <-   Rápido e Devagar: Duas Formas de Pensar
+startup-manual-do-empreendedor.jpg   <-   Startup: Manual do Empreendedor
+startup-essentials.jpg   <-   Startup Essentials
+the-creature-from-jekyll-island.jpg   <-   The Creature From Jekyll Island
+algoritmos.jpg   <-   Algoritmos
+arquitetura-e-organizacao-de-computadores.jpg   <-   Arquitetura e Organização de Computadores
+arquitetura-limpa.jpg   <-   Arquitetura Limpa
+clean-code.jpg   <-   Clean Code
+codigo-limpo.jpg   <-   Código Limpo
+data-science-do-zero.jpg   <-   Data Science do Zero
+de-zero-a-um.jpg   <-   De Zero a Um
+desenvolvimento-agil-limpo.jpg   <-   Desenvolvimento Ágil Limpo
+entendendo-algoritmos.jpg   <-   Entendendo Algoritmos
+o-programador-pragmatico.jpg   <-   O Programador Pragmático
+padroes-de-projetos-solucoes-reutilizaveis.jpg   <-   Padrões de Projetos: Soluções Reutilizáveis
+use-a-cabeca-c.jpg   <-   Use a Cabeça C#
+use-a-cabeca-java.jpg   <-   Use a Cabeça Java
+use-a-cabeca-javascript.jpg   <-   Use a Cabeça JavaScript
+use-a-cabeca-padroes-de-projetos.jpg   <-   Use a Cabeça Padrões de Projetos
+use-a-cabeca-python.jpg   <-   Use a Cabeça Python
+use-a-cabeca-redes-de-computador.jpg   <-   Use a Cabeça Redes de Computador
+use-a-cabeca-sql.jpg   <-   Use a Cabeça SQL
+tecnicas-de-invasao.jpg   <-   Técnicas de Invasão
+domain-driven-design.jpg   <-   Domain-Driven Design
+how-to-draw-and-sketch-objects.jpg   <-   How to Draw and Sketch Objects
+the-design-of-everyday-things.jpg   <-   The Design of Everyday Things
+the-art-of-electronics.jpg   <-   The Art of Electronics
+3d-automotive-design.jpg   <-   3D Automotive Design
+ferrari-o-homem-por-tras-das-maquinas.jpg   <-   Ferrari: O Homem por Trás das Máquinas
+how-to-build-a-car.jpg   <-   How to Build a Car
+how-to-design-cars.jpg   <-   How to Design Cars
+how-to-draw-cars-like-a-pro.jpg   <-   How to Draw Cars Like a Pro
+how-to-draw-hotwheels.jpg   <-   How to Draw Hotwheels
+manual-de-tecnologia-alternativa.jpg   <-   Manual de Tecnologia Alternativa
+art-of-game-design.jpg   <-   Art of Game Design
+game-programming-patterns.jpg   <-   Game Programming Patterns
+level-up-the-guide-to-great-video-game-design.jpg   <-   Level Up! The Guide to Great Video Game Design
+programming-game-ai-by-example.jpg   <-   Programming Game AI by Example
+story.jpg   <-   Story

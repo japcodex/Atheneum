@@ -1,0 +1,203 @@
+/* Luz de fim de tarde, papel antigo e bronze: a camada visual da biblioteca. */
+:root {
+  --noite: #111a1d; --azul: #19262a; --painel: #172226;
+  --ouro: #c7a46c; --ouro-claro: #ead0a0; --marmore: #f2ebdc;
+  --marmore-suave: #abb9b6; --linha: rgba(199,164,108,.19);
+  --fonte-titulo: 'Cinzel', Georgia, serif; --fonte-literaria: 'Cormorant Garamond', Georgia, serif;
+  --raio: 16px;
+}
+html { scroll-padding-top: 95px; }
+html[data-texto="grande"] { font-size: 18px; }
+body { background: var(--noite); }
+html[data-ambiente="imersivo"] body {
+  background-image: radial-gradient(ellipse at 90% 0,rgba(183,129,63,.085),transparent 48%), radial-gradient(ellipse at 4% 45%,rgba(74,119,111,.06),transparent 50%);
+}
+.icone { width: 20px; height: 20px; flex: 0 0 20px; vertical-align: middle; }
+[data-icone], .botao-icone { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; }
+.botao { border-radius: 14px; background: linear-gradient(120deg,#e0c087,var(--ouro)); color: #1c2525; box-shadow: 0 4px 20px #0002; min-height: 44px; }
+.botao:hover { background: var(--ouro-claro); }
+.botao-texto { border-bottom: 0; }
+.chip, .menu-item, .campo input, .campo select, .campo textarea { border-radius: 12px; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+.topo { padding: .85rem var(--margem); background: rgba(17,26,29,.96); gap: 1rem 2rem; backdrop-filter: none; }
+.marca { gap: .65rem; }
+.marca__logo { width: 38px; height: 38px; }
+.marca__nome { font-family: var(--fonte-titulo); font-size: 1.55rem; letter-spacing: -.04em; }
+.marca__ponto { display: none; }
+.topo__legenda { font: .62rem var(--fonte-titulo); letter-spacing: .15em; text-transform: uppercase; }
+#navegacao { gap: .35rem; }
+#navegacao .aba { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem .9rem; border: 1px solid transparent; border-radius: 13px; font-size: .86rem; }
+#navegacao .aba .icone { width: 17px; height: 17px; flex-basis: 17px; }
+#navegacao .aba[aria-pressed="true"] { background: #c7a46c12; border-color: #c7a46c33; color: var(--ouro-claro); }
+.inicio, .configuracoes { max-width: 1280px; margin: auto; padding: 2rem var(--espaco) 4rem; }
+.inicio__hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: center; padding: 3.5rem 0 4rem; position: relative; }
+.inicio__introducao { position: relative; z-index: 1; }
+.inicio__introducao .sobretitulo { display: flex; align-items: center; gap: .8rem; }
+.inicio__introducao .sobretitulo::before { content: ''; width: 2rem; height: 1px; background: var(--ouro); }
+.inicio h1 { font: 500 clamp(3.4rem,6.5vw,6.15rem)/.98 var(--fonte-literaria); letter-spacing: -.035em; margin: 1.6rem 0; }
+.inicio h1 em { color: var(--ouro-claro); font-weight: 500; }
+.inicio__convite { font: 500 1.45rem/1.5 var(--fonte-literaria); color: var(--marmore-suave); max-width: 28rem; }
+.inicio__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 1.8rem; }
+.inicio__acoes .botao { font-size: .86rem; }
+.inicio__acoes .botao-texto { font-size: .82rem; margin: 0; }
+.inicio__acervo { margin-top: 2rem; font-size: .73rem; color: var(--marmore-suave); letter-spacing: .03em; }
+.inicio__vitrine { min-width: 0; position: relative; text-align: center; padding: 2.2rem 1rem 1.5rem; border-radius: 50% 50% 18px 18px; background: radial-gradient(ellipse at center,#bc935821,transparent 68%); }
+.inicio__vitrine::before { content: ''; position: absolute; inset: 0 7%; border: 1px solid #c7a46c22; border-radius: 50% 50% 18px 18px; pointer-events: none; }
+.inicio__vitrine > .sobretitulo { font-size: .6rem; position: relative; margin: 1.5rem 0 2rem; }
+.inicio__livros { list-style: none; display: flex; justify-content: center; align-items: center; padding: 0 0 1.5rem; margin: 0; position: relative; }
+.inicio__livros li { width: 39%; max-width: 170px; flex-shrink: 0; transition: transform .4s ease; }
+.inicio__livros li:first-child { transform: rotate(-11deg) translateY(7px); margin-right: -35px; }
+.inicio__livros li:nth-child(2) { transform: translateY(-8px); z-index: 2; }
+.inicio__livros li:nth-child(3) { transform: rotate(11deg) translateY(7px); margin-left: -35px; }
+.inicio__livros .livro__legenda, .inicio__livros .livro__lombada { display: none; }
+.inicio__livros .capa { box-shadow: -8px 12px 40px #0009; }
+.inicio__livros .capa__titulo { font: 500 .95rem/1.3 var(--fonte-titulo); }
+.inicio__assinatura { display: block; position: relative; font: italic 500 1.15rem var(--fonte-literaria); color: var(--ouro-claro); margin: .8rem 0; }
+.inicio__atalhos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3.5rem; }
+.inicio__atalhos button { display: flex; align-items: center; gap: 1rem; text-align: left; color: var(--marmore); padding: 1.2rem 1.5rem; background: #19262a80; border: 1px solid var(--linha); border-radius: 18px; cursor: pointer; }
+.inicio__atalhos button > .icone { color: var(--ouro); width: 26px; height: 26px; flex-basis: 26px; }
+.inicio__atalhos button > span:last-child { margin-left: auto; color: var(--ouro); }
+.inicio__atalhos strong { display: block; font-size: .94rem; font-weight: 500; }
+.inicio__atalhos small { display: block; color: var(--marmore-suave); margin-top: .25rem; font-size: .78rem; }
+.inicio__convite-final { text-align: center; padding: 3.5rem 1rem 1rem; }
+.inicio__convite-final h2 { font: 500 2.8rem var(--fonte-literaria); }
+.inicio__convite-final > p:last-child { font-size: .85rem; color: var(--marmore-suave); margin-top: .6rem; }
+.inicio__vazio { padding: 2rem; border: 1px solid var(--linha); border-radius: 18px; color: var(--marmore-suave); }
+.biblioteca { max-width: 1440px; }
+.biblioteca__cabecalho h1 { font: 500 clamp(2.3rem,4vw,3.5rem)/1.2 var(--fonte-titulo); }
+.biblioteca__ferramentas .busca input, .biblioteca__ferramentas .chip { border-radius: 12px; }
+.biblioteca__ferramentas .busca input { background: var(--painel); }
+.biblioteca__ferramentas .visoes { gap: .3rem; }
+.biblioteca__lateral { font-size: .9rem; }
+.menu-item[data-icone] { justify-content: flex-start; }
+.menu-item[data-icone] > span:last-child { margin-left: auto; }
+.carrossel { min-width: 0; margin-bottom: 2.5rem; }
+.carrossel__cabecalho { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .4rem; }
+.carrossel__titulo { font: 500 clamp(1.3rem,2vw,1.7rem)/1.25 var(--fonte-titulo); }
+.carrossel__cabecalho .texto-suave { font-size: .8rem; margin-top: .35rem; }
+.carrossel__controles { display: flex; gap: .45rem; }
+.botao-icone { width: 40px; height: 40px; border: 1px solid var(--linha); border-radius: 50%; background: var(--painel); color: var(--ouro-claro); cursor: pointer; }
+.botao-icone[data-direcao="-1"] .icone { transform: rotate(180deg); }
+.botao-icone:disabled { opacity: .28; }
+.carrossel__janela { position: relative; overflow: hidden; background: linear-gradient(to top,#c7a46c0c,transparent 35%); border-radius: 12px; }
+.carrossel__janela::before, .carrossel__janela::after { content: ''; position: absolute; top: 0; bottom: 0; width: 38px; z-index: 3; pointer-events: none; transition: opacity .25s; }
+.carrossel__janela::before { left: 0; background: linear-gradient(to right,var(--noite),transparent); }
+.carrossel__janela::after { right: 0; background: linear-gradient(to left,var(--noite),transparent); }
+.carrossel--inicio .carrossel__janela::before, .carrossel--fim .carrossel__janela::after { opacity: 0; }
+.carrossel__trilha { display: grid; grid-auto-flow: column; grid-auto-columns: 158px; gap: 1.4rem; list-style: none; margin: 0; padding: 1.4rem .4rem 1.6rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #c7a46c55 transparent; border-bottom: 1px solid var(--linha); }
+.carrossel__trilha > li { min-width: 0; scroll-snap-align: start; }
+.carrossel .livro { display: flex; flex-direction: column; align-items: stretch; height: 100%; }
+.carrossel .capa { width: 100%; aspect-ratio: 2/3; padding: 1.7rem .75rem 1rem; }
+.carrossel .capa__titulo { font: 500 .95rem/1.2 var(--fonte-titulo); }
+.carrossel .capa__autor { font-size: .68rem; }
+.carrossel .livro__nome, .catalogo .livro__nome { font: 600 1.22rem/1.12 var(--fonte-literaria); }
+.carrossel .livro__autor { font-size: .75rem; }
+.carrossel .livro__progresso { font-size: .68rem; }
+.capa { border-radius: 5px 12px 12px 5px; }
+.capa::after { border-radius: 2px 6px 6px 2px; }
+.livro:hover .capa { translate: 0 -7px; }
+.santuario__manifesto h1 { font: 500 clamp(2.3rem,4vw,3.6rem)/1.2 var(--fonte-titulo); }
+.jornada { border-radius: 24px; background: radial-gradient(ellipse at 100% 0,#c7a46c15,transparent 75%),var(--painel); }
+.jornada h2 { font-family: var(--fonte-literaria); font-size: 1.9rem; }
+.jornada__nivel { font-family: var(--fonte-literaria); font-size: 4rem; }
+.santuario__barra { border-radius: 6px; overflow: hidden; height: 7px; }
+.santuario__barra span { background: linear-gradient(90deg,var(--ouro),var(--ouro-claro)); transition: width .7s ease; }
+.santuario__numeros span { font-family: var(--fonte-literaria); }
+.santuario__inferior { grid-template-columns: 1.6fr 1fr; gap: 3rem; }
+.bloco-titulo h2 { font-size: 1.7rem; }
+.santuario__emblemas { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .8rem; }
+.santuario__emblema { padding: 1.2rem; border: 1px solid var(--linha); border-radius: 18px; margin: 0; background: #19262a55; }
+.santuario__emblema > .icone { display: block; color: var(--marmore-suave); margin-bottom: .8rem; width: 24px; height: 24px; }
+.santuario__emblema strong { font-family: var(--fonte-literaria); font-size: 1.3rem; }
+.santuario__emblema p { line-height: 1.5; }
+.santuario__emblema[data-desbloqueado="true"] { background: linear-gradient(135deg,#c7a46c13,transparent); border-color: #c7a46c66; }
+.santuario__emblema[data-desbloqueado="true"] > .icone { color: var(--ouro-claro); }
+.emblema__estado { display: inline-block; margin-top: .8rem; padding: .15rem .5rem; border-radius: 20px; font-size: .65rem; background: #ffffff08; color: var(--marmore-suave); }
+[data-desbloqueado="true"] .emblema__estado { background: #c7a46c1c; color: var(--ouro-claro); }
+.santuario__reflexao .citacao__texto { font-family: var(--fonte-literaria); font-size: 2rem; }
+.pagina-cabecalho { padding: 2rem 0 2.5rem; }
+.pagina-cabecalho h1 { font: 500 clamp(2rem,4vw,3rem)/1.2 var(--fonte-titulo); margin-bottom: .8rem; }
+.configuracoes__grade { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.5rem; align-items: start; }
+.painel-config { border: 1px solid var(--linha); border-radius: 24px; background: var(--painel); padding: 2rem; min-width: 0; }
+.painel-config h2 { display: flex; justify-content: flex-start; font: 500 1.25rem var(--fonte-titulo); margin-bottom: 1.8rem; }
+.painel-config h2 .icone { color: var(--ouro); }
+.painel-config > .campo, .painel-config > .form-grid { margin-bottom: 1.2rem; }
+.painel-config > .texto-suave { margin: 1rem 0; }
+.painel-config > .botao, .painel-config > .chip { margin-top: .5rem; }
+.preferencia-switch { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: 1.1rem 0; border-top: 1px solid var(--linha); cursor: pointer; }
+.preferencia-switch strong { display: block; font-size: .93rem; font-weight: 500; }
+.preferencia-switch small { display: block; color: var(--marmore-suave); margin-top: .3rem; font-size: .76rem; }
+.preferencia-switch input { width: 20px; height: 20px; accent-color: var(--ouro); flex-shrink: 0; }
+.config-nota { color: var(--marmore-suave); font-size: .72rem; margin: .6rem 0 1.5rem; }
+.config-separador { height: 1px; background: var(--linha); margin: 2rem 0; }
+.config-lembrete { display: flex; gap: .8rem; border-radius: 14px; padding: 1rem; background: #c7a46c0c; color: var(--marmore-suave); font-size: .8rem; margin-top: 2rem; }
+.config-lembrete > span { color: var(--ouro); align-self: start; }
+.editor, .lista-editor { border-radius: 22px; background: var(--noite); }
+.editor__topo h2, .lista-editor h2 { font-family: var(--fonte-literaria); }
+.editor__fechar { border-radius: 50%; min-width: 44px; min-height: 44px; }
+.editor__listas { border-radius: 14px; }
+.lista-opcao { padding: .35rem .5rem; background: #ffffff05; border-radius: 9px; }
+.notificacao { border-radius: 14px; }
+.rodape { font-family: var(--fonte-literaria); font-size: 1rem; }
+.pagina--entrando { animation: entrar-na-sala .45s ease both; }
+@keyframes entrar-na-sala { from { opacity: .25; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+html[data-movimento="reduzido"] { scroll-behavior: auto; }
+html[data-movimento="reduzido"] *, html[data-movimento="reduzido"] *::before, html[data-movimento="reduzido"] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+html[data-movimento="reduzido"] .revelar { opacity: 1; transform: none; }
+html[data-movimento="reduzido"] .entrada { display: none; }
+html[data-ambiente="discreto"] .inicio__vitrine, html[data-ambiente="discreto"] .jornada, html[data-ambiente="discreto"] .carrossel__janela { background: none; }
+html[data-ambiente="discreto"] .inicio__vitrine::before { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 1100px) {
+  .topo__legenda { display: none; }
+  #navegacao { margin-left: auto; }
+  .inicio__hero { gap: 1.3rem; }
+  .inicio__livros li { max-width: 145px; }
+  .santuario__inferior { grid-template-columns: 1.4fr 1fr; gap: 2rem; }
+}
+@media (max-width: 760px) {
+  body { padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
+  .topo { padding: .8rem 1rem; justify-content: center; position: relative; }
+  .marca__logo { width: 30px; height: 30px; }
+  .marca__nome { font-size: 1.4rem; }
+  #navegacao { position: fixed; inset: auto 12px calc(10px + env(safe-area-inset-bottom)); z-index: 55; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0; padding: .4rem; border: 1px solid #c7a46c44; border-radius: 22px; background: #111a1df0; backdrop-filter: blur(16px); box-shadow: 0 8px 35px #0009; margin: 0; overflow: visible; }
+  #navegacao .aba { flex-direction: column; justify-content: center; gap: .3rem; padding: .55rem .1rem; font-size: .65rem; border-radius: 15px; min-width: 0; }
+  #navegacao .aba .icone { width: 21px; height: 21px; flex-basis: 21px; }
+  .inicio, .configuracoes { padding: 1rem 1rem 2rem; }
+  .inicio__hero { grid-template-columns: 1fr; padding: 1.8rem 0 2.3rem; gap: 2.5rem; }
+  .inicio h1 { font-size: clamp(3.2rem,11vw,4.5rem); }
+  .inicio__convite { font-size: 1.35rem; }
+  .inicio__acoes { gap: .9rem; }
+  .inicio__acoes .botao { font-size: .8rem; padding: .7rem 1rem; }
+  .inicio__acoes .botao-texto { font-size: .75rem; }
+  .inicio__vitrine { max-width: 410px; width: 100%; margin: auto; padding-top: 1rem; }
+  .inicio__vitrine > .sobretitulo { margin-top: 1.4rem; }
+  .inicio__livros li { max-width: 132px; width: 38%; }
+  .inicio__livros .capa__titulo { font-size: .8rem; }
+  .inicio__atalhos { grid-template-columns: 1fr; margin-bottom: 2.2rem; }
+  .inicio__atalhos button { padding: 1rem; }
+  .carrossel__trilha { grid-auto-columns: 142px; gap: 1rem; }
+  .carrossel__titulo { font-size: 1.15rem; }
+  .carrossel__cabecalho .texto-suave { font-size: .74rem; }
+  .carrossel__cabecalho { align-items: start; }
+  .botao-icone { width: 36px; height: 36px; }
+  .carrossel__controles { flex-shrink: 0; }
+  .biblioteca { padding-top: 1.2rem; }
+  .biblioteca__cabecalho h1 { font-size: 2.2rem; }
+  .biblioteca__ferramentas .visoes { margin-left: 0; }
+  .biblioteca__ferramentas .chip { padding: .55rem .7rem; }
+  .santuario__hero, .santuario__inferior { grid-template-columns: 1fr; }
+  .santuario__manifesto h1 { font-size: 2.5rem; }
+  .santuario__emblemas { gap: .65rem; }
+  .santuario__emblema { padding: 1rem; }
+  .santuario__emblema strong { font-size: 1.2rem; }
+  .santuario__emblema p { font-size: .7rem; }
+  .configuracoes__grade { grid-template-columns: 1fr; }
+  .pagina-cabecalho { padding: 1.5rem 0 2rem; }
+  .painel-config { padding: 1.4rem; }
+  .painel-config .form-grid { grid-template-columns: 1fr; }
+  .notificacao { bottom: calc(95px + env(safe-area-inset-bottom)); }
+}

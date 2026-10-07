@@ -1,0 +1,277 @@
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  padding: 0.7rem var(--margem);
+  background: rgba(11, 16, 32, 0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201, 168, 92, 0.18);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ouro-claro);
+  text-decoration: none;
+}
+
+.marca__logo {
+  width: 34px;      /* tamanho do logo: mude aqui */
+  height: 34px;
+}
+
+.marca__nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--marmore);
+}
+
+.abas {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.aba {
+  padding: 0.55rem 0.9rem;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--marmore-suave);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.aba:hover { color: var(--marmore); }
+.aba[aria-pressed="true"] {
+  color: var(--marmore);
+  border-bottom-color: var(--ouro);
+}
+.aba__total {
+  margin-left: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--ouro);
+}
+
+.busca {
+  position: relative;
+  flex: 0 1 22rem;
+  margin-left: auto;
+}
+
+.busca__icone {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  translate: 0 -50%;
+  color: var(--ouro);
+  pointer-events: none;
+}
+
+.busca input {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.6rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 168, 92, 0.25);
+  border-radius: 999px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.busca input::placeholder { color: var(--marmore-suave); }
+.busca input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--ouro);
+}
+
+/* ---------- Hero: foto do Panteão ---------- */
+
+/* A foto vem da variável --foto-hero (definida em base.css).
+   Por cima dela empilhamos degradês azul-noite: o primeiro escurece o lado
+   esquerdo para o texto ficar legível; o segundo aplica um tom azulado. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: clamp(27rem, 64vh, 40rem);
+  padding: clamp(2.5rem, 6vw, 4.5rem) var(--margem);
+  background:
+    linear-gradient(90deg, rgba(11, 16, 32, 0.93) 0%, rgba(11, 16, 32, 0.72) 42%, rgba(11, 16, 32, 0.15) 100%),
+    linear-gradient(to bottom, rgba(19, 28, 56, 0.45), rgba(19, 28, 56, 0.25)),
+    var(--foto-hero) center 62% / cover no-repeat;
+}
+
+/* Esmaece a base da foto no fundo da página */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 28%;
+  background: linear-gradient(to bottom, transparent, var(--noite));
+  pointer-events: none;
+}
+
+.hero__texto {
+  position: relative;
+  z-index: 1;               /* fica acima do esmaecimento */
+  max-width: 36rem;
+  animation: surgir 1.2s ease-out both;
+}
+
+.hero__titulo {
+  font-size: clamp(3.4rem, 9vw, 6.5rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.hero__subtitulo {
+  margin-top: 0.75rem;
+  max-width: 30rem;
+  font-size: 1.15rem;
+  color: var(--marmore-suave);
+}
+
+.citacao {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  max-width: 32rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(232, 214, 164, 0.4);
+}
+
+.citacao__texto {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  line-height: 1.25;
+}
+
+.citacao__autor { margin-top: 0.5rem; color: var(--ouro-claro); }
+
+.botao-texto {
+  margin-top: 0.75rem;
+  padding: 0.3rem 0;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid rgba(232, 214, 164, 0.5);
+  color: var(--ouro-claro);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.botao-texto:hover { border-bottom-color: var(--ouro-claro); }
+
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Controles ---------- */
+
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 1.5rem var(--margem) 0;
+}
+
+.controles__resumo { color: var(--marmore-suave); }
+
+.campos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem;
+}
+
+.campo {
+  display: grid;
+  gap: 0.15rem;
+  font-size: 0.85rem;
+  color: var(--marmore-suave);
+}
+
+.campo select {
+  padding: 0.5rem 0.75rem;
+  background: var(--azul);
+  border: 1px solid rgba(201, 168, 92, 0.25);
+  border-radius: var(--raio);
+}
+
+.visoes,
+.grupos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.grupos { flex-basis: 100%; }
+.grupos[hidden] { display: none; }
+
+/* ---------- Seções ---------- */
+
+.estantes {
+  padding: clamp(1.5rem, 4vw, 2.5rem) var(--margem) 5rem;
+}
+
+.secao + .secao { margin-top: clamp(3.5rem, 8vw, 6rem); }
+
+.secao__cabecalho { margin-bottom: 2rem; }
+
+.secao__titulo { font-size: clamp(2.4rem, 5vw, 3.4rem); }
+
+.secao__cabecalho::after {
+  content: "";
+  display: block;
+  width: 7.5rem;
+  height: 24px;
+  margin-top: 0.75rem;
+  background: var(--meandro) repeat-x left center;
+  opacity: 0.7;
+}
+
+.secao__descricao {
+  margin-top: 0.25rem;
+  max-width: 44rem;
+  color: var(--marmore-suave);
+}
+
+/* ---------- Estado vazio ---------- */
+
+.vazio { padding: 4rem 1rem; text-align: center; }
+.vazio__titulo { font-family: var(--fonte-titulo); font-size: 2rem; }
+.vazio__texto { margin: 0.4rem 0 1.25rem; color: var(--marmore-suave); }
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+  padding: 0 var(--margem) 2.5rem;
+  text-align: center;
+  color: var(--marmore-suave);
+}
+.rodape__credito { margin-top: 0.4rem; font-size: 0.85rem; opacity: 0.7; }
+.rodape__friso {
+  height: 24px;
+  margin-bottom: 1.5rem;
+  background: var(--meandro) repeat-x center;
+  opacity: 0.35;
+}
+
+/* ---------- Telas pequenas ---------- */
+
+@media (max-width: 860px) {
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(11, 16, 32, 0.85) 0%, rgba(11, 16, 32, 0.6) 100%),
+      var(--foto-hero) center / cover no-repeat;
+  }
+  .busca { flex-basis: 100%; margin-left: 0; order: 3; }
+}

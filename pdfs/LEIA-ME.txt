@@ -1,0 +1,18 @@
+PASTA DE PDFs
+
+Coloque aqui o PDF de um livro, com o MESMO NOME do id dele + .pdf
+Exemplo: para "Crime e Castigo" (id: crime-e-castigo), salve  pdfs/crime-e-castigo.pdf
+A lista de ids está em img/capas/LISTA-DE-NOMES.txt (ou no campo "id" de data/livros.js).
+
+Como o site descobre o arquivo:
+  1. Site publicado (Vercel) ou aberto com servidor local (Live Server, npx serve):
+     ele procura pdfs/<id>.pdf sozinho. Basta colocar o arquivo e atualizar a página.
+  2. Abrindo o index.html com dois cliques (file://): rode uma vez
+         node scripts/listar-pdfs.mjs
+     para gerar data/pdfs.js com a lista dos arquivos desta pasta.
+  3. Qualquer nome: no editor do livro, preencha "PDF" com o caminho (ex.: pdfs/qualquer-nome.pdf),
+     ou coloque  "pdf": "pdfs/arquivo.pdf"  na linha do livro em data/livros.js.
+
+Cuide dos direitos autorais: guarde aqui apenas PDFs que você pode distribuir
+(obras em domínio público, livros seus ou com permissão). Se o repositório for público,
+os PDFs ficam públicos junto.

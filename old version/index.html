@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atheneum | A biblioteca de um leitor</title>
+  <meta name="theme-color" content="#0b1020">
+
+  <!-- Ícone da aba do navegador. Para trocar, substitua img/logo/favicon.svg -->
+  <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
+
+  <!-- Fontes do Google (precisa de internet): Cormorant Garamond (títulos) e Jost (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos (a ordem importa: base primeiro) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/livros.css">
+  <link rel="stylesheet" href="css/animacoes.css">
+  <link rel="stylesheet" href="css/aplicativo.css">
+</head>
+
+<body>
+  <div class="entrada" id="entrada" aria-hidden="true" hidden><span></span><span></span></div>
+  <a class="pular" href="#biblioteca">Pular para os livros</a>
+
+  <!-- Barra Superior -->
+  <header class="topo">
+    <a class="marca" href="#biblioteca" aria-label="Atheneum, biblioteca">
+      <img class="marca__logo" src="img/logo/logo.svg" alt="">
+      <span class="marca__nome">Atheneum<span class="marca__ponto">.</span></span>
+    </a>
+    <nav class="abas" id="navegacao" aria-label="Áreas do Atheneum">
+      <button class="aba" type="button" data-pagina="biblioteca" aria-controls="biblioteca" aria-pressed="true">Biblioteca</button>
+      <button class="aba" type="button" data-pagina="santuario" aria-controls="santuario" aria-pressed="false">Santuário</button>
+    </nav>
+    <span class="topo__legenda">Um espaço para cultivar conhecimento.</span>
+  </header>
+
+  <main class="biblioteca" id="biblioteca" tabindex="-1">
+    <aside class="biblioteca__lateral" aria-label="Organização da biblioteca">
+      <p class="sobretitulo">Sua coleção</p>
+      <button class="menu-item" type="button" id="todos-livros">Todos os livros <span id="total-lateral"></span></button>
+      <div class="lateral__titulo"><h2>Minhas listas</h2><button class="botao-texto" id="nova-lista" type="button" aria-label="Criar nova lista">+ Nova</button></div>
+      <nav id="minhas-listas" aria-label="Minhas listas"></nav>
+      <p class="texto-suave lateral__dica" id="listas-vazias">Crie uma lista para reunir suas próximas leituras.</p>
+      <details class="lateral__categorias"><summary>Explorar por tema</summary><nav id="categorias" aria-label="Categorias"></nav></details>
+      <button class="menu-item menu-item--discreto" type="button" id="abrir-lixeira">Livros removidos <span id="total-removidos"></span></button>
+    </aside>
+    <div class="biblioteca__conteudo">
+      <header class="biblioteca__cabecalho">
+        <div><p class="sobretitulo">Organize. Leia. Descubra.</p><h1 id="biblioteca-titulo">Sua biblioteca</h1><p class="texto-suave" id="biblioteca-descricao">As suas leituras, do primeiro interesse à última página.</p></div>
+        <button class="botao" id="novo-livro" type="button">+ Adicionar livro</button>
+      </header>
+      <section class="biblioteca__ferramentas" aria-label="Busca e filtros">
+        <label class="busca"><span class="visualmente-oculto">Buscar livros</span><input id="busca" type="search" placeholder="Buscar título, autor ou tema" autocomplete="off"></label>
+        <label class="campo"><span>Situação</span><select id="status"><option value="todos">Todos</option><option value="lendo">Lendo</option><option value="quero-ler">Quero ler</option><option value="lido">Lidos</option></select></label>
+        <label class="campo"><span>Ordenar</span><select id="ordem"><option value="estante">Minha coleção</option><option value="titulo">Título A–Z</option><option value="autor">Autor A–Z</option><option value="nota">Melhor avaliação</option></select></label>
+        <div class="visoes" id="visoes" role="group" aria-label="Modo de exibição"><button class="chip" type="button" data-visao="capas" aria-pressed="true">Capas</button><button class="chip" type="button" data-visao="lista" aria-pressed="false">Lista</button></div>
+      </section>
+      <div class="biblioteca__resumo"><p id="resumo" aria-live="polite"></p><div id="acoes-lista" hidden><button class="botao-texto" id="renomear-lista" type="button">Renomear lista</button><button class="botao-texto" id="excluir-lista" type="button">Excluir lista</button></div></div>
+      <div id="grupos" class="grupos" hidden></div>
+      <div id="estantes" class="catalogo" tabindex="-1"></div>
+      <nav class="paginacao" id="paginacao" aria-label="Páginas da coleção"></nav>
+    </div>
+  </main>
+
+  <main class="santuario" id="santuario" aria-labelledby="santuario-titulo" tabindex="-1" hidden>
+    <header class="santuario__hero">
+      <div class="santuario__manifesto"><p class="sobretitulo">Seu espaço de evolução</p><h1 id="santuario-titulo">Sua leitura.<br>Sua evolução.</h1><p class="texto-suave">Cada livro deixa uma marca. Este é o registro da sua jornada.</p><img id="arte-santuario" class="santuario__arte" alt="Arte do seu Santuário" hidden></div>
+      <section class="jornada" aria-label="Seu nível de leitura"><p class="sobretitulo">Sua jornada</p><p class="jornada__nivel" id="santuario-nivel"></p><h2 id="santuario-titulo-usuario"></h2><p class="texto-suave" id="santuario-xp"></p><div class="santuario__barra" id="santuario-barra" role="progressbar" aria-label="Progresso até o próximo nível" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="santuario-preenchimento"></span></div><p class="texto-suave" id="santuario-proximo"></p><button class="botao-texto" type="button" id="voltar-leitura">Continuar minha leitura →</button></section>
+    </header>
+    <section class="santuario__numeros" aria-label="Resumo da jornada"><div><span id="santuario-lido">0</span><p>Livros concluídos</p></div><div><span id="santuario-lendo">0</span><p>Leituras em andamento</p></div><div><span id="santuario-paginas">0</span><p>Páginas registradas</p></div><div><span id="santuario-notas">0</span><p>Livros com anotações</p></div></section>
+    <div class="santuario__inferior">
+      <section aria-labelledby="conquistas-titulo"><div class="bloco-titulo"><p class="sobretitulo">Marcos da caminhada</p><h2 id="conquistas-titulo">Suas conquistas</h2><p class="texto-suave" id="santuario-conquistas-resumo"></p></div><ul class="santuario__emblemas" id="santuario-emblemas"></ul></section>
+      <aside class="santuario__reflexao"><p class="sobretitulo">Uma pausa para pensar</p><figure class="citacao"><blockquote class="citacao__texto"><p id="frase-texto"></p></blockquote><figcaption class="citacao__autor" id="frase-autor"></figcaption></figure><button class="botao-texto" id="outra-frase" type="button">Outra reflexão</button><div class="jornada__regras"><p>Pequenos passos, todos os dias.</p><span>Começar um livro: +10 XP<br>Concluir um livro: +50 XP<br>Cada recompensa vale uma vez por título.</span></div></aside>
+    </div>
+    <p class="visualmente-oculto" id="santuario-aviso" role="status" aria-live="polite"></p>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <div class="rodape__friso" aria-hidden="true"></div>
+    <p>Atheneum. Os livros de um leitor, sob o olhar de Atena.</p>
+  </footer>
+  <p class="notificacao" id="notificacao" role="status" aria-live="polite" hidden></p>
+  <dialog class="editor" id="detalhes" aria-labelledby="detalhes-titulo">
+    <form id="livro-form">
+      <header class="editor__topo"><div><p class="sobretitulo">Meu caderno de leitura</p><h2 id="detalhes-titulo">Adicionar livro</h2></div><button class="editor__fechar" type="button" id="fechar-editor" aria-label="Fechar livro">×</button></header>
+      <div class="editor__corpo">
+        <aside class="editor__capa"><div id="editor-capa"></div><p id="editor-autor" class="texto-suave"></p><button class="botao-texto perigo" id="remover-livro" type="button">Remover da biblioteca</button><button class="botao" id="restaurar-livro" type="button" hidden>Restaurar livro</button></aside>
+        <div class="editor__campos">
+          <details id="cadastro-campos"><summary>Dados do livro</summary><div class="form-grid">
+            <label class="campo campo--largo">Título<input id="livro-titulo" maxlength="250" required></label>
+            <label class="campo">Autor<input id="livro-autor" maxlength="250"></label>
+            <label class="campo">Categoria<select id="livro-categoria"></select></label>
+            <label class="campo campo--largo">Descrição<textarea id="livro-descricao" rows="2" maxlength="10000"></textarea></label>
+            <label class="campo campo--largo">Capa: endereço ou arquivo em img/<input id="livro-capa" placeholder="img/capas/meu-livro.jpg"></label>
+            <label class="campo campo--largo">Ou escolha uma imagem<input id="livro-imagem" type="file" accept="image/png,image/jpeg,image/webp"></label>
+          </div></details>
+          <div class="form-grid leitura-campos"><label class="campo">Situação<select id="livro-status"><option value="quero-ler">Quero ler</option><option value="lendo">Lendo</option><option value="lido">Lido</option></select></label><label class="campo">Sua avaliação<select id="livro-nota"><option value="0">Sem avaliação</option><option value="1">1 estrela</option><option value="2">2 estrelas</option><option value="3">3 estrelas</option><option value="4">4 estrelas</option><option value="5">5 estrelas</option></select></label><label class="campo">Página atual<input id="livro-pagina" type="number" min="0" max="100000" step="1" value="0" required></label><label class="campo">Total de páginas<input id="livro-total" type="number" min="0" max="100000" step="1" value="0" required><small>Use 0 se ainda não souber.</small></label></div>
+          <p class="texto-suave" id="editor-progresso"></p>
+          <fieldset class="editor__listas"><legend>Adicionar às minhas listas</legend><div id="editor-listas"></div></fieldset>
+          <label class="campo campo--largo">Minhas anotações<textarea id="livro-anotacoes" rows="7" maxlength="100000" placeholder="Ideias, trechos e reflexões que você quer guardar…"></textarea></label>
+        </div>
+      </div>
+      <footer class="editor__rodape"><p id="editor-aviso" role="status" aria-live="polite">As alterações são guardadas ao salvar.</p><button class="botao" id="salvar-livro" type="submit">Salvar alterações</button></footer>
+    </form>
+  </dialog>
+  <dialog class="lista-editor" id="lista-editor" aria-labelledby="lista-titulo"><form id="lista-form"><h2 id="lista-titulo">Nova lista</h2><label class="campo">Nome da lista<input id="lista-nome" maxlength="80" required placeholder="Ex.: Leituras de 2026"></label><p class="texto-suave" id="lista-aviso" role="status"></p><div class="form-acoes"><button class="chip" id="cancelar-lista" type="button">Cancelar</button><button class="botao" type="submit">Salvar lista</button></div></form></dialog>
+
+  <script src="data/livros.js"></script>
+  <script src="data/frases.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/colecao.js"></script>
+  <script src="js/armazenamento.js"></script>
+  <script src="js/estante.js"></script>
+  <script src="js/gamification.js"></script>
+  <script src="js/filtros.js"></script>
+  <script src="js/desenho.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/citacao.js"></script>
+  <script src="js/listas.js"></script>
+  <script src="js/principal.js"></script>
+  <script src="js/santuario.js"></script>
+  <script src="js/animacoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* ==========================================================================
+   VIDRO  (identidade visual atual — carrega por último e vence os outros CSS)
+
+   Ideia: um salão de museu à noite. A foto do Panteão fica atrás de tudo,
+   e as superfícies são vidro fosco que deixa a luz passar. Sem contornos
+   grossos, sem sombras duras, sem rotações aleatórias: hierarquia vem de
+   tamanho, espaço e contraste.
+
+   Para mudar o clima do site, comece pelos valores do bloco :root abaixo.
+   Referências: liquid glass (glass.samasante.com), micro-interações com mola
+   (withanimation.app), ícones Lucide consistentes (js/icones.js).
+   ========================================================================== */
+
+:root {
+  --noite: #0c1517;
+  --noite-rgb: 12, 21, 23;
+  --marmore: #f4ecd8;
+  --marmore-suave: #b8c4bd;      /* contraste 9:1 sobre --noite */
+  --ouro: #e6b866;
+  --ouro-claro: #f4d89c;
+  --coral: #ee9279;
+  --tinta: rgba(0, 0, 0, 0.35);
+  --linha: rgba(255, 255, 255, 0.14);
+
+  /* vidro */
+  --vidro: rgba(255, 255, 255, 0.075);
+  --vidro-forte: rgba(255, 255, 255, 0.1);
+  --brilho: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+  --sombra: 0 24px 48px -24px rgba(0, 0, 0, 0.7);
+  --desfoque: blur(22px) saturate(1.5);
+
+  --raio-g: 24px;
+  --raio-m: 16px;
+
+  /* movimento: mola leve; navegadores antigos usam a curva simples */
+  --mola: cubic-bezier(0.2, 0.9, 0.3, 1.15);
+  --suave: cubic-bezier(0.22, 1, 0.36, 1);
+}
+@supports (transition-timing-function: linear(0, 1)) {
+  :root { --mola: linear(0, 0.2 4%, 0.62 10%, 0.98 17%, 1.07 23%, 1.04 30%, 0.995 42%, 1 60%, 1); }
+}
+
+/* ---------- Fundo: a luz do Panteão atrás de tudo ---------- */
+html { background: var(--noite); scroll-behavior: smooth; }
+body, body[data-pagina] { background: transparent !important; }
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -2;
+  background: var(--foto-hero) center 20% / cover no-repeat;
+  opacity: 0.24; filter: saturate(0.55);
+  -webkit-mask-image: linear-gradient(#000 0, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
+  mask-image: linear-gradient(#000 0, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
+}
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse 60% 45% at 80% 0%, rgba(230, 184, 102, 0.16), transparent 70%),
+              radial-gradient(ellipse 50% 40% at 0% 100%, rgba(80, 140, 130, 0.14), transparent 70%);
+}
+.oculto-svg { position: absolute; }
+
+/* ---------- Superfícies de vidro ---------- */
+.biblioteca__lateral, .inicio__vitrine, .inicio__atalhos button, .jornada,
+.santuario__numeros > div, .santuario__emblema, .santuario__reflexao,
+.catalogo[data-visao="lista"] .livro, .editor, .lista-editor, .painel-config {
+  background-color: var(--vidro) !important;
+  -webkit-backdrop-filter: var(--desfoque); backdrop-filter: var(--desfoque);
+  border: 0 !important; box-shadow: var(--brilho), var(--sombra) !important;
+  border-radius: var(--raio-g) !important; transform: none !important; color: var(--marmore);
+}
+
+/* ---------- Topo ---------- */
+.topo { background: rgba(var(--noite-rgb), 0.55) !important; border-bottom: 1px solid var(--linha) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4); position: sticky; top: 0; z-index: 30; }
+.topo__legenda { color: var(--marmore-suave) !important; font-style: italic; }
+#navegacao { background: var(--vidro) !important; border: 0 !important; border-radius: 999px !important; padding: 4px; gap: 2px;
+  box-shadow: var(--brilho); -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5);
+  backdrop-filter: url(#vidro-refracao) blur(14px) saturate(1.5); }
+#navegacao .aba { min-height: 44px; border: 0 !important; border-radius: 999px !important; box-shadow: none !important; color: var(--marmore-suave); background: transparent;
+  transition: background-color 0.3s var(--suave), color 0.3s, transform 0.5s var(--mola); }
+#navegacao .aba:hover { color: var(--marmore); }
+#navegacao .aba:active { transform: scale(0.96); }
+#navegacao .aba[aria-pressed="true"] { background: var(--ouro) !important; color: #1b1407 !important; box-shadow: 0 6px 18px -6px rgba(230, 184, 102, 0.6) !important; }
+
+/* ---------- Botões, chips e campos ---------- */
+.botao { min-height: 44px; background: var(--ouro) !important; color: #1b1407 !important; border: 0 !important; border-radius: 999px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 10px 24px -10px rgba(230, 184, 102, 0.7) !important;
+  transition: transform 0.5s var(--mola), box-shadow 0.3s; }
+.botao:hover { transform: translateY(-2px) scale(1.02) !important; }
+.botao:active { transform: scale(0.97) !important; }
+.chip, .carrossel__controles button, .botao-icone {
+  min-height: 44px; border: 0 !important; border-radius: 999px !important; background: var(--vidro) !important; box-shadow: var(--brilho);
+  color: var(--marmore); transition: background-color 0.25s, transform 0.5s var(--mola); }
+.botao-icone, .carrossel__controles button { min-width: 44px; }
+.chip:hover, .carrossel__controles button:hover:not(:disabled) { background: var(--vidro-forte) !important; transform: translateY(-1px); }
+.chip[aria-pressed="true"] { background: var(--marmore) !important; color: #11201f !important; }
+.botao-texto { color: var(--ouro-claro); }
+.campo input, .campo select, .campo textarea, .biblioteca__ferramentas .busca input {
+  min-height: 44px; background: var(--vidro) !important; border: 0 !important; border-radius: var(--raio-m) !important; box-shadow: var(--brilho);
+  color: var(--marmore); transition: box-shadow 0.25s; }
+.campo input:focus, .campo select:focus, .campo textarea:focus, .busca input:focus { outline: none; box-shadow: var(--brilho), 0 0 0 2px var(--ouro); }
+:focus-visible { outline: 2px solid var(--ouro-claro); outline-offset: 3px; }
+select option { background: #14262a; color: var(--marmore); }
+
+/* ---------- Tipografia ---------- */
+.sobretitulo { color: var(--ouro); letter-spacing: 0.14em; font-size: 0.74rem; font-weight: 500; }
+.inicio__introducao .sobretitulo::before { background: var(--ouro); box-shadow: 0 0 12px var(--ouro); }
+.inicio h1 { font-weight: 500; font-size: clamp(3.6rem, 7.2vw, 6.6rem); line-height: 0.94; letter-spacing: -0.03em; }
+.inicio h1 em { transform: none; color: var(--ouro); }
+.inicio__convite { font-size: 1.3rem; color: var(--marmore-suave); max-width: 30rem; }
+
+/* ---------- Início ---------- */
+.inicio__vitrine { border-radius: 220px 220px var(--raio-g) var(--raio-g) !important; }
+.inicio__vitrine::before { border: 1px solid var(--linha) !important; }
+.inicio__vitrine > .sobretitulo { color: var(--marmore-suave); }
+.inicio__assinatura { background: rgba(255, 255, 255, 0.1) !important; color: var(--marmore) !important; border: 0 !important; border-radius: 999px !important;
+  transform: none !important; box-shadow: var(--brilho) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.inicio__livros .capa { box-shadow: 0 22px 40px -14px rgba(0, 0, 0, 0.75) !important; transition: transform 0.7s var(--mola); }
+.inicio__livros li:hover .capa { transform: translateY(-10px) scale(1.04); }
+.inicio__atalhos button { text-align: left; color: var(--marmore) !important; transition: transform 0.5s var(--mola), background-color 0.3s !important; }
+.inicio__atalhos button:hover { transform: translateY(-4px) !important; background-color: var(--vidro-forte) !important; }
+.inicio__atalhos button small, .inicio__atalhos button .icone, .inicio__atalhos button > span:last-child { color: var(--marmore-suave) !important; }
+.inicio__atalhos button .icone { color: var(--ouro) !important; }
+.inicio__atalhos button strong { color: var(--marmore); }
+
+/* ---------- Biblioteca ---------- */
+.biblioteca__lateral { padding: 1.4rem; position: sticky; top: 88px; align-self: start; }
+.menu-item { min-height: 44px; border-radius: var(--raio-m) !important; border: 0 !important; transition: background-color 0.25s; }
+.menu-item span:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.menu-item[aria-pressed="true"] { background: var(--vidro-forte) !important; color: var(--ouro-claro); box-shadow: var(--brilho); }
+.carrossel__trilha { border-bottom: 0 !important; padding-bottom: 1.2rem; }
+.carrossel__titulo { font-size: 2rem; font-weight: 500; }
+
+/* Capas: objeto com volume (lombada dobrada, sombra projetada) */
+#biblioteca .capa, .capa { border: 0 !important; border-radius: 3px 10px 10px 3px !important;
+  box-shadow: inset 5px 0 5px -3px rgba(0, 0, 0, 0.55), inset -1px 0 0 rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 18px 28px -14px rgba(0, 0, 0, 0.8) !important;
+  transition: transform 0.6s var(--mola), box-shadow 0.4s; }
+.livro:hover .capa, .livro:focus-visible .capa { transform: translateY(-8px) rotate(-0.8deg) !important;
+  box-shadow: inset 5px 0 5px -3px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 30px 36px -16px rgba(0, 0, 0, 0.85) !important; }
+.livro:active .capa { transform: scale(0.97) !important; }
+.livro__nome { font-weight: 500; }
+.selo, .livro .chip { border-radius: 999px; }
+.catalogo[data-visao="lista"] .livro { padding: 1.2rem; }
+.paginacao .chip { min-width: 44px; }
+
+/* ---------- Santuário ---------- */
+.jornada { padding: 1.8rem; }
+.santuario__barra { background: rgba(255, 255, 255, 0.1) !important; border: 0 !important; border-radius: 999px; height: 10px; overflow: hidden; }
+.santuario__barra span { background: var(--ouro) !important; border-radius: 999px; transition: width 0.9s var(--suave); box-shadow: 0 0 14px rgba(230, 184, 102, 0.6); }
+.santuario__numeros > div { padding: 1.3rem; }
+.santuario__numeros span { color: var(--ouro-claro); font-variant-numeric: tabular-nums; }
+.santuario__emblema { padding: 1.1rem; opacity: 0.62; transition: transform 0.5s var(--mola), opacity 0.3s; }
+.santuario__emblema[data-desbloqueado="true"] { opacity: 1; background-color: rgba(230, 184, 102, 0.12) !important;
+  box-shadow: var(--brilho), 0 0 0 1px rgba(230, 184, 102, 0.55), var(--sombra) !important; }
+.santuario__emblema:hover { transform: translateY(-3px) !important; }
+
+/* ---------- Editor e caixas: vidro escuro em vez de papel ---------- */
+.editor, .lista-editor { background-color: rgba(16, 28, 30, 0.82) !important; -webkit-backdrop-filter: blur(30px) saturate(1.4); backdrop-filter: blur(30px) saturate(1.4); }
+.editor::backdrop, .lista-editor::backdrop { background: rgba(5, 10, 11, 0.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.editor .texto-suave, .editor .campo, .editor .sobretitulo, .editor #editor-aviso, .editor summary, .editor legend { color: var(--marmore-suave) !important; }
+.editor .campo input, .editor .campo select, .editor .campo textarea { background: var(--vidro) !important; color: var(--marmore) !important; border: 0 !important; }
+.editor__topo, .editor__rodape { background: transparent !important; border-color: var(--linha) !important; }
+.editor__fechar { color: var(--marmore) !important; min-width: 44px; min-height: 44px; }
+.editor #livro-anotacoes { border-left: 2px solid var(--ouro) !important; }
+.editor .botao-texto { color: var(--ouro-claro) !important; }
+.editor .lista-opcao { color: var(--marmore) !important; }
+.editor[open], .lista-editor[open] { animation: aparecer 0.45s var(--mola); }
+
+/* ---------- Rodapé e notificação ---------- */
+.rodape { border-top: 1px solid var(--linha) !important; color: var(--marmore-suave); }
+.notificacao { background: var(--vidro-forte) !important; color: var(--marmore) !important; border: 0 !important; border-radius: 999px !important;
+  box-shadow: var(--brilho), var(--sombra) !important; -webkit-backdrop-filter: var(--desfoque); backdrop-filter: var(--desfoque); }
+
+/* ---------- Entrada de página e movimento ---------- */
+main:not([hidden]) { animation: subir 0.65s var(--suave) both; }
+@keyframes subir { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes aparecer { from { opacity: 0; transform: translateY(18px) scale(0.97); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 760px) {
+  .topo__legenda { display: none; }
+  #navegacao { box-shadow: var(--brilho), 0 -12px 40px rgba(0, 0, 0, 0.5); }
+  .biblioteca__lateral { position: static; }
+  .inicio h1 { font-size: 3.7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main:not([hidden]), .editor[open], .lista-editor[open] { animation: none; }
+  .livro:hover .capa, .botao:hover, .santuario__emblema:hover { transform: none !important; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --vidro: rgba(30, 48, 50, 0.96); --vidro-forte: rgba(40, 62, 64, 0.98); }
+  * { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+}
+
+/* ---------- Acertos de espaçamento ---------- */
+.santuario__reflexao { padding: 1.6rem; align-self: start; }
+.santuario__numeros { gap: 1rem; border: 0 !important; }
+.santuario__numeros > div { border-radius: var(--raio-g) !important; }
+.santuario__numeros span, .jornada__nivel, .menu-item span:last-child { font-variant-numeric: lining-nums tabular-nums; }
+.santuario__emblemas { gap: 1rem; }
+
+/* Celular: a barra de abas fica fixa embaixo. O desfoque do topo cria um "quadro" que prende
+   elementos fixos dentro dele, então no celular o topo usa fundo sólido. */
+@media (max-width: 760px) {
+  .topo { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(var(--noite-rgb), 0.94) !important; position: relative; }
+  #navegacao { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; padding: 6px; border-radius: 26px !important;
+    background: rgba(24, 40, 42, 0.78) !important; backdrop-filter: blur(18px) saturate(1.5); -webkit-backdrop-filter: blur(18px) saturate(1.5); }
+  #navegacao .aba { border-radius: 20px !important; min-height: 52px; }
+  body { padding-bottom: 5.5rem; }
+}

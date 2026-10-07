@@ -1,0 +1,165 @@
+/* ==========================================================================
+   HUMANO  (a camada de personalidade: carrega depois do vidro.css)
+
+   Troca o tom de "produto" por um de caderno de leitor: papel, fita crepe,
+   caneta marca-texto, assinatura à mão e livros que você pode virar na mão.
+   Tudo aqui é ajustável nos números e nas cores.
+   ========================================================================== */
+
+:root {
+  --noite: #1b1416;  --noite-rgb: 27, 20, 22;
+  --marmore: #f4e9d1;  --marmore-suave: #d0c3aa;
+  --ouro: #f2b632;  --ouro-claro: #ffd97a;
+  --coral: #f0654a;  --salvia: #a8c3a0;
+  --papel: #f3e6c8;  --tinta-papel: #2a1d1a;
+  --vidro: rgba(244, 233, 209, 0.07);  --vidro-forte: rgba(244, 233, 209, 0.13);
+  --brilho: inset 0 0 0 1.5px rgba(244, 233, 209, 0.14);
+  --sombra: 0 16px 30px -18px rgba(0, 0, 0, 0.75);
+  --desfoque: blur(8px);
+  --fonte-mao: "Caveat", "Segoe Print", cursive;
+}
+
+/* ---------- Atmosfera: luz de abajur, foto antiga e grão de papel ---------- */
+body::before { opacity: 0.14; filter: sepia(0.85) saturate(0.9); }
+body::after { background: radial-gradient(ellipse 55% 45% at 12% 0%, rgba(242, 182, 50, 0.2), transparent 70%),
+                          radial-gradient(ellipse 50% 40% at 100% 100%, rgba(240, 101, 74, 0.14), transparent 70%); }
+html::before { content: ""; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: 0.1; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* ---------- Anotações à mão ---------- */
+.sobretitulo { font: 700 1.45rem/1 var(--fonte-mao) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--coral) !important;
+  display: inline-block; transform: rotate(-1.5deg); }
+.inicio__introducao .sobretitulo::before { display: none; }
+
+/* ---------- Topo e abas ---------- */
+.topo { background: rgba(var(--noite-rgb), 0.78) !important; border-bottom: 1.5px dashed rgba(244, 233, 209, 0.22) !important; }
+.topo__legenda { font: 700 1.35rem var(--fonte-mao) !important; color: var(--coral) !important; font-style: normal; transform: rotate(-2deg); }
+#navegacao { background: transparent !important; box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+#navegacao .aba { border-radius: 55% 45% 50% 50% / 50% 55% 45% 50% !important; }
+#navegacao .aba:hover { transform: rotate(-2deg); }
+#navegacao .aba[aria-pressed="true"] { background: var(--ouro) !important; color: var(--tinta-papel) !important; transform: rotate(-2deg);
+  box-shadow: 0 3px 0 #a87a12 !important; }
+
+/* ---------- Botões: com peso, como teclas ---------- */
+.botao { color: var(--tinta-papel) !important; font-weight: 600;
+  box-shadow: 0 4px 0 #a87a12, 0 14px 20px -10px rgba(0, 0, 0, 0.6) !important; }
+.botao:hover { transform: translateY(-2px) rotate(-0.6deg) !important; }
+.botao:active { transform: translateY(3px) !important; box-shadow: 0 1px 0 #a87a12 !important; }
+.chip[aria-pressed="true"] { background: var(--ouro) !important; color: var(--tinta-papel) !important; }
+.botao-texto { color: var(--ouro-claro); }
+
+/* ---------- Início: assinatura e marca-texto ---------- */
+.inicio h1.assinatura { margin: 0.4rem 0 0.8rem; line-height: 0; font-size: 0; }
+.assinatura__svg { display: block; width: min(100%, 36rem); height: auto; overflow: visible; }
+.assinatura__svg path { fill: var(--marmore); fill-opacity: 0; stroke: var(--ouro-claro); stroke-width: 18; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: escrever 1.5s cubic-bezier(0.55, 0, 0.3, 1) calc(var(--i) * 0.34s + 0.35s) forwards,
+             preencher 0.9s ease calc(var(--i) * 0.34s + 1.5s) forwards; }
+@keyframes escrever { to { stroke-dashoffset: 0; } }
+@keyframes preencher { to { fill-opacity: 1; stroke-width: 5; } }
+
+.inicio__convite { font-size: 1.35rem; max-width: 31rem; }
+.inicio__convite mark { color: inherit; padding: 0 0.12em; background: linear-gradient(transparent 52%, rgba(242, 182, 50, 0.8) 52% 92%, transparent 90%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* ---------- Livro em perspectiva ---------- */
+.inicio__vitrine { background: none !important; box-shadow: none !important; backdrop-filter: none !important; border-radius: 0 !important;
+  display: grid; justify-items: center; align-content: center; gap: 2.2rem; padding: 1rem 0 !important; }
+.inicio__vitrine::before { display: none; }
+.vitrine__legenda { display: grid; text-align: center; justify-items: center; gap: 0.1rem; }
+.vitrine__rotulo { font: 700 1.5rem var(--fonte-mao); color: var(--coral); transform: rotate(-2deg); }
+.vitrine__legenda strong { font: 500 1.5rem var(--fonte-literaria); }
+
+.book3d { position: relative; flex: none; width: var(--l); height: var(--a); padding: 0; background: none; border: 0; cursor: pointer; color: inherit; perspective: 1000px; }
+.book3d::after { content: ""; position: absolute; left: 6%; right: -12%; bottom: -16px; height: 18px; border-radius: 50%; background: rgba(0, 0, 0, 0.55); filter: blur(7px); transition: transform 0.8s var(--mola), opacity 0.4s; }
+.book3d__giro { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateY(32deg) rotateX(-5deg); transition: transform 0.9s var(--mola); }
+.book3d:hover .book3d__giro, .book3d:focus-visible .book3d__giro { transform: rotateY(6deg) rotateX(0) translateY(-12px) scale(1.04); }
+.book3d:hover::after { transform: scale(0.9) translateX(-6%); opacity: 0.75; }
+.book3d:active .book3d__giro { transform: rotateY(0) scale(0.97); }
+.book3d__giro > span { position: absolute; backface-visibility: hidden; }
+.book3d__capa { inset: 0; transform: translateZ(calc(var(--e) / 2)); border-radius: 2px 7px 7px 2px; overflow: hidden; }
+.book3d__capa .capa { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0 !important; box-shadow: none !important; transform: none !important; }
+.book3d__capa::before { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(90deg, rgba(0, 0, 0, 0.38), rgba(255, 255, 255, 0.16) 5%, transparent 14%); }
+.book3d__capa::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.book3d__lombada { top: 0; left: 0; width: var(--e); height: 100%; transform: translateX(calc(var(--e) / -2)) rotateY(-90deg); display: grid; place-items: center;
+  background: hsl(var(--matiz) 34% 24%); border-radius: 3px 0 0 3px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.book3d__texto { writing-mode: vertical-rl; max-height: calc(var(--a) - 28px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font: 600 clamp(0.7rem, calc(var(--e) * 0.34), 1.05rem) var(--fonte-literaria); color: var(--papel); }
+.book3d__paginas { top: 1.5%; left: calc(100% - var(--e)); width: var(--e); height: 97%; transform: translateX(calc(var(--e) / 2)) rotateY(90deg);
+  background: repeating-linear-gradient(90deg, #f3e6c8 0 2px, #d4c29a 2px 3px); }
+.book3d__topo { top: 0; left: 1%; width: 98%; height: var(--e); transform: translateY(calc(var(--e) / -2)) rotateX(90deg); background: #e5d4ae; }
+.book3d__fundo { inset: 0; transform: translateZ(calc(var(--e) / -2)); background: hsl(var(--matiz) 34% 14%); }
+
+/* ---------- Marquee: faixas de livros ---------- */
+.passeio { margin-top: 2rem; }
+.passeio > header h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.passeio__janela { overflow: hidden; margin-inline: calc(var(--margem) * -1); }
+.passeio__janela::before, .passeio__janela::after { width: 90px; background: linear-gradient(90deg, var(--noite), transparent); }
+.marquee { overflow: hidden; padding: 30px 0 40px; }
+.marquee + .marquee { margin-top: -6px; }
+.marquee__trilha { display: flex; width: max-content; animation: marquee var(--duracao, 60s) linear infinite; }
+.marquee--reverso .marquee__trilha { animation-direction: reverse; }
+.marquee__grupo { display: flex; align-items: flex-end; gap: 46px; padding-right: 46px; }
+.marquee__grupo .book3d:nth-child(3n + 1) { transform: translateY(8px); }
+.marquee__grupo .book3d:nth-child(3n + 2) { transform: translateY(-6px); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.passeio:hover .marquee__trilha, .passeio--pausado .marquee__trilha, .marquee:focus-within .marquee__trilha, body:has(dialog[open]) .marquee__trilha { animation-play-state: paused; }
+
+/* ---------- Cartões de papel com inclinação (tilt) ---------- */
+.inicio__cartoes { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.8rem; padding: 1.6rem 0 2.4rem; align-items: stretch; }
+.cartao-papel { --rx: 0deg; --ry: 0deg; --zoom: 1; --giro: 0deg; position: relative; display: grid; align-content: center; gap: 0.5rem; padding: 1.7rem 1.6rem 1.4rem;
+  background: var(--papel) !important; color: var(--tinta-papel) !important; border: 0 !important; border-radius: 6px 24px 8px 22px !important; text-align: left; cursor: pointer;
+  box-shadow: 0 20px 28px -16px rgba(0, 0, 0, 0.8) !important; backdrop-filter: none !important;
+  transform: perspective(1200px) rotate(var(--giro)) rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--zoom)) !important; transition: transform 0.7s var(--mola); }
+.cartao-papel:nth-child(1) { --giro: -1.2deg; cursor: default; }
+.cartao-papel:nth-child(2) { --giro: 1deg; }
+.cartao-papel:nth-child(3) { --giro: -0.7deg; }
+.cartao-papel.tilt--ativo { transition: transform 0.12s linear; }
+.cartao-papel::before { content: ""; position: absolute; top: -13px; left: 50%; width: 92px; height: 28px; translate: -50% 0; rotate: -3deg;
+  background: rgba(242, 182, 50, 0.78); clip-path: polygon(0 8%, 4% 0, 8% 10%, 12% 0, 90% 0, 94% 10%, 98% 0, 100% 90%, 96% 100%, 92% 88%, 88% 100%, 10% 100%, 6% 90%, 2% 100%); }
+.cartao-papel::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.3s;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.75), transparent 55%); mix-blend-mode: soft-light; }
+.cartao-papel.tilt--ativo::after { opacity: 1; }
+.cartao-papel__texto { font: italic 500 clamp(1.4rem, 2.2vw, 1.85rem)/1.22 var(--fonte-literaria); }
+.cartao-papel__autor { font: 700 1.6rem var(--fonte-mao); color: #c4442a; }
+.cartao-papel .botao-texto { justify-self: start; color: #c4442a; font: 700 1.3rem var(--fonte-mao); text-decoration: underline wavy rgba(196, 68, 42, 0.5); text-underline-offset: 4px; }
+.cartao-papel--botao strong { display: block; font: 600 1.6rem/1.1 var(--fonte-literaria); color: var(--tinta-papel); }
+.cartao-papel--botao small { font-size: 0.95rem; color: #5b463d !important; }
+.cartao-papel--botao .icone { width: 30px; height: 30px; color: #c4442a; margin-bottom: 0.4rem; }
+.cartao-papel--botao > span:last-child { color: inherit; }
+
+/* Santuário: números e citação viram cartões de papel também */
+.santuario__numeros > div[data-tilt], .santuario__reflexao[data-tilt] { background: var(--papel) !important; color: var(--tinta-papel) !important; backdrop-filter: none !important;
+  border-radius: 6px 22px 8px 20px !important; box-shadow: 0 18px 26px -16px rgba(0, 0, 0, 0.8) !important; position: relative;
+  transform: perspective(1200px) rotate(var(--giro, 0deg)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(var(--zoom, 1)) !important; transition: transform 0.7s var(--mola); }
+.santuario__numeros > div:nth-child(odd)[data-tilt] { --giro: -1deg; }
+.santuario__numeros > div:nth-child(even)[data-tilt] { --giro: 1.1deg; }
+.santuario__numeros > div[data-tilt].tilt--ativo, .santuario__reflexao[data-tilt].tilt--ativo { transition: transform 0.12s linear; }
+.santuario__numeros > div[data-tilt] span { color: #c4442a !important; }
+.santuario__numeros > div[data-tilt] p, .santuario__reflexao[data-tilt] .citacao__texto, .santuario__reflexao[data-tilt] p { color: var(--tinta-papel) !important; }
+.santuario__reflexao[data-tilt] .citacao__autor { color: #c4442a; font: 700 1.5rem var(--fonte-mao); }
+.santuario__reflexao[data-tilt] .botao-texto { color: #c4442a; }
+.santuario__numeros > div[data-tilt]::after, .santuario__reflexao[data-tilt]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.3s;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.75), transparent 55%); mix-blend-mode: soft-light; }
+.santuario__numeros > div[data-tilt].tilt--ativo::after, .santuario__reflexao[data-tilt].tilt--ativo::after { opacity: 1; }
+
+/* ---------- Biblioteca: rabisco sob o título ---------- */
+.biblioteca__cabecalho h1::after, .santuario__manifesto h1::after { content: ""; display: block; width: 8rem; height: 14px; margin-top: 0.3rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='14'%3E%3Cpath d='M2 8c8-8 12 6 20-1s12 6 20-1 12 6 20-1 10 3 16-1' fill='none' stroke='%23f0654a' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x left / 80px 14px; }
+.menu-item[aria-pressed="true"] { color: var(--ouro-claro); }
+.rodape { font-family: var(--fonte-mao) !important; font-size: 1.4rem; }
+
+@media (max-width: 860px) { .inicio__cartoes { grid-template-columns: 1fr; gap: 2rem; } .assinatura__svg { width: min(100%, 24rem); } }
+@media (prefers-reduced-motion: reduce) {
+  .assinatura__svg path { animation: none; stroke-dashoffset: 0; fill-opacity: 1; stroke-width: 5; }
+  .marquee__trilha { animation: none; }
+  .marquee { overflow-x: auto; }
+  .book3d__giro, .book3d:hover .book3d__giro { transition: none; }
+  .cartao-papel, .santuario__numeros > div[data-tilt] { transition: none; }
+}
+
+/* Capas pequenas (faixa de livros): texto proporcional ao tamanho */
+.marquee .book3d__capa .capa { padding: 1rem 0.55rem; }
+.marquee .book3d__capa .capa__titulo { font-size: 0.8rem; line-height: 1.05; overflow-wrap: anywhere; }
+.marquee .book3d__capa .capa__autor { font-size: 0.6rem; }

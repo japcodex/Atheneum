@@ -1,0 +1,156 @@
+/* ==========================================================================
+   DESCOBRIR  (animação dos livros 3D + abas Descobrir e Ler agora)
+
+   Seções:  1. Livro 3D animado   2. Início   3. Páginas novas (cabeçalho)
+            4. Descobrir          5. Ler agora   6. Navegação com 5 abas
+            7. Movimento reduzido
+   ========================================================================== */
+
+/* ---------- 1. Livro 3D animado ---------- */
+
+/* O ângulo do livro vira uma variável animável: assim ele balança e volta de frente ao passar o mouse. */
+@property --giro-y { syntax: "<angle>"; inherits: false; initial-value: 32deg; }
+
+.book3d__giro { transform: rotateY(var(--giro-y)) rotateX(-5deg); transition: --giro-y 1s var(--mola), translate 0.9s var(--mola), scale 0.9s var(--mola); }
+.book3d:hover .book3d__giro, .book3d:focus-visible .book3d__giro { animation: none; --giro-y: 6deg; translate: 0 -12px; scale: 1.04; transform: rotateY(var(--giro-y)) rotateX(0); }
+.book3d:active .book3d__giro { --giro-y: 0deg; scale: 0.97; }
+
+/* Livros da faixa: só flutuam (barato para o navegador, mesmo com dezenas na tela). */
+.marquee .book3d__giro { animation: flutuar 7s ease-in-out infinite; animation-delay: calc(var(--n, 0) * -0.9s); }
+@keyframes flutuar { 50% { translate: 0 -8px; } }
+
+/* Livros de destaque: balançam de um lado a outro e flutuam. */
+.book3d--abre .book3d__giro { animation: oscilar 9s ease-in-out infinite; }
+@keyframes oscilar { 0%, 100% { --giro-y: 24deg; translate: 0 0; } 50% { --giro-y: 40deg; translate: 0 -9px; } }
+
+/* Entrada do livro grande: cai e assenta com a mola. */
+.inicio__vitrine .book3d, .semana__cartao .book3d { animation: cair 1.2s var(--mola) 0.4s both; }
+@keyframes cair { from { opacity: 0; translate: 0 -70px; rotate: -10deg; } to { opacity: 1; translate: 0 0; rotate: 0deg; } }
+
+/* Capa que abre como livro de verdade (só nos livros de destaque) */
+.book3d__giro > span.book3d__capa { backface-visibility: visible; transform-origin: left center; transform-style: preserve-3d; overflow: visible; border-radius: 0;
+  transform: translateZ(calc(var(--e) / 2)); transition: transform 1.15s var(--mola); }
+.book3d__capa::before, .book3d__capa::after { display: none; }
+.book3d__frente { position: absolute; inset: 0; overflow: hidden; border-radius: 2px 7px 7px 2px; backface-visibility: hidden; }
+.book3d__frente .capa { width: 100%; height: 100%; aspect-ratio: auto; border-radius: 0 !important; box-shadow: none !important; transform: none !important; }
+.book3d__frente::before { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(90deg, rgba(0, 0, 0, 0.38), rgba(255, 255, 255, 0.16) 5%, transparent 14%); }
+.book3d__frente::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.book3d__verso { position: absolute; inset: 0; transform: rotateY(180deg); backface-visibility: hidden; border-radius: 7px 2px 2px 7px; background: var(--papel); box-shadow: inset -6px 0 8px -6px rgba(0, 0, 0, 0.35); }
+.book3d__miolo { inset: 1.5% 1% 1.5% 0; transform: translateZ(calc(var(--e) / 2 - 3px)); display: grid; place-items: center; background: repeating-linear-gradient(transparent 0 23px, rgba(42, 29, 26, 0.12) 23px 24px), var(--papel); border-radius: 0 4px 4px 0; }
+.book3d__nota { font: 700 clamp(1.3rem, calc(var(--l) * 0.12), 2rem) var(--fonte-mao); color: #c4442a; rotate: -5deg; }
+.book3d--abre:hover .book3d__capa, .book3d--abre:focus-visible .book3d__capa { transform: translateZ(calc(var(--e) / 2)) rotateY(-122deg); }
+
+/* ---------- 2. Início ---------- */
+.inicio__cartoes--solo { grid-template-columns: minmax(0, 40rem); justify-content: center; padding-top: 2.4rem; }
+.vitrine__autor { color: var(--marmore-suave); }
+.inicio__vazio { color: var(--marmore-suave); padding: 2rem 0; }
+
+/* ---------- 3. Cabeçalho das páginas novas ---------- */
+.descobrir, .leitura { max-width: var(--largura-maxima, 1200px); margin-inline: auto; padding: clamp(2rem, 5vw, 4rem) var(--espaco, 1.5rem) 6rem; }
+.pagina-cabecalho { max-width: 46rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.pagina-cabecalho h1 { font: 500 clamp(3rem, 7vw, 5rem)/0.98 var(--fonte-literaria); letter-spacing: -0.02em; margin: 0.3rem 0 0.9rem; }
+.pagina-cabecalho h1 em { color: var(--ouro); }
+.pagina-cabecalho .texto-suave { font-size: 1.15rem; max-width: 38rem; }
+
+/* ---------- 4. Descobrir ---------- */
+.semana__cartao { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: clamp(2rem, 6vw, 5rem);
+  padding: clamp(2rem, 5vw, 3.6rem) clamp(1.6rem, 5vw, 4rem); background: var(--papel); color: var(--tinta-papel); border-radius: 8px 34px 10px 30px; rotate: -0.5deg;
+  box-shadow: 0 30px 40px -24px rgba(0, 0, 0, 0.85); }
+.semana__cartao::before { content: ""; position: absolute; top: -14px; left: 12%; width: 110px; height: 30px; rotate: -4deg; background: rgba(242, 182, 50, 0.8);
+  clip-path: polygon(0 8%, 4% 0, 8% 10%, 12% 0, 90% 0, 94% 10%, 98% 0, 100% 90%, 96% 100%, 92% 88%, 88% 100%, 10% 100%, 6% 90%, 2% 100%); }
+.semana__cartao .sobretitulo { color: #c4442a !important; }
+.semana__texto { display: grid; gap: 0.7rem; justify-items: start; }
+.semana__texto h2 { font: 600 clamp(2.4rem, 5vw, 3.8rem)/1 var(--fonte-literaria); }
+.semana__autor { font: 700 1.7rem var(--fonte-mao); color: #c4442a; }
+.semana__motivo { font: italic 500 clamp(1.3rem, 2.2vw, 1.7rem)/1.3 var(--fonte-literaria); max-width: 34rem; }
+.semana__genero { font-size: 0.9rem; color: #5b463d; border-top: 1.5px dashed rgba(42, 29, 26, 0.3); padding-top: 0.6rem; }
+.semana__acoes, .sugestao__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.4rem; margin-top: 0.6rem; }
+.semana__cartao .encontrar summary { color: #c4442a; }
+
+.descobrir__filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: clamp(2.2rem, 5vw, 3.4rem) 0 0.8rem; }
+.descobrir__status { display: flex; align-items: center; gap: 0.4rem; min-height: 1.8rem; margin-bottom: 0.6rem; color: var(--marmore-suave); }
+.descobrir__status--erro { color: #ffb4a2; }
+.giro-espera { width: 14px; height: 14px; border: 2px solid rgba(244, 233, 209, 0.3); border-top-color: var(--ouro); border-radius: 50%; animation: girar 0.8s linear infinite; }
+@keyframes girar { to { rotate: 360deg; } }
+
+.sugestoes { list-style: none; margin: 0; padding: 0; counter-reset: sug; }
+.sugestao { counter-increment: sug; display: grid; grid-template-columns: 4.5rem 84px minmax(0, 1fr); gap: 1.6rem; align-items: start; padding: 2rem 0; border-top: 1.5px dashed rgba(244, 233, 209, 0.2);
+  animation: subir 0.6s var(--suave) both; animation-delay: calc(min(var(--n, 0), 10) * 55ms); }
+.sugestao::before { content: counter(sug, decimal-leading-zero); font: 500 3.2rem/1 var(--fonte-literaria); color: rgba(244, 233, 209, 0.22); font-variant-numeric: lining-nums; }
+.sugestao__corpo { display: grid; gap: 0.35rem; justify-items: start; min-width: 0; }
+.sugestao__genero { font: 700 1.35rem/1 var(--fonte-mao); color: var(--coral); }
+.sugestao h3 { font: 500 clamp(1.7rem, 3vw, 2.3rem)/1.05 var(--fonte-literaria); }
+.sugestao__autor { color: var(--ouro-claro); }
+.sugestao__motivo { max-width: 50ch; color: var(--marmore-suave); }
+.capa--sugestao { width: 84px; padding: 0.9rem 0.3rem; }
+.capa--sugestao .capa__titulo { font-size: 0.62rem; line-height: 1.05; overflow-wrap: break-word; }
+.capa--sugestao .capa__autor { font-size: 0.56rem; }
+.capa--esperando { background-image: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.16) 50%, transparent 70%); background-size: 250% 100%; animation: brilho 1.5s linear infinite; }
+@keyframes brilho { from { background-position: 150% 0; } to { background-position: -50% 0; } }
+
+.encontrar { position: relative; }
+.encontrar summary { cursor: pointer; list-style: none; min-height: 44px; display: inline-flex; align-items: center; color: var(--ouro-claro); text-decoration: underline wavy rgba(242, 182, 50, 0.5); text-underline-offset: 5px; }
+.encontrar summary::-webkit-details-marker { display: none; }
+.encontrar ul { position: absolute; left: 0; top: calc(100% + 4px); z-index: 20; min-width: 18rem; margin: 0; padding: 0.5rem; list-style: none; background: #2c2024; border-radius: 18px; box-shadow: 0 24px 40px -12px rgba(0, 0, 0, 0.8); animation: aparecer 0.3s var(--mola); }
+.encontrar a { display: flex; align-items: center; min-height: 44px; padding: 0 0.9rem; border-radius: 12px; color: var(--marmore); text-decoration: none; }
+.encontrar a:hover, .encontrar a:focus-visible { background: var(--vidro-forte); }
+
+/* ---------- 5. Ler agora ---------- */
+.leitura__grade { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: stretch; }
+.relogio { display: grid; align-content: start; gap: 1.3rem; padding: clamp(1.5rem, 4vw, 2.6rem); background: var(--vidro-forte); border-radius: 30px 8px 28px 10px; box-shadow: inset 0 0 0 1.5px rgba(244, 233, 209, 0.14); }
+.relogio__tempo { font: 500 clamp(4.5rem, 11vw, 8rem)/1 var(--fonte-literaria); letter-spacing: -0.02em; font-variant-numeric: lining-nums tabular-nums; transition: color 0.4s; }
+.relogio--ativo .relogio__tempo { color: var(--ouro-claro); }
+.relogio--ativo { box-shadow: inset 0 0 0 1.5px rgba(242, 182, 50, 0.55), 0 0 40px -10px rgba(242, 182, 50, 0.35); }
+.relogio__botoes, .relogio__linha { display: flex; flex-wrap: wrap; align-items: end; gap: 0.8rem 1rem; }
+.relogio__botoes [hidden], .relogio__registro[hidden], .relogio__erro[hidden] { display: none; }
+.relogio__registro { display: grid; gap: 0.8rem; padding-top: 1.2rem; border-top: 1.5px dashed rgba(244, 233, 209, 0.25); }
+.relogio__registro input { width: 7rem; }
+.relogio__erro { color: #ffb4a2; font-weight: 500; }
+
+.ritmo { display: grid; align-content: start; gap: 1.8rem; padding: clamp(0rem, 2vw, 1rem) 0; }
+.ritmo__numeros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.ritmo__numeros strong { display: block; font: 500 clamp(2.8rem, 5vw, 4rem)/1 var(--fonte-literaria); color: var(--ouro-claro); font-variant-numeric: lining-nums; }
+.ritmo__numeros span { font-size: 0.95rem; color: var(--marmore-suave); }
+.ritmo__previsao { max-width: 32ch; min-height: 3.2rem; padding-left: 1rem; border-left: 3px solid var(--coral); font: italic 500 clamp(1.3rem, 2.2vw, 1.6rem)/1.3 var(--fonte-literaria); }
+.ritmo__previsao:empty { display: none; }
+
+.calor { margin-top: clamp(2.5rem, 6vw, 4rem); }
+.calor h2 { font: 500 clamp(1.8rem, 3vw, 2.4rem) var(--fonte-literaria); margin-bottom: 1rem; }
+.calor__mapa { display: grid; grid-template-rows: repeat(7, 1fr); grid-auto-flow: column; grid-auto-columns: 1fr; gap: 5px; max-width: 34rem; }
+.calor__dia { aspect-ratio: 1; border-radius: 4px; background: rgba(244, 233, 209, 0.08); }
+.calor__dia--1 { background: rgba(242, 182, 50, 0.32); }
+.calor__dia--2 { background: rgba(242, 182, 50, 0.56); }
+.calor__dia--3 { background: rgba(242, 182, 50, 0.82); }
+.calor__dia--4 { background: var(--ouro-claro); box-shadow: 0 0 10px rgba(255, 217, 122, 0.55); }
+.calor__dia--x { background: none; box-shadow: inset 0 0 0 1px rgba(244, 233, 209, 0.1); }
+.calor__legenda { margin-top: 0.8rem; font-size: 0.95rem; }
+
+/* ---------- 6. Cinco abas ---------- */
+@media (min-width: 761px) and (max-width: 1100px) { #navegacao .aba span { font-size: 0.9rem; } .topo__legenda { display: none; } }
+@media (max-width: 760px) {
+  #navegacao { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; padding: 5px; }
+  #navegacao { background: rgba(27, 20, 22, 0.95) !important; -webkit-backdrop-filter: blur(14px) !important; backdrop-filter: blur(14px) !important;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.55), inset 0 0 0 1.5px rgba(244, 233, 209, 0.18) !important; }
+  #navegacao .aba { padding-inline: 0; flex-direction: column; gap: 2px; color: var(--marmore); }
+  #navegacao .aba span { font-size: 0.68rem; }
+}
+@media (max-width: 860px) {
+  .semana__cartao { grid-template-columns: 1fr; justify-items: center; text-align: left; }
+  .semana__texto { justify-items: start; width: 100%; }
+  .leitura__grade { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .sugestao { grid-template-columns: 70px minmax(0, 1fr); gap: 1rem; }
+  .sugestao::before { display: none; }
+  .capa--sugestao { width: 70px; }
+  .ritmo__numeros { gap: 0.6rem; }
+  .encontrar ul { min-width: min(18rem, calc(100vw - 3rem)); }
+}
+
+/* ---------- 7. Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .book3d__giro, .book3d--abre .book3d__giro, .marquee .book3d__giro { animation: none !important; transition: none; }
+  .inicio__vitrine .book3d, .semana__cartao .book3d, .sugestao, .capa--esperando, .giro-espera, .encontrar ul { animation: none; }
+  .book3d__capa { transition: none; }
+}

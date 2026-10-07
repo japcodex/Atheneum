@@ -1,0 +1,95 @@
+:root {
+  /*Padrão de Cores*/
+  --noite: #0b1020;         /* fundo da página */
+  --azul: #131c38;          /* fundo de cartões e caixas */
+  --azul-medio: #1d2a55;
+  --marmore: #f2ede2;       /* texto principal */
+  --marmore-suave: #aeb3c6; /* texto secundário */
+  --ouro: #c9a85c;          /* destaques */
+  --ouro-claro: #e8d6a4;
+  --vinho: #8a3a4a;
+  --oliva: #4d8a78;
+
+  /*Fontes*/
+  --fonte-titulo: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /*Imagens*/
+  --foto-hero: url("../img/fundo/pantheon-hero.jpg");
+
+  /*Medidas*/
+  --raio: 10px;                 /* arredondamento dos cantos */
+  --largura-maxima: 1200px;     /* largura máxima do conteúdo */
+  --espaco: clamp(1rem, 4vw, 2rem);
+  /* Margem lateral que mantém tudo alinhado na mesma coluna central */
+  --margem: max(var(--espaco), calc((100% - var(--largura-maxima)) / 2 + var(--espaco)));
+
+  /* Friso grego (meandro): desenho usado em divisores, rodapé e capas */
+  --meandro: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M0 18H24M18 18V6H6V12H12' fill='none' stroke='%23c9a85c' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--noite);
+  color: var(--marmore);
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, figure, blockquote { margin: 0; }
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+button, input, select { font: inherit; color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 2px solid var(--ouro-claro);
+  outline-offset: 3px;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.pular {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--ouro);
+  color: var(--noite);
+  border-radius: var(--raio);
+  z-index: 100;
+}
+.pular:focus { top: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
