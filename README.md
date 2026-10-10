@@ -1,21 +1,23 @@
 <div align="center">
 
-<img src="img/logo/logo.svg" alt="Logo do Atheneum: a coruja de Atena" width="96">
+<img src="assets/logo.svg" alt="Atheneum — a coruja de Atena" width="96">
 
 # Atheneum
 
-**A biblioteca de um leitor, guardada sob o olhar de Atena.**
+**Um jornal da sua vida em livros.**
 
-Uma estante digital com clássicos, ficção e livros de ofício.<br>
-Feita com HTML, CSS e JavaScript puro, sem instalar nada.
+Uma biblioteca pessoal para organizar histórias, guardar ideias<br>
+e acompanhar cada capítulo da sua jornada de leitura.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Sem dependências](https://img.shields.io/badge/depend%C3%AAncias-zero-c9a85c?style=flat-square)
-![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-4d8a78?style=flat-square)
-![Código aberto](https://img.shields.io/badge/c%C3%B3digo-aberto-8a3a4a?style=flat-square)
-<br>
+![Módulos ES](https://img.shields.io/badge/m%C3%B3dulos-ES-8a3a4a?style=flat-square)
+![Dados locais](https://img.shields.io/badge/dados-no_navegador-c9a85c?style=flat-square)
+
+[Conheça o Atheneum](https://atheneum-julio.julioandre754.chatgpt.site/)
+
+<sub>A versão hospedada pode solicitar autenticação: seu acesso atual é privado.</sub>
 
 </div>
 
@@ -23,193 +25,199 @@ Feita com HTML, CSS e JavaScript puro, sem instalar nada.
 
 ## 📜 Sobre o projeto
 
-O **Atheneum** é a minha coleção de livros, organizada em uma biblioteca que dá gosto de visitar. A ideia é entrar no site e sentir que está num daqueles salões clássicos, cheios de colunas, estátuas e estantes até o teto.
+O **Atheneum** nasceu de uma lista de livros mantida no Obsidian e evoluiu para uma biblioteca pessoal com organização, registro de leitura e acompanhamento de metas.
 
-Ele nasceu de uma lista que eu mantenho no Obsidian. Em vez de deixá-la guardada em um arquivo de texto, transformei tudo num site com busca, categorias, capas e prateleiras por autor, e agora ele mostra **+130 livros** em três seções: **Clássicos**, **Ficção** e **Carreira**.
+Sua identidade visual remete a um jornal antigo: papel em tons envelhecidos, títulos marcantes, colunas editoriais, gravuras, selos e fitas. Cada seção funciona como um caderno da mesma edição, conectando o acervo às leituras e às conquistas do leitor.
 
-### 🏛️ Código aberto, para cada um fazer a sua
+A coleção inicial reúne **137 livros**, distribuídos entre **Clássicos (59)**, **Ficção (25)** e **Carreira (53)**. Esse acervo é um ponto de partida: a interface permite cadastrar livros, editar suas fichas e criar novas formas de organização.
 
-Este projeto é **completamente aberto**. Ele é a minha coleção, mas o código é de todos:
+## 🗞️ Os cinco cadernos
 
-- Você pode **copiar, modificar e usar** para a sua própria biblioteca.
-- Pode trocar os livros, as cores, a foto, o logo, o nome e o que mais quiser.
-- Pode publicar o seu e compartilhar com amigos.
----
+| Caderno | O que você encontra |
+| --- | --- |
+| **Início** | Apresentação editorial, citações, atalhos para a coleção, seleção de livros e carrossel infinito. |
+| **Biblioteca** | Acervo completo, busca, filtros, listas, tags e três modos de visualização. |
+| **Sala de leitura** | Progresso por página, cronômetro, sessões de leitura e acesso ao leitor de PDF quando seus arquivos de suporte estão presentes. |
+| **Descobrir** | Curadoria de livros e busca bibliográfica na Open Library para ajudar a ampliar a coleção. |
+| **Santuário** | Estatísticas, calendário de sessões, conquistas, níveis e metas de leitura. |
 
 ## ✨ Funcionalidades
 
-| | Recurso | Detalhes |
-|---|---|---|
-| 🔎 | **Busca** | Procura em título, autor, prateleira e descrição. Ignora acentos (`edipo` acha `Édipo`). Atalho: tecle `/`. |
-| 🗂️ | **Categorias** | Abas no topo com a contagem de livros de cada uma. |
-| 📚 | **Prateleiras** | Dentro de cada categoria, os livros se agrupam por autor ou tema, e você pode filtrar por uma prateleira só. |
-| 🖼️ | **Dois modos de exibição** | **Capas** (vitrine de livraria) e **Estante** (lombadas sobre um friso de mármore). |
-| 🏷️ | **Situação do livro** | Filtro por *Lido*, *Lendo* e *Quero ler*. |
-| ↕️ | **Ordenação** | Ordem da estante, título (A a Z), autor (A a Z) ou maior nota. |
-| 🔖 | **Detalhes do livro** | Ao clicar, abre uma janela com capa, autor, prateleira, situação, nota, descrição e link. |
-| 🖌️ | **Capas automáticas** | Sem imagem, o site desenha uma capa com título e autor. Com imagem, basta salvar o arquivo com o nome certo. |
-| 💬 | **Frases inspiradoras** | Uma frase diferente a cada visita (Cícero, Borges, Sêneca...), com botão "Outra frase". |
-| 📱 | **Responsivo** | Funciona em computador, tablet e celular. |
-| ♿ | **Acessível** | Navegação por teclado, foco visível, textos para leitores de tela e respeito a quem prefere menos animação. |
+### Sua coleção, do seu jeito
 
----
+- Cadastro e edição de livros, com título, autor, ISBN, gênero, capa e informações da edição.
+- Visualizações em **estante, grade e lista**.
+- Busca por título, autor ou ISBN, combinada com filtros por situação de leitura, gênero, lista e tag.
+- Listas personalizadas para agrupar autores, assuntos e seleções do leitor.
+- **Tags com nome e cor editáveis**, exibidas junto aos livros e disponíveis como filtro.
+- Avaliações de uma a cinco estrelas e capas tipográficas para livros sem imagem.
+- Remoção recuperável: livros podem ser restaurados pela área de removidos.
 
-## 🚀 Rodar no seu computador
+### Um diário para cada leitura
 
-Não precisa instalar nada, não tem `npm install`, não tem servidor.
+- Situações **Quero ler**, **Lendo** e **Lido**.
+- Registro da página atual e do total de páginas.
+- Sessões com páginas lidas e duração, com cronômetro opcional.
+- Histórico de sessões com correção e exclusão de registros.
+- Anotações associadas a páginas, disponíveis na ficha do livro.
+- Suporte a PDFs pessoais, armazenados no navegador, com navegação por página e download do original. O leitor depende do PDF.js local.
 
-### Opção 1: dois cliques (mais simples)
+### Metas e memória da jornada
 
-1. Baixe o projeto: no GitHub, clique em **Code > Download ZIP** e extraia a pasta.
-2. Abra a pasta `Atheneum`.
-3. Dê dois cliques em **`index.html`**. Pronto, ele abre no navegador.
+- Metas mensais de **livros concluídos, páginas e minutos de leitura**.
+- Consulta de meses anteriores e possibilidade de pausar uma meta.
+- Metas anuais, calendário de sessões e indicadores de progresso.
+- Selos de conquistas, experiência, níveis e histórico de recompensas.
 
-> As fontes (Cormorant Garamond e Jost) vêm do Google Fonts, então precisam de internet. Sem internet o site funciona do mesmo jeito, só com fontes parecidas do sistema.
+### A experiência de um jornal
 
-### Opção 2: clonar com o Git
+- Folha de jornal com dobras animadas: desce para cobrir a seção e sobe para revelar a próxima.
+- Entrada gradual de títulos, textos, cards e elementos editoriais.
+- Carrossel infinito na primeira página, com controle para pausar e retomar.
+- Resposta visual ao pressionar botões e links.
+- Layout adaptável a computador e celular, navegação por teclado e foco visível.
+- Página 404 com a mesma identidade visual do site.
+
+## 💾 Dados e backups
+
+O Atheneum funciona como uma aplicação estática. **A biblioteca pessoal é salva no navegador utilizado**, sem um servidor de contas ou sincronização automática entre dispositivos.
+
+| Armazenamento | Conteúdo |
+| --- | --- |
+| **localStorage** | Livros, listas, tags, anotações, sessões, metas, conquistas e preferências. |
+| **IndexedDB** | Arquivos PDF anexados aos livros. |
+| **Backup JSON** | Exportação e importação dos dados; a exportação completa também pode incluir os PDFs. |
+
+Use **Preferências e backup** para exportar sua biblioteca antes de limpar os dados do navegador ou mudar de dispositivo. O armazenamento também depende do endereço de acesso: abrir o site em outro domínio ou porta não transfere os dados automaticamente.
+
+A consulta à Open Library e o carregamento de imagens externas precisam de internet. Os PDFs anexados são tratados localmente; não são enviados pela aplicação para um servidor de armazenamento.
+
+## 🛡️ Cuidados implementados
+
+- Validação de formato, assinatura e tamanho dos arquivos selecionados.
+- Capas em **PNG, JPEG ou WebP**, com limite de **2 MiB**, decodificadas e reprocessadas antes de serem salvas. SVG não é aceito como upload de capa.
+- PDFs com limite de **25 MiB** e validações antes de abrir no leitor.
+- Validação da estrutura de backups, das referências entre registros e de propriedades perigosas.
+- Escape de textos inseridos na interface e política de segurança de conteúdo definida no HTML.
+- No leitor interno, PDFs são renderizados em canvas; scripts, formulários e links internos do documento não são ativados.
+
+Esses controles são parte da implementação atual e devem ser preservados ao modificar os formulários, o armazenamento ou o tratamento de arquivos.
+
+## 🚀 Executar localmente
+
+O projeto usa **HTML, CSS e JavaScript com módulos ES nativos**, sem framework e sem etapa de compilação. Para executá-lo, sirva a pasta por **HTTP**: abrir `index.html` diretamente pelo explorador de arquivos pode impedir o carregamento dos módulos e da coleção.
+
+### Com Python 3
+
+Abra um terminal na pasta que contém `index.html` e execute:
 
 ```bash
-git clone https://github.com/SEU-USUARIO/atheneum.git
-cd atheneum
+python -m http.server 4173 --bind 127.0.0.1
 ```
 
-Depois abra o `index.html` no navegador.
+Acesse **http://127.0.0.1:4173/** e mantenha o terminal aberto durante o uso. Se o Python estiver disponível pelo comando `python3`, substitua `python` por `python3`.
 
-### Opção 3: servidor local (recomendado para editar)
+### Com um servidor estático no editor
 
-Um servidor local atualiza a página sozinho enquanto você edita. Escolha um:
+Também é possível abrir a pasta em um editor e usar uma extensão de servidor estático, como o Live Server. Sirva a raiz da versão atual, onde estão `index.html`, `app.js`, `styles/` e `lib/`.
 
-**VS Code + Live Server** (o mais fácil)
-1. Instale o [VS Code] e a extensão **Live Server**.
-2. Abra a pasta do projeto no VS Code.
-3. Clique com o botão direito em `index.html` e escolha **Open with Live Server**.
----
+O `INICIAR.cmd` remanescente da estrutura anterior depende de arquivos da pasta `.dev`. Como essa pasta foi removida desta cópia, esse atalho precisa ser ajustado antes de voltar a ser usado.
 
-## 🗺️ Como o projeto está organizado
+## 🗺️ Estrutura atual
 
-```
+```text
 Atheneum/
-│
-├── index.html                A página. Reúne todas as outras peças.
-│
-├── css/                      COMO O SITE PARECE
-│   ├── base.css              Cores, fontes e medidas (comece por aqui!)
-│   ├── layout.css            Estrutura: barra do topo, foto, seções, rodapé
-│   └── livros.css            Capas, lombadas, prateleiras e janela de detalhes
-│
-├── js/                       COMO O SITE FUNCIONA
-│   ├── utils.js              Ferramentas pequenas de apoio
-│   ├── filtros.js            Busca, categoria, situação e ordenação
-│   ├── desenho.js            Transforma a lista de livros em capas na tela
-│   ├── detalhes.js           A janela que abre ao clicar num livro
-│   ├── citacao.js            A frase do topo
-│   └── principal.js          O "cérebro": guarda as escolhas e reage aos cliques
-│
-├── data/                     O CONTEÚDO
-│   ├── livros.js             Todos os livros e categorias (o arquivo que você mais edita)
-│   └── frases.js             As frases inspiradoras
-│
-├── img/                      AS IMAGENS
-│   ├── logo/                 logo.svg e favicon.svg
-│   ├── fundo/                A foto do Panteão
-│   └── capas/                Capas dos livros (veja LISTA-DE-NOMES.txt)
-│
-├── obsidian/Biblioteca.md    A lista original, escrita no Obsidian
-├── scripts/                  Importador opcional do Obsidian
-├── docs/img/                 Imagens usadas neste README
-└── LICENSE                   Licença MIT
+├── index.html                  Estrutura principal e entrada da aplicação
+├── 404.html                    Página de erro para hospedagem estática
+├── app.js                      Navegação, inicialização e integração dos módulos
+├── store.js                    Estado, persistência, validações e regras da biblioteca
+├── styles.css                  Entrada dos estilos
+├── styles/                     Estilos separados por página e componente
+├── pages/                      Início, biblioteca, descoberta, santuário e erro
+├── lib/
+│   ├── actions.js              Eventos e ações da interface
+│   ├── collection.js           Importação da coleção inicial
+│   ├── catalog.js              Curadoria e citações
+│   ├── dialogs.js              Formulários e diálogos
+│   ├── reader.js               Leitor, sessões e cronômetro
+│   ├── uploads.js              Validação e preparação dos arquivos
+│   ├── tags.js                 Componentes e formulários de tags
+│   ├── goals.js                Formulários e navegação das metas mensais
+│   ├── motion.js               Ciclo de vida das animações
+│   ├── motion/paper.js         Geometria e movimento da folha de jornal
+│   ├── page-renderer.js        Renderização e preservação de foco e formulários
+│   ├── feedback.js             Mensagens e tratamento de erros na interface
+│   └── ui.js                   Componentes e funções compartilhadas
+├── data/
+│   └── personal-library.json   Coleção inicial transcrita do Obsidian
+├── assets/
+│   ├── logo.svg                Identidade do Atheneum
+│   ├── library-engraving.png   Gravura da primeira página
+│   └── covers/                 Capas ilustrativas locais
+├── old version/                Arquivo histórico, sem participação na aplicação atual
+├── INICIAR.cmd                 Atalho legado de inicialização
+└── README.md                   Apresentação e orientações do projeto
 ```
 
-## 🎨 Personalizar o Atheneum
+### Recursos ausentes nesta cópia
 
-**O que significa cada campo:**
+As pastas abaixo foram removidas da versão local, mas continuam referenciadas pelo código:
 
-| Campo | O que é | Exemplo |
-|---|---|---|
-| `id` | Nome único do livro, sem espaços nem acentos. Também é o nome do arquivo da capa. | `"o-hobbit"` |
-| `titulo` | Título que aparece na tela | `"O Hobbit"` |
-| `autor` | Nome do autor. Deixe `""` se não souber. | `"J.R.R. Tolkien"` |
-| `categoria` | O `id` de uma categoria (veja abaixo) | `"ficcao"` |
-| `grupo` | A prateleira onde o livro fica: um autor ou um tema | `"J.R.R. Tolkien"` |
-| `capa` | Endereço da imagem da capa. Vazio usa `img/capas/<id>.jpg`. | `""` |
-| `nota` | De `0` a `5`. Zero significa sem nota. | `5` |
-| `status` | `"lido"`, `"lendo"` ou `"quero-ler"` | `"lido"` |
-| `descricao` | Resumo ou opinião, mostrada ao clicar no livro | `"Uma aventura..."` |
-| `link` | Endereço para comprar ou saber mais (opcional) | `"https://..."` |
+| Recurso | Arquivos esperados | Efeito da ausência |
+| --- | --- | --- |
+| **PDF.js** | `assets/pdfjs/pdf.mjs` e `assets/pdfjs/pdf.worker.mjs`, com os recursos necessários da mesma distribuição | O leitor interno não consegue abrir PDFs. O registro de leituras físicas permanece disponível. |
+| **Fontes locais** | `assets/fonts/bodoni-moda-900-latin.woff2`, `instrument-serif-latin.woff2` e `dm-sans-latin.woff2` | O navegador usa fontes substitutas, alterando a tipografia e possivelmente o layout. |
 
-### Colocar a capa de um livro
+Para distribuir a experiência completa, restaure esses recursos com suas licenças e avisos de origem. O CSS das fontes está em `styles/fonts.css`; o carregamento do PDF.js está em `lib/reader.js`.
 
-**Jeito fácil:** salve a imagem em `img/capas/` com o **mesmo nome do `id`** do livro. Exemplo: para *Crime e Castigo*, salve `img/capas/crime-e-castigo.jpg`. O site encontra sozinho.
+## 🎨 Personalizar
 
-A lista com o nome exato de todos os livros está em [`img/capas/LISTA-DE-NOMES.txt`](img/capas/LISTA-DE-NOMES.txt).
+**Livros e organização:** prefira os formulários da biblioteca para cadastrar obras, editar capas, criar listas e gerenciar tags. As alterações ficam na biblioteca daquele navegador.
 
-**Outro jeito:** preencha o campo `capa` do livro com o caminho ou endereço da imagem:
+**Coleção inicial do repositório:** edite `data/personal-library.json` em conjunto com `lib/collection.js`. A importação valida o identificador da coleção e a quantidade de livros; o número total, os resumos por caderno e o identificador da edição precisam acompanhar a nova coleção. Coleções já importadas não são reaplicadas automaticamente a cada visita.
 
-```js
-"capa":"img/capas/minha-capa.png"
-"capa":"https://exemplo.com/capa.jpg"
-```
+**Identidade visual:** cores, tipografia e regras gerais ficam em `styles/base.css` e nos demais arquivos de `styles/`. A marca e a gravura ficam em `assets/`; as citações e a curadoria, em `lib/catalog.js`.
 
-Quando a imagem não existe ou não carrega, o Atheneum mostra a capa desenhada. Nada quebra.
+**Animações:** o comportamento geral está em `lib/motion.js`, a folha em `lib/motion/paper.js` e os estilos em `styles/motion.css`. As animações usam Web Animations API e CSS, sem seletor de intensidade na interface.
 
-> 💡 Prefira imagens de até 200 KB, na proporção de livro (2:3), para a página carregar rápido.
+## 🌐 Hospedagem
 
+Publique os arquivos da aplicação em uma hospedagem estática com HTTPS, mantendo os caminhos relativos. Nesta estrutura, `index.html` fica na raiz da publicação. Configure `404.html` como a página de erro do serviço.
 
-## 📚 Montar a sua própria biblioteca
+As seções usam navegação por fragmentos, como `#biblioteca` e `#santuario`. Não há etapa de build. A pasta `old version/` é apenas histórica e pode ficar fora da publicação.
 
-Quer usar o Atheneum para os **seus** livros? O caminho é este:
+Mantenha o mesmo endereço ao atualizar o site para que o navegador continue encontrando a biblioteca já salva.
 
-1. **Copie o projeto** (Fork, Use this template ou Download ZIP).
-2. **Limpe os livros.** Em `data/livros.js`, apague todas as linhas dentro de `LIVROS` e deixe a lista vazia (`const LIVROS = [ ];`).
-3. **Defina as suas categorias** na lista `CATEGORIAS`.
-4. **Adicione os seus livros**, um por linha, como mostrado acima.
-5. **Troque a identidade:** nome, logo, foto e frases.
+## 🤝 Contribuir
 
-> O site precisa de pelo menos uma categoria e um livro para ficar completo. Com a lista vazia ele mostra a mensagem "Nenhum livro encontrado".
+Sugestões de leitura, melhorias de interface e correções são bem-vindas.
 
----
+1. Abra uma Issue descrevendo a ideia ou o problema, com os passos para reproduzi-lo.
+2. Para alterações no código, crie uma branch no seu fork.
+3. Verifique a navegação, os filtros e o funcionamento em telas pequenas.
+4. Se alterar o armazenamento, confirme a preservação dos dados e a exportação e importação de backups.
+5. Abra um Pull Request explicando a mudança e como ela foi verificada.
 
-## 🤝 Contribuindo
+## 📄 Créditos e licença
 
-Sugestões, ideias e melhorias são bem-vindas:
+- **Criação e desenvolvimento:** Julio André Cimarosti.
+- **Coleção inicial:** lista pessoal mantida no Obsidian, organizada em Clássicos, Ficção e Carreira.
+- **Identidade visual:** composição editorial inspirada em jornais antigos e bibliotecas clássicas; marca com a coruja de Atena.
+- **Gravura da biblioteca:** imagem criada com auxílio de IA para o projeto.
+- **Busca bibliográfica:** Open Library.
+- **Leitor de PDF:** PDF.js, quando incluído na distribuição.
+- **Tipografia prevista:** Bodoni Moda, Instrument Serif e DM Sans.
 
-1. Faça um **fork** do projeto.
-2. Crie uma branch: `git checkout -b minha-melhoria`.
-3. Faça suas mudanças e um commit: `git commit -m "Adiciona minha melhoria"`.
-4. Envie: `git push origin minha-melhoria`.
-5. Abra um **Pull Request** explicando o que mudou.
-
-Se encontrou um erro ou tem uma ideia, abra uma **Issue**.
+O README anterior indicava licença MIT para o código. Esta cópia ainda não contém o arquivo `LICENSE`; ele deve acompanhar o repositório para formalizar essa indicação. Bibliotecas, fontes e imagens de terceiros mantêm suas próprias licenças e créditos.
 
 ---
-
-## 📄 Licença e créditos
-
-- **Código:** [MIT](LICENSE). Use, copie e modifique à vontade, mantendo o aviso de licença.
-- **Foto do Panteão:** Oliver NT, via [Pexels](https://www.pexels.com), sob a licença do Pexels. Ela não faz parte da licença MIT; se você trocar a foto, lembre de atualizar o crédito no rodapé.
-- **Fontes:** [Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond) e [Jost](https://fonts.google.com/specimen/Jost), do Google Fonts, sob a licença SIL Open Font.
-- **Livros, títulos e capas:** pertencem aos seus autores e editoras. Se você usar capas reais, confira os direitos de uso.
-- **Frases:** de domínio público ou de autores citados com atribuição.
-
-<div align="center">
-
-<br>
 
 <div align="center">
 
 **Julio André Cimarosti** · [@japcodex](https://github.com/japcodex)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/julioandrecimarosti/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/japcodex)
-[![Behance](https://img.shields.io/badge/Behance-1769FF?style=for-the-badge&logo=behance&logoColor=white)](https://www.behance.net/julioandre7)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/julio_a_/)
+[LinkedIn](https://www.linkedin.com/in/julioandrecimarosti/) · [Behance](https://www.behance.net/julioandre7) · [Instagram](https://www.instagram.com/julio_a_/)
 
-<br/>
+**Sua coleção. Suas ideias. Sua próxima página.**
 
-</div>
-
-*Se você tem um jardim e uma biblioteca, você tem tudo de que necessita.*<br>
-— Cícero
-
-<br>
 </div>
