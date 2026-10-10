@@ -1,0 +1,102 @@
+.book-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.book-tag {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  font-size: 9px;
+  line-height: 1.3;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+button.book-tag:hover,
+.book-tag.active {
+  border-color: var(--ink);
+  background: #f2edde88;
+}
+.tag-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: var(--tag-color);
+  border-radius: 50%;
+  border: 1px solid #28251f40;
+}
+.tag-manager-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+.tag-manager-row .book-tag {
+  font-size: 12px;
+}
+.tag-assignment {
+  border: 0;
+  border-top: 1px solid var(--line);
+  padding: 16px 0 0;
+  margin: 5px 0 0;
+  min-width: 0;
+}
+.tag-assignment legend {
+  font-size: 10px;
+  padding: 0 10px 0 0;
+}
+.tag-assignment .checkbox-group {
+  gap: 12px 18px;
+}
+.tag-assignment label {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.tag-filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+.tag-filter-bar > .text-button {
+  margin-left: auto;
+}
+.tag-filter-bar > .eyebrow {
+  align-self: center;
+}
+input[type="color"] {
+  padding: 5px;
+  width: 100%;
+  height: 44px;
+}
+.book-list .book-tags {
+  margin-left: 75px;
+  margin-top: 10px;
+  padding-right: 80px;
+}
+.book-list .book-actions {
+  top: 34px;
+}
+.detail-info .book-tags {
+  margin-top: 16px;
+}
+@media (max-width: 720px) {
+  .book-tag {
+    font-size: 8px;
+    padding: 4px 6px;
+  }
+  .tag-filter-bar > .text-button {
+    font-size: 10px;
+  }
+  .book-list .book-tags {
+    margin-left: 75px;
+    padding-right: 0;
+  }
+}

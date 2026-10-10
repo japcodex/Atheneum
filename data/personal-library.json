@@ -1,0 +1,2144 @@
+{
+  "id": "personal-library-2026-10-09",
+  "name": "Biblioteca pessoal",
+  "source": "Biblioteca.md",
+  "sourceDate": "2026-09-27",
+  "total": 137,
+  "sections": [
+    {
+      "name": "Clássicos",
+      "count": 59,
+      "groups": [
+        {
+          "name": "C. S. Lewis",
+          "count": 9
+        },
+        {
+          "name": "Dostoiévski",
+          "count": 7
+        },
+        {
+          "name": "G. K. Chesterton",
+          "count": 6
+        },
+        {
+          "name": "Liev Tolstói",
+          "count": 4
+        },
+        {
+          "name": "Clarice Lispector",
+          "count": 4
+        },
+        {
+          "name": "Literatura Clássica",
+          "count": 29
+        }
+      ]
+    },
+    {
+      "name": "Ficção",
+      "count": 25,
+      "groups": [
+        {
+          "name": "Andrzej Sapowski",
+          "count": 8
+        },
+        {
+          "name": "J.K. Rowling",
+          "count": 7
+        },
+        {
+          "name": "J.R.R. Tolkien",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "Carreira",
+      "count": 53,
+      "groups": [
+        {
+          "name": "Empreendedorismo",
+          "count": 18
+        },
+        {
+          "name": "Tech",
+          "count": 19
+        },
+        {
+          "name": "Design",
+          "count": 3
+        },
+        {
+          "name": "Mecatrônica",
+          "count": 1
+        },
+        {
+          "name": "Automotive",
+          "count": 7
+        },
+        {
+          "name": "Desenvolvimento de Jogos",
+          "count": 5
+        }
+      ]
+    }
+  ],
+  "books": [
+    {
+      "sourceIndex": 1,
+      "title": "A Abolição do Homem",
+      "author": "C. S. Lewis",
+      "sourceTitle": "A Abolição do Homem",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 2,
+      "title": "As Crônicas de Nárnia",
+      "author": "C. S. Lewis",
+      "sourceTitle": "As Crônicas de Nárnia",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 3,
+      "title": "Cartas de um Diabo a seu Aprendiz",
+      "author": "C. S. Lewis",
+      "sourceTitle": "Cartas de um Diabo a seu Aprendiz",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 4,
+      "title": "Cristianismo Puro e Simples",
+      "author": "C. S. Lewis",
+      "sourceTitle": "Cristianismo Puro e Simples",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 5,
+      "title": "O Grande Divórcio",
+      "author": "C. S. Lewis",
+      "sourceTitle": "O Grande Divórcio",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 6,
+      "title": "O Peso da Glória",
+      "author": "C. S. Lewis",
+      "sourceTitle": "O Peso da Glória",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 7,
+      "title": "O Problema da Dor",
+      "author": "C. S. Lewis",
+      "sourceTitle": "O Problema da Dor",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 8,
+      "title": "Os Quatro Amores",
+      "author": "C. S. Lewis",
+      "sourceTitle": "Os Quatro Amores",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 9,
+      "title": "Reflexões Cristãs",
+      "author": "C. S. Lewis",
+      "sourceTitle": "Reflexões Cristãs",
+      "sourceAuthor": "C. S. Lewis",
+      "section": "Clássicos",
+      "subgroup": "C. S. Lewis",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "C. S. Lewis"
+      ]
+    },
+    {
+      "sourceIndex": 10,
+      "title": "A Senhoria",
+      "author": "Fiódor Dostoiévski",
+      "sourceTitle": "A Senhoria",
+      "sourceAuthor": "Dostoiévski",
+      "section": "Clássicos",
+      "subgroup": "Dostoiévski",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Dostoiévski"
+      ]
+    },
+    {
+      "sourceIndex": 11,
+      "title": "Crime e Castigo",
+      "author": "Fiódor Dostoiévski",
+      "sourceTitle": "Crime e Castigo",
+      "sourceAuthor": "Dostoiévski",
+      "section": "Clássicos",
+      "subgroup": "Dostoiévski",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Dostoiévski"
+      ]
+    },
+    {
+      "sourceIndex": 12,
+      "title": "Memórias do Subsolo",
+      "author": "Fiódor Dostoiévski",
+      "sourceTitle": "Memórias do Subsolo",
+      "sourceAuthor": "Dostoiévski",
+      "section": "Clássicos",
+      "subgroup": "Dostoiévski",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Dostoiévski"
+      ]
+    },
+    {
+      "sourceIndex": 13,
+      "title": "Noites Brancas",
+      "author": "Fiódor Dostoiévski",
+      "sourceTitle": "Noites Brancas",
+      "sourceAuthor": "Dostoiévski",
+      "section": "Clássicos",
+      "subgroup": "Dostoiévski",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Dostoiévski"
+      ]
+    },
+    {
+      "sourceIndex": 14,
+      "title": "O Idiota",
+      "author": "Fiódor Dostoiévski",
+      "sourceTitle": "O Idiota",
+      "sourceAuthor": "Dostoiévski",
+      "section": "Clássicos",
+      "subgroup": "Dostoiévski",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Dostoiévski"
+      ]
+    },
+    {
+      "sourceIndex": 15,
+      "title": "Os Irmãos Karamazov",
+      "author": "Fiódor Dostoiévski",
+      "sourceTitle": "Os Irmãos Karamazov",
+      "sourceAuthor": "Dostoiévski",
+      "section": "Clássicos",
+      "subgroup": "Dostoiévski",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Dostoiévski"
+      ]
+    },
+    {
+      "sourceIndex": 16,
+      "title": "Gente Pobre",
+      "author": "Fiódor Dostoiévski",
+      "sourceTitle": "Gente Pobre",
+      "sourceAuthor": "Dostoiévski",
+      "section": "Clássicos",
+      "subgroup": "Dostoiévski",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Dostoiévski"
+      ]
+    },
+    {
+      "sourceIndex": 17,
+      "title": "A Inocência do Padre Brown",
+      "author": "G. K. Chesterton",
+      "sourceTitle": "A Inocência do Padre Brown",
+      "sourceAuthor": "G. K. Chesterton",
+      "section": "Clássicos",
+      "subgroup": "G. K. Chesterton",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "G. K. Chesterton"
+      ]
+    },
+    {
+      "sourceIndex": 18,
+      "title": "A Sabedoria do Padre Brown",
+      "author": "G. K. Chesterton",
+      "sourceTitle": "A Sabedoria do Padre Brown",
+      "sourceAuthor": "G. K. Chesterton",
+      "section": "Clássicos",
+      "subgroup": "G. K. Chesterton",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "G. K. Chesterton"
+      ]
+    },
+    {
+      "sourceIndex": 19,
+      "title": "O Homem Eterno",
+      "author": "G. K. Chesterton",
+      "sourceTitle": "O Homem Eterno",
+      "sourceAuthor": "G. K. Chesterton",
+      "section": "Clássicos",
+      "subgroup": "G. K. Chesterton",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "G. K. Chesterton"
+      ]
+    },
+    {
+      "sourceIndex": 20,
+      "title": "O Homem que era Quinta-Feira",
+      "author": "G. K. Chesterton",
+      "sourceTitle": "O Homem que era Quinta-Feira",
+      "sourceAuthor": "G. K. Chesterton",
+      "section": "Clássicos",
+      "subgroup": "G. K. Chesterton",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "G. K. Chesterton"
+      ]
+    },
+    {
+      "sourceIndex": 21,
+      "title": "O Que Há de Errado com o Mundo",
+      "author": "G. K. Chesterton",
+      "sourceTitle": "O Que Há de Errado com o Mundo",
+      "sourceAuthor": "G. K. Chesterton",
+      "section": "Clássicos",
+      "subgroup": "G. K. Chesterton",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "G. K. Chesterton"
+      ]
+    },
+    {
+      "sourceIndex": 22,
+      "title": "Ortodoxia",
+      "author": "G. K. Chesterton",
+      "sourceTitle": "Ortodoxia",
+      "sourceAuthor": "G. K. Chesterton",
+      "section": "Clássicos",
+      "subgroup": "G. K. Chesterton",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "G. K. Chesterton"
+      ]
+    },
+    {
+      "sourceIndex": 23,
+      "title": "A Morte de Ivan Ilitch",
+      "author": "Liev Tolstói",
+      "sourceTitle": "A Morte de Ivan Ilitch",
+      "sourceAuthor": "Liev Tolstói",
+      "section": "Clássicos",
+      "subgroup": "Liev Tolstói",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Liev Tolstói"
+      ]
+    },
+    {
+      "sourceIndex": 24,
+      "title": "Guerra e Paz",
+      "author": "Liev Tolstói",
+      "sourceTitle": "Guerra e Paz",
+      "sourceAuthor": "Liev Tolstói",
+      "section": "Clássicos",
+      "subgroup": "Liev Tolstói",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Liev Tolstói"
+      ]
+    },
+    {
+      "sourceIndex": 25,
+      "title": "De Quanta Terra Precisa o Homem",
+      "author": "Liev Tolstói",
+      "sourceTitle": "De Quanta Terra Precisa o Homem",
+      "sourceAuthor": "Liev Tolstói",
+      "section": "Clássicos",
+      "subgroup": "Liev Tolstói",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Liev Tolstói"
+      ]
+    },
+    {
+      "sourceIndex": 26,
+      "title": "Anna Karienina",
+      "author": "Liev Tolstói",
+      "sourceTitle": "Anna Karienina",
+      "sourceAuthor": "Liev Tolstói",
+      "section": "Clássicos",
+      "subgroup": "Liev Tolstói",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Liev Tolstói"
+      ]
+    },
+    {
+      "sourceIndex": 27,
+      "title": "A Hora da Estrela",
+      "author": "Clarice Lispector",
+      "sourceTitle": "A Hora da Estrela",
+      "sourceAuthor": "Clarice Lispector",
+      "section": "Clássicos",
+      "subgroup": "Clarice Lispector",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Clarice Lispector"
+      ]
+    },
+    {
+      "sourceIndex": 28,
+      "title": "Água Viva",
+      "author": "Clarice Lispector",
+      "sourceTitle": "Água Viva",
+      "sourceAuthor": "Clarice Lispector",
+      "section": "Clássicos",
+      "subgroup": "Clarice Lispector",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Clarice Lispector"
+      ]
+    },
+    {
+      "sourceIndex": 29,
+      "title": "A Paixão Segundo G.H",
+      "author": "Clarice Lispector",
+      "sourceTitle": "A Paixão Segundo G.H",
+      "sourceAuthor": "Clarice Lispector",
+      "section": "Clássicos",
+      "subgroup": "Clarice Lispector",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Clarice Lispector"
+      ]
+    },
+    {
+      "sourceIndex": 30,
+      "title": "Perto do Coração Selvagem",
+      "author": "Clarice Lispector",
+      "sourceTitle": "Perto do Coração Selvagem",
+      "sourceAuthor": "Clarice Lispector",
+      "section": "Clássicos",
+      "subgroup": "Clarice Lispector",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Clarice Lispector"
+      ]
+    },
+    {
+      "sourceIndex": 31,
+      "title": "Ilíada",
+      "author": "Homero",
+      "sourceTitle": "Ilíada — Homero",
+      "sourceAuthor": "Homero",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 32,
+      "title": "Odisseia",
+      "author": "Homero",
+      "sourceTitle": "Odisseia — Homero",
+      "sourceAuthor": "Homero",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 33,
+      "title": "Meditações",
+      "author": "Marco Aurélio",
+      "sourceTitle": "Meditações — Marco Aurélio",
+      "sourceAuthor": "Marco Aurélio",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 34,
+      "title": "Além do Bem e do Mal",
+      "author": "Nietzsche",
+      "sourceTitle": "Além do Bem e do Mal — Nietzsche",
+      "sourceAuthor": "Nietzsche",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 35,
+      "title": "A Arte de Ter Razão",
+      "author": "Arthur Schopenhauer",
+      "sourceTitle": "A Arte de Ter Razão — Arthur Schopenhauer",
+      "sourceAuthor": "Arthur Schopenhauer",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 36,
+      "title": "A República",
+      "author": "Platão",
+      "sourceTitle": "A República — Platão",
+      "sourceAuthor": "Platão",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 37,
+      "title": "O Mito de Sísifo",
+      "author": "Camus",
+      "sourceTitle": "O Mito de Sísifo — Camus",
+      "sourceAuthor": "Camus",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 38,
+      "title": "O Estrangeiro",
+      "author": "Camus",
+      "sourceTitle": "O Estrangeiro — Camus",
+      "sourceAuthor": "Camus",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 39,
+      "title": "O Herói de Mil Faces",
+      "author": "Joseph Campbell",
+      "sourceTitle": "O Herói de Mil Faces — Joseph Campbell",
+      "sourceAuthor": "Joseph Campbell",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 40,
+      "title": "Confissões",
+      "author": "Santo Agostinho",
+      "sourceTitle": "Confissões — Santo Agostinho",
+      "sourceAuthor": "Santo Agostinho",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 41,
+      "title": "Decadência do Ocidente",
+      "author": "Spengler",
+      "sourceTitle": "Decadência do Ocidente — Spengler",
+      "sourceAuthor": "Spengler",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 42,
+      "title": "As Ideias Têm Consequências",
+      "author": "Richard Weaver",
+      "sourceTitle": "As Ideias Têm Consequências — Richard Weaver",
+      "sourceAuthor": "Richard Weaver",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 43,
+      "title": "A Última Superstição — Refutando o Neoateísmo",
+      "author": "",
+      "sourceTitle": "A Última Superstição — Refutando o Neoateísmo",
+      "sourceAuthor": "",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 44,
+      "title": "O Ego é Seu Inimigo",
+      "author": "Ryan Holiday",
+      "sourceTitle": "O Ego é Seu Inimigo — Ryan Holiday",
+      "sourceAuthor": "Ryan Holiday",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 45,
+      "title": "O Erro de Descartes",
+      "author": "Antônio Damásio",
+      "sourceTitle": "O Erro de Descartes — Antônio Damásio",
+      "sourceAuthor": "Antônio Damásio",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 46,
+      "title": "Walden",
+      "author": "Thoreau",
+      "sourceTitle": "Walden — Thoreau",
+      "sourceAuthor": "Thoreau",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 47,
+      "title": "O Príncipe",
+      "author": "Maquiavel",
+      "sourceTitle": "O Príncipe — Maquiavel",
+      "sourceAuthor": "Maquiavel",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 48,
+      "title": "A Arte da Guerra",
+      "author": "Sun Tzu",
+      "sourceTitle": "A Arte da Guerra — Sun Tzu",
+      "sourceAuthor": "Sun Tzu",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 49,
+      "title": "1984",
+      "author": "George Orwell",
+      "sourceTitle": "1984 — George Orwell",
+      "sourceAuthor": "George Orwell",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 50,
+      "title": "O Conde de Monte Cristo",
+      "author": "Dumas",
+      "sourceTitle": "O Conde de Monte Cristo — Dumas",
+      "sourceAuthor": "Dumas",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 51,
+      "title": "Caninos Brancos",
+      "author": "Jack London",
+      "sourceTitle": "Caninos Brancos — Jack London",
+      "sourceAuthor": "Jack London",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 52,
+      "title": "Caçando Carneiros",
+      "author": "Murakami",
+      "sourceTitle": "Caçando Carneiros — Murakami",
+      "sourceAuthor": "Murakami",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 53,
+      "title": "O Retrato de Dorian Gray",
+      "author": "Oscar Wilde",
+      "sourceTitle": "O Retrato de Dorian Gray — Oscar Wilde",
+      "sourceAuthor": "Oscar Wilde",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 54,
+      "title": "O Velho e o Mar",
+      "author": "Hemingway",
+      "sourceTitle": "O Velho e o Mar — Hemingway",
+      "sourceAuthor": "Hemingway",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 55,
+      "title": "Sidarta",
+      "author": "Hermann Hesse",
+      "sourceTitle": "Sidarta — Hermann Hesse",
+      "sourceAuthor": "Hermann Hesse",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 56,
+      "title": "O Despertar da Menina Prim",
+      "author": "",
+      "sourceTitle": "O Despertar da Menina Prim",
+      "sourceAuthor": "",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 57,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "sourceTitle": "Sapiens — Yuval Noah Harari",
+      "sourceAuthor": "Yuval Noah Harari",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 58,
+      "title": "A Jornada da Humanidade",
+      "author": "Oded Galor",
+      "sourceTitle": "A Jornada da Humanidade — Oded Galor",
+      "sourceAuthor": "Oded Galor",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 59,
+      "title": "Princípios",
+      "author": "Ray Dalio",
+      "sourceTitle": "Princípios — Ray Dalio",
+      "sourceAuthor": "Ray Dalio",
+      "section": "Clássicos",
+      "subgroup": "Literatura Clássica",
+      "genre": "Clássicos",
+      "status": "want",
+      "listNames": [
+        "Clássicos",
+        "Literatura Clássica"
+      ]
+    },
+    {
+      "sourceIndex": 60,
+      "title": "The Witcher — A Espada do Destino",
+      "author": "Andrzej Sapowski",
+      "sourceTitle": "The Witcher — A Espada do Destino",
+      "sourceAuthor": "Andrzej Sapowski",
+      "section": "Ficção",
+      "subgroup": "Andrzej Sapowski",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "Andrzej Sapowski"
+      ]
+    },
+    {
+      "sourceIndex": 61,
+      "title": "The Witcher — A Senhora do Lago",
+      "author": "Andrzej Sapowski",
+      "sourceTitle": "The Witcher — A Senhora do Lago",
+      "sourceAuthor": "Andrzej Sapowski",
+      "section": "Ficção",
+      "subgroup": "Andrzej Sapowski",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "Andrzej Sapowski"
+      ]
+    },
+    {
+      "sourceIndex": 62,
+      "title": "The Witcher — A Torre da Andorinha",
+      "author": "Andrzej Sapowski",
+      "sourceTitle": "The Witcher — A Torre da Andorinha",
+      "sourceAuthor": "Andrzej Sapowski",
+      "section": "Ficção",
+      "subgroup": "Andrzej Sapowski",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "Andrzej Sapowski"
+      ]
+    },
+    {
+      "sourceIndex": 63,
+      "title": "The Witcher — Batismo de Fogo",
+      "author": "Andrzej Sapowski",
+      "sourceTitle": "The Witcher — Batismo de Fogo",
+      "sourceAuthor": "Andrzej Sapowski",
+      "section": "Ficção",
+      "subgroup": "Andrzej Sapowski",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "Andrzej Sapowski"
+      ]
+    },
+    {
+      "sourceIndex": 64,
+      "title": "The Witcher — O Sangue dos Elfos",
+      "author": "Andrzej Sapowski",
+      "sourceTitle": "The Witcher — O Sangue dos Elfos",
+      "sourceAuthor": "Andrzej Sapowski",
+      "section": "Ficção",
+      "subgroup": "Andrzej Sapowski",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "Andrzej Sapowski"
+      ]
+    },
+    {
+      "sourceIndex": 65,
+      "title": "The Witcher — O Último Desejo",
+      "author": "Andrzej Sapowski",
+      "sourceTitle": "The Witcher — O Último Desejo",
+      "sourceAuthor": "Andrzej Sapowski",
+      "section": "Ficção",
+      "subgroup": "Andrzej Sapowski",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "Andrzej Sapowski"
+      ]
+    },
+    {
+      "sourceIndex": 66,
+      "title": "The Witcher — Tempo de Desprezo",
+      "author": "Andrzej Sapowski",
+      "sourceTitle": "The Witcher — Tempo de Desprezo",
+      "sourceAuthor": "Andrzej Sapowski",
+      "section": "Ficção",
+      "subgroup": "Andrzej Sapowski",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "Andrzej Sapowski"
+      ]
+    },
+    {
+      "sourceIndex": 67,
+      "title": "The Witcher — Tempo de Tempestade",
+      "author": "Andrzej Sapowski",
+      "sourceTitle": "The Witcher — Tempo de Tempestade",
+      "sourceAuthor": "Andrzej Sapowski",
+      "section": "Ficção",
+      "subgroup": "Andrzej Sapowski",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "Andrzej Sapowski"
+      ]
+    },
+    {
+      "sourceIndex": 68,
+      "title": "Harry Potter e a Câmara Secreta",
+      "author": "J.K. Rowling",
+      "sourceTitle": "Harry Potter e a Câmara Secreta",
+      "sourceAuthor": "J.K. Rowling",
+      "section": "Ficção",
+      "subgroup": "J.K. Rowling",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.K. Rowling"
+      ]
+    },
+    {
+      "sourceIndex": 69,
+      "title": "Harry Potter e a Ordem da Fênix",
+      "author": "J.K. Rowling",
+      "sourceTitle": "Harry Potter e a Ordem da Fênix",
+      "sourceAuthor": "J.K. Rowling",
+      "section": "Ficção",
+      "subgroup": "J.K. Rowling",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.K. Rowling"
+      ]
+    },
+    {
+      "sourceIndex": 70,
+      "title": "Harry Potter e a Pedra Filosofal",
+      "author": "J.K. Rowling",
+      "sourceTitle": "Harry Potter e a Pedra Filosofal",
+      "sourceAuthor": "J.K. Rowling",
+      "section": "Ficção",
+      "subgroup": "J.K. Rowling",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.K. Rowling"
+      ]
+    },
+    {
+      "sourceIndex": 71,
+      "title": "Harry Potter e as Relíquias da Morte",
+      "author": "J.K. Rowling",
+      "sourceTitle": "Harry Potter e as Relíquias da Morte",
+      "sourceAuthor": "J.K. Rowling",
+      "section": "Ficção",
+      "subgroup": "J.K. Rowling",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.K. Rowling"
+      ]
+    },
+    {
+      "sourceIndex": 72,
+      "title": "Harry Potter e o Cálice de Fogo",
+      "author": "J.K. Rowling",
+      "sourceTitle": "Harry Potter e o Cálice de Fogo",
+      "sourceAuthor": "J.K. Rowling",
+      "section": "Ficção",
+      "subgroup": "J.K. Rowling",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.K. Rowling"
+      ]
+    },
+    {
+      "sourceIndex": 73,
+      "title": "Harry Potter e o Enigma do Príncipe",
+      "author": "J.K. Rowling",
+      "sourceTitle": "Harry Potter e o Enigma do Príncipe",
+      "sourceAuthor": "J.K. Rowling",
+      "section": "Ficção",
+      "subgroup": "J.K. Rowling",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.K. Rowling"
+      ]
+    },
+    {
+      "sourceIndex": 74,
+      "title": "Harry Potter e o Prisioneiro de Azkaban",
+      "author": "J.K. Rowling",
+      "sourceTitle": "Harry Potter e o Prisioneiro de Azkaban",
+      "sourceAuthor": "J.K. Rowling",
+      "section": "Ficção",
+      "subgroup": "J.K. Rowling",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.K. Rowling"
+      ]
+    },
+    {
+      "sourceIndex": 75,
+      "title": "O Hobbit",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "O Hobbit",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 76,
+      "title": "Senhor dos Anéis — A Sociedade do Anel",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "Senhor dos Anéis — A Sociedade do Anel",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 77,
+      "title": "Senhor dos Anéis — As Duas Torres",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "Senhor dos Anéis — As Duas Torres",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 78,
+      "title": "Senhor dos Anéis — O Retorno do Rei",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "Senhor dos Anéis — O Retorno do Rei",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 79,
+      "title": "O Silmarillion",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "O Silmarillion",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 80,
+      "title": "Contos Inacabados",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "Contos Inacabados",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 81,
+      "title": "Os Filhos de Húrin",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "Os Filhos de Húrin",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 82,
+      "title": "Beren e Luthien",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "Beren e Luthien",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 83,
+      "title": "A Queda de Gondolin",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "A Queda de Gondolin",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 84,
+      "title": "A Queda de Númenor",
+      "author": "J.R.R. Tolkien",
+      "sourceTitle": "A Queda de Númenor",
+      "sourceAuthor": "J.R.R. Tolkien",
+      "section": "Ficção",
+      "subgroup": "J.R.R. Tolkien",
+      "genre": "Ficção",
+      "status": "want",
+      "listNames": [
+        "Ficção",
+        "J.R.R. Tolkien"
+      ]
+    },
+    {
+      "sourceIndex": 85,
+      "title": "A Loja de Tudo",
+      "author": "",
+      "sourceTitle": "A Loja de Tudo",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 86,
+      "title": "A Startup Enxuta",
+      "author": "",
+      "sourceTitle": "A Startup Enxuta",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 87,
+      "title": "A Venda Desafiadora",
+      "author": "",
+      "sourceTitle": "A Venda Desafiadora",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 88,
+      "title": "Antifragile",
+      "author": "Nassim Taleb",
+      "sourceTitle": "Antifragile — Nassim Taleb",
+      "sourceAuthor": "Nassim Taleb",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 89,
+      "title": "Confissões de um Publicitário",
+      "author": "David Ogilvy",
+      "sourceTitle": "Confissões de um Publicitário — David Ogilvy",
+      "sourceAuthor": "David Ogilvy",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 90,
+      "title": "Elon Musk — Líderes e Números",
+      "author": "",
+      "sourceTitle": "Elon Musk — Líderes e Números",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 91,
+      "title": "Hábitos Atômicos",
+      "author": "James Clear",
+      "sourceTitle": "Hábitos Atômicos — James Clear",
+      "sourceAuthor": "James Clear",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 92,
+      "title": "Made in America",
+      "author": "Sam Walton",
+      "sourceTitle": "Made in America — Sam Walton",
+      "sourceAuthor": "Sam Walton",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 93,
+      "title": "Misbehaving",
+      "author": "Richard Thaler",
+      "sourceTitle": "Misbehaving — Richard Thaler",
+      "sourceAuthor": "Richard Thaler",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 94,
+      "title": "Nada Pode me Ferir",
+      "author": "David Goggins",
+      "sourceTitle": "Nada Pode me Ferir — David Goggins",
+      "sourceAuthor": "David Goggins",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 95,
+      "title": "Never Split the Difference",
+      "author": "Chris Voss",
+      "sourceTitle": "Never Split the Difference — Chris Voss",
+      "sourceAuthor": "Chris Voss",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 96,
+      "title": "O Homem mais Rico da Babilônia",
+      "author": "",
+      "sourceTitle": "O Homem mais Rico da Babilônia",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 97,
+      "title": "O Investidor Inteligente",
+      "author": "Benjamin Graham",
+      "sourceTitle": "O Investidor Inteligente — Benjamin Graham",
+      "sourceAuthor": "Benjamin Graham",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 98,
+      "title": "Princípios para a Ordem Mundial em Transformação",
+      "author": "Ray Dalio",
+      "sourceTitle": "Princípios para a Ordem Mundial em Transformação — Ray Dalio",
+      "sourceAuthor": "Ray Dalio",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 99,
+      "title": "Rápido e Devagar — Duas Formas de Pensar",
+      "author": "Kahneman",
+      "sourceTitle": "Rápido e Devagar — Duas Formas de Pensar (Kahneman)",
+      "sourceAuthor": "Kahneman",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 100,
+      "title": "Startup — Manual do Empreendedor",
+      "author": "Blank",
+      "sourceTitle": "Startup — Manual do Empreendedor (Blank)",
+      "sourceAuthor": "Blank",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 101,
+      "title": "Startup Essentials",
+      "author": "",
+      "sourceTitle": "Startup Essentials",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 102,
+      "title": "The Creature From Jekyll Island",
+      "author": "",
+      "sourceTitle": "The Creature From Jekyll Island",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Empreendedorismo",
+      "genre": "Empreendedorismo",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Empreendedorismo"
+      ]
+    },
+    {
+      "sourceIndex": 103,
+      "title": "Algoritmos",
+      "author": "",
+      "sourceTitle": "Algoritmos",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 104,
+      "title": "Arquitetura e Organização de Computadores",
+      "author": "",
+      "sourceTitle": "Arquitetura e Organização de Computadores",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 105,
+      "title": "Arquitetura Limpa",
+      "author": "",
+      "sourceTitle": "Arquitetura Limpa",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 106,
+      "title": "Clean Code",
+      "author": "",
+      "sourceTitle": "Clean Code",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 107,
+      "title": "Código Limpo",
+      "author": "",
+      "sourceTitle": "Código Limpo",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 108,
+      "title": "Data Science do Zero",
+      "author": "",
+      "sourceTitle": "Data Science do Zero",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 109,
+      "title": "De Zero a Um",
+      "author": "Peter Thiel",
+      "sourceTitle": "De Zero a Um — Peter Thiel",
+      "sourceAuthor": "Peter Thiel",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 110,
+      "title": "Desenvolvimento Ágil Limpo",
+      "author": "",
+      "sourceTitle": "Desenvolvimento Ágil Limpo",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 111,
+      "title": "Entendendo Algoritmos",
+      "author": "",
+      "sourceTitle": "Entendendo Algoritmos",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 112,
+      "title": "O Programador Pragmático",
+      "author": "",
+      "sourceTitle": "O Programador Pragmático",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 113,
+      "title": "Padrões de Projetos — Soluções Reutilizáveis",
+      "author": "",
+      "sourceTitle": "Padrões de Projetos — Soluções Reutilizáveis",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 114,
+      "title": "Use a Cabeça C#",
+      "author": "",
+      "sourceTitle": "Use a Cabeça C#",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 115,
+      "title": "Use a Cabeça Java",
+      "author": "",
+      "sourceTitle": "Use a Cabeça Java",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 116,
+      "title": "Use a Cabeça JavaScript",
+      "author": "",
+      "sourceTitle": "Use a Cabeça JavaScript",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 117,
+      "title": "Use a Cabeça Padrões de Projetos",
+      "author": "",
+      "sourceTitle": "Use a Cabeça Padrões de Projetos",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 118,
+      "title": "Use a Cabeça Python",
+      "author": "",
+      "sourceTitle": "Use a Cabeça Python",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 119,
+      "title": "Use a Cabeça Redes de Computador",
+      "author": "",
+      "sourceTitle": "Use a Cabeça Redes de Computador",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 120,
+      "title": "Use a Cabeça SQL",
+      "author": "",
+      "sourceTitle": "Use a Cabeça SQL",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 121,
+      "title": "Técnicas de Invasão",
+      "author": "",
+      "sourceTitle": "Técnicas de Invasão",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Tech",
+      "genre": "Tech",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Tech"
+      ]
+    },
+    {
+      "sourceIndex": 122,
+      "title": "Domain-Driven Design",
+      "author": "",
+      "sourceTitle": "Domain-Driven Design",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Design",
+      "genre": "Design",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Design"
+      ]
+    },
+    {
+      "sourceIndex": 123,
+      "title": "How to Draw and Sketch Objects",
+      "author": "",
+      "sourceTitle": "How to Draw and Sketch Objects",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Design",
+      "genre": "Design",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Design"
+      ]
+    },
+    {
+      "sourceIndex": 124,
+      "title": "The Design of Everyday Things",
+      "author": "Don Norman",
+      "sourceTitle": "The Design of Everyday Things — Don Norman",
+      "sourceAuthor": "Don Norman",
+      "section": "Carreira",
+      "subgroup": "Design",
+      "genre": "Design",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Design"
+      ]
+    },
+    {
+      "sourceIndex": 125,
+      "title": "The Art of Electronics — Student Manual",
+      "author": "",
+      "sourceTitle": "The Art of Electronics — Student Manual",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Mecatrônica",
+      "genre": "Mecatrônica",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Mecatrônica"
+      ]
+    },
+    {
+      "sourceIndex": 126,
+      "title": "3D Automotive Design",
+      "author": "",
+      "sourceTitle": "3D Automotive Design",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Automotive",
+      "genre": "Automotive",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Automotive"
+      ]
+    },
+    {
+      "sourceIndex": 127,
+      "title": "Ferrari — O Homem por Trás das Máquinas",
+      "author": "Brock Yates",
+      "sourceTitle": "Ferrari — O Homem por Trás das Máquinas (Brock Yates)",
+      "sourceAuthor": "Brock Yates",
+      "section": "Carreira",
+      "subgroup": "Automotive",
+      "genre": "Automotive",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Automotive"
+      ]
+    },
+    {
+      "sourceIndex": 128,
+      "title": "How to Build a Car",
+      "author": "",
+      "sourceTitle": "How to Build a Car",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Automotive",
+      "genre": "Automotive",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Automotive"
+      ]
+    },
+    {
+      "sourceIndex": 129,
+      "title": "How to Design Cars",
+      "author": "",
+      "sourceTitle": "How to Design Cars",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Automotive",
+      "genre": "Automotive",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Automotive"
+      ]
+    },
+    {
+      "sourceIndex": 130,
+      "title": "How to Draw Cars Like a Pro",
+      "author": "",
+      "sourceTitle": "How to Draw Cars Like a Pro",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Automotive",
+      "genre": "Automotive",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Automotive"
+      ]
+    },
+    {
+      "sourceIndex": 131,
+      "title": "How to Draw Hotwheels",
+      "author": "",
+      "sourceTitle": "How to Draw Hotwheels",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Automotive",
+      "genre": "Automotive",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Automotive"
+      ]
+    },
+    {
+      "sourceIndex": 132,
+      "title": "Manual de Tecnologia Alternativa",
+      "author": "",
+      "sourceTitle": "Manual de Tecnologia Alternativa",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Automotive",
+      "genre": "Automotive",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Automotive"
+      ]
+    },
+    {
+      "sourceIndex": 133,
+      "title": "Art of Game Design",
+      "author": "",
+      "sourceTitle": "Art of Game Design",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Desenvolvimento de Jogos",
+      "genre": "Desenvolvimento de Jogos",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Desenvolvimento de Jogos"
+      ]
+    },
+    {
+      "sourceIndex": 134,
+      "title": "Game Programming Patterns",
+      "author": "",
+      "sourceTitle": "Game Programming Patterns",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Desenvolvimento de Jogos",
+      "genre": "Desenvolvimento de Jogos",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Desenvolvimento de Jogos"
+      ]
+    },
+    {
+      "sourceIndex": 135,
+      "title": "Level Up! — The Guide to Great Video Game Design",
+      "author": "",
+      "sourceTitle": "Level Up! — The Guide to Great Video Game Design",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Desenvolvimento de Jogos",
+      "genre": "Desenvolvimento de Jogos",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Desenvolvimento de Jogos"
+      ]
+    },
+    {
+      "sourceIndex": 136,
+      "title": "Programming Game AI by Example",
+      "author": "",
+      "sourceTitle": "Programming Game AI by Example",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Desenvolvimento de Jogos",
+      "genre": "Desenvolvimento de Jogos",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Desenvolvimento de Jogos"
+      ]
+    },
+    {
+      "sourceIndex": 137,
+      "title": "Story",
+      "author": "",
+      "sourceTitle": "Story",
+      "sourceAuthor": "",
+      "section": "Carreira",
+      "subgroup": "Desenvolvimento de Jogos",
+      "genre": "Desenvolvimento de Jogos",
+      "status": "want",
+      "listNames": [
+        "Carreira",
+        "Desenvolvimento de Jogos"
+      ]
+    }
+  ]
+}

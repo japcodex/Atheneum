@@ -1,0 +1,240 @@
+/* Motion is progressive enhancement. Content has no hidden base state. */
+:root {
+  --paper-motion-ease: cubic-bezier(0.22, 0.75, 0.2, 1);
+  --paper-print: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1500' viewBox='0 0 1200 1500'%3E%3Cdefs%3E%3Cpattern id='p' width='360' height='168' patternUnits='userSpaceOnUse'%3E%3Cpath d='M0 13h316m-316 10h335m-335 10h306m-306 10h334m-334 10h280m-280 10h332m-332 10h310m-310 10h335m-335 10h324m-324 10h278m-278 10h332m-332 10h294m-294 10h335m-335 10h199' stroke='%2328251f' stroke-width='3' opacity='.19'/%3E%3C/pattern%3E%3C/defs%3E%3Ctext x='600' y='144' text-anchor='middle' fill='%2328251f' opacity='.3' font-family='Georgia,serif' font-size='126' font-weight='bold' letter-spacing='-7'%3EATHENEUM%3C/text%3E%3Cpath d='M38 180h1124m-1124 7h1124M38 219h1124M398 245v1200m404-1200v1200M38 1438h1124' stroke='%2328251f' stroke-width='2' opacity='.22'/%3E%3Ctext x='40' y='211' fill='%2328251f' opacity='.3' font-family='Georgia,serif' font-size='14' letter-spacing='4'%3EO JORNAL DE UMA VIDA EM LIVROS%3C/text%3E%3Cpath d='M40 267h309m-309 15h251M425 270h320m-320 18h244M830 267h315m-315 15h270' stroke='%2328251f' stroke-width='10' opacity='.18'/%3E%3Crect x='40' y='304' width='335' height='1120' fill='url(%23p)'/%3E%3Crect x='426' y='306' width='335' height='1120' fill='url(%23p)'/%3E%3Crect x='830' y='304' width='335' height='1120' fill='url(%23p)'/%3E%3C/svg%3E");
+  --paper-creases: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'%3E%3Cg fill='none' stroke='%23827763' stroke-width='1.4' opacity='.32'%3E%3Cpath d='M270 0 230 360 280 660 240 1000M510 0 540 290 490 740 520 1000M760 0 730 370 780 650 750 1000M0 310 230 360 540 290 730 370 1000 310M0 700 280 660 490 740 780 650 1000 700M0 0 230 360 510 0M540 290 760 0 1000 310M0 310 280 660 230 360M540 290 280 660 490 740M730 370 780 650 1000 310M0 700 240 1000 280 660M490 740 240 1000 520 1000M780 650 520 1000 750 1000M780 650 1000 1000'/%3E%3C/g%3E%3Cg fill='none' stroke='%23fff7e5' stroke-width='2' opacity='.22' transform='translate(2 2)'%3E%3Cpath d='M270 0 230 360 280 660 240 1000M510 0 540 290 490 740 520 1000M760 0 730 370 780 650 750 1000M0 310 230 360 540 290 730 370 1000 310M0 700 280 660 490 740 780 650 1000 700'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.paper-transition {
+  position: fixed;
+  inset: -1px;
+  z-index: 80;
+  overflow: hidden;
+  pointer-events: none;
+  perspective: 1800px;
+  perspective-origin: 50% 0;
+  isolation: isolate;
+  contain: layout style;
+}
+.paper-transition__sheet {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+.paper-transition__sheet::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 24px;
+  pointer-events: none;
+  background: linear-gradient(0deg, #82776326, #fff7e500);
+  box-shadow: 0 13px 22px -12px #28251f30;
+}
+.paper-transition__fold {
+  position: absolute;
+  background-color: var(--paper, #ddd5c6);
+  background-image: var(--paper-creases), var(--paper-print);
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  backface-visibility: visible;
+  filter: drop-shadow(0 2px 2px #28251f12);
+  will-change: transform;
+}
+.paper-transition__fold::before,
+.paper-transition__fold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.paper-transition__fold::before {
+  background: linear-gradient(
+    var(--crease-angle),
+    #28251f00 12%,
+    #28251f 55%,
+    #fff7e5 100%
+  );
+  opacity: var(--crease-strength, 0.05);
+}
+.paper-transition__fold::after {
+  opacity: 0.13;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.77' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.6'/%3E%3C/svg%3E");
+}
+.paper-transition.is-folding .paper-transition__fold::before {
+  opacity: calc(var(--crease-strength, 0.05) + 0.085);
+  transition: opacity 420ms ease;
+}
+.is-revealing {
+  will-change: transform, opacity;
+}
+
+.primary-button,
+.secondary-button,
+.chip,
+.icon-btn,
+.book-more {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+.primary-button svg,
+.secondary-button svg,
+.editorial-card .arrow,
+.desk-links .arrow {
+  transition: transform 230ms var(--paper-motion-ease);
+}
+.nav-links a::after {
+  transform-origin: left;
+  animation: newspaper-rule 260ms var(--paper-motion-ease) both;
+}
+.reading-progress span {
+  transition: width 400ms var(--paper-motion-ease);
+}
+.newspaper-stamp {
+  transition:
+    rotate 300ms var(--paper-motion-ease),
+    filter 300ms ease;
+}
+.paper-ribbon {
+  transition: translate 240ms var(--paper-motion-ease);
+}
+.paper-cover {
+  transition: filter 240ms ease;
+}
+.quote-refresh {
+  transition: rotate 240ms var(--paper-motion-ease);
+}
+.text-button {
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease;
+}
+button:not(:disabled):active,
+a.primary-button:active,
+a.secondary-button:active {
+  scale: 0.985;
+  translate: 0 1px;
+}
+.nav-links a:active,
+.edition-related a:active,
+.text-button:active {
+  color: var(--red);
+}
+.book-card > button:active .cover {
+  translate: 0 2px;
+}
+
+@keyframes newspaper-rule {
+  from {
+    transform: scaleX(0.3);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .primary-button:hover,
+  .secondary-button:hover {
+    box-shadow: 2px 3px 0 #28251f16;
+  }
+  .primary-button:hover svg,
+  .secondary-button:hover svg,
+  .editorial-card:hover .arrow,
+  .desk-links a:hover .arrow {
+    transform: translateX(3px);
+  }
+  .newspaper-stamp:hover {
+    rotate: -2deg;
+    filter: contrast(1.06);
+  }
+  .paper-ribbon:hover {
+    translate: 0 -2px;
+  }
+  .book-card:hover .paper-cover {
+    filter: contrast(1.045);
+  }
+  .quote-refresh:hover {
+    rotate: 45deg;
+  }
+  .text-button:hover {
+    color: var(--red, #a53d2c);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.motion-full) button:active,
+  body:not(.motion-full) a.primary-button:active,
+  body:not(.motion-full) a.secondary-button:active,
+  body:not(.motion-full) .book-card > button:active .cover {
+    scale: 1;
+    translate: none;
+  }
+}
+.primary-button:focus-visible svg,
+.secondary-button:focus-visible svg {
+  transform: translateX(3px);
+}
+.editorial-card:focus-visible .arrow {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 720px) {
+  .paper-transition {
+    perspective: 1400px;
+  }
+  .paper-transition__sheet {
+    transform-origin: 50% 0;
+  }
+}
+
+body.is-page-hidden .auto-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.motion-full) .paper-transition {
+    display: none !important;
+  }
+  .is-revealing {
+    will-change: auto;
+  }
+  body:not(.motion-full) .primary-button,
+  body:not(.motion-full) .secondary-button,
+  body:not(.motion-full) .primary-button svg,
+  body:not(.motion-full) .secondary-button svg,
+  body:not(.motion-full) .editorial-card .arrow,
+  body:not(.motion-full) .desk-links .arrow,
+  body:not(.motion-full) .newspaper-stamp,
+  body:not(.motion-full) .paper-ribbon,
+  body:not(.motion-full) .paper-cover,
+  body:not(.motion-full) .quote-refresh,
+  body:not(.motion-full) .reading-progress span {
+    transition: none !important;
+  }
+  body:not(.motion-full) .nav-links a::after {
+    animation: none !important;
+  }
+}
+body.motion-reduced *,
+body.motion-reduced *::before,
+body.motion-reduced *::after {
+  animation: none !important;
+  transition: none !important;
+}
+body.motion-reduced .auto-track {
+  animation: none !important;
+}
+body.motion-reduced button:active,
+body.motion-reduced a.primary-button:active,
+body.motion-reduced a.secondary-button:active,
+body.motion-reduced .book-card > button:active .cover {
+  scale: 1;
+  translate: none;
+}

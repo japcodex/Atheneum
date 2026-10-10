@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Bodoni;
+  src: url("../assets/fonts/bodoni-moda-900-latin.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Instrument;
+  src: url("../assets/fonts/instrument-serif-latin.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: DM;
+  src: url("../assets/fonts/dm-sans-latin.woff2") format("woff2");
+  font-weight: 400 600;
+  font-display: swap;
+}

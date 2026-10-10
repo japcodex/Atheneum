@@ -1,0 +1,831 @@
+/* The sanctuary is the journal's ledger: ruled columns, medals and a calendar. */
+.sanctuary {
+  padding-top: 8px;
+}
+.sanctuary-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-block: 1px solid var(--ink);
+  margin: 17px 0 31px;
+}
+.sanctuary-stat-strip > div {
+  padding: 20px 24px;
+  border-right: 1px solid var(--line);
+}
+.sanctuary-stat-strip > div:last-child {
+  border-right: 0;
+}
+.sanctuary-stat-strip strong {
+  display: block;
+  font: 400 clamp(36px, 4.5vw, 58px) / 1 var(--serif);
+  margin-bottom: 9px;
+  overflow-wrap: anywhere;
+}
+.sanctuary-stat-strip span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.sanctuary-month-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1fr);
+  gap: 34px;
+}
+.monthly-ledger {
+  border: 1px solid var(--ink);
+  padding: 28px;
+  position: relative;
+}
+.monthly-ledger::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+.monthly-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 17px;
+  border-bottom: 3px double var(--line);
+}
+.monthly-heading h2 {
+  font: 400 clamp(29px, 3vw, 42px) / 1.15 var(--serif);
+  margin: 7px 0 0;
+  text-transform: capitalize;
+}
+.monthly-navigation {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+.monthly-arrow {
+  width: 39px;
+  height: 39px;
+  border: 1px solid var(--line);
+  font-size: 20px;
+  line-height: 1;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.monthly-arrow:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.monthly-overview {
+  display: grid;
+  grid-template-columns: minmax(140px, 180px) minmax(0, 1fr);
+  align-items: center;
+  gap: 27px;
+  margin: 27px 0 31px;
+}
+.monthly-ring {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1;
+  position: relative;
+}
+.monthly-ring > svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  stroke-width: 3;
+}
+.monthly-ring-track {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.monthly-ring-fill {
+  stroke: var(--red);
+  stroke-linecap: round;
+}
+.monthly-ring > div {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.monthly-ring strong {
+  font: 400 57px / 1 var(--serif);
+}
+.monthly-ring strong small {
+  font-size: 24px;
+}
+.monthly-ring span {
+  font-size: 7px;
+  letter-spacing: 1px;
+  text-align: center;
+  max-width: 115px;
+}
+.monthly-ring.is-paused .monthly-ring-fill {
+  stroke: var(--muted);
+}
+.monthly-intro h3 {
+  font: 400 32px / 1.1 var(--serif);
+  margin: 10px 0;
+}
+.monthly-intro p {
+  font-size: 11px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.monthly-intro .secondary-button {
+  min-height: 42px;
+}
+.monthly-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 19px;
+}
+.monthly-metric > div:first-child {
+  min-height: 64px;
+}
+.monthly-metric > div > span {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.monthly-metric strong {
+  display: block;
+  font: 400 30px / 1.1 var(--serif);
+  overflow-wrap: anywhere;
+}
+.monthly-metric strong small {
+  font-size: 18px;
+  color: var(--muted);
+}
+.monthly-metric > small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 9px;
+  line-height: 1.5;
+}
+.sanctuary-meter {
+  height: 4px;
+  background: #28251f1a;
+  overflow: hidden;
+}
+.sanctuary-meter > span {
+  display: block;
+  height: 100%;
+  background: var(--red);
+  transition: width 350ms var(--paper-motion-ease, ease);
+}
+.monthly-footnote {
+  font-size: 9px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 18px 0 0;
+}
+.sanctuary-calendar-column {
+  padding-left: 25px;
+  border-left: 1px solid var(--line);
+  min-width: 0;
+}
+.sanctuary-section-heading h2 {
+  font: 400 clamp(30px, 3.3vw, 44px) / 1.1 var(--serif);
+  margin: 10px 0 0;
+}
+.reading-calendar > p {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 12px 0 23px;
+}
+.habit-weekdays,
+.habit-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 7px;
+}
+.habit-weekdays {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 9px;
+  color: var(--muted);
+}
+.habit-day {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 10px;
+  min-width: 0;
+}
+.habit-day.has-session {
+  background: var(--red);
+  border-color: var(--red);
+  color: #f4ead7;
+}
+.habit-day.is-today {
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
+.habit-day.is-future {
+  border-color: #a19a8c70;
+  color: var(--muted);
+}
+.habit-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin: 17px 0 24px;
+}
+.habit-legend > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 8px;
+  color: var(--muted);
+}
+.habit-legend i {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+}
+.habit-legend i.has-session {
+  background: var(--red);
+  border-color: var(--red);
+}
+.sanctuary-empty-note {
+  font: 400 21px / 1.3 var(--serif);
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin: 25px 0 0;
+  color: var(--muted);
+}
+.monthly-archive {
+  border-top: 1px solid var(--line);
+  margin-top: 25px;
+  padding-top: 18px;
+}
+.monthly-archive summary {
+  font-size: 11px;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.monthly-archive summary > span {
+  font-size: 9px;
+  color: var(--muted);
+  margin-left: 8px;
+}
+.monthly-archive-entry {
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.monthly-archive-entry > span {
+  font: 400 22px / 1.1 var(--serif);
+  text-transform: capitalize;
+}
+.monthly-archive-entry > small {
+  font-size: 9px;
+  color: var(--muted);
+}
+.monthly-archive-entry.is-current > span {
+  color: var(--red);
+}
+.sanctuary-year {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 35px;
+  border-block: 3px double var(--ink);
+  padding: 27px 0;
+  margin: 39px 0;
+}
+.sanctuary-level {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  align-items: center;
+  gap: 27px;
+  padding-right: 30px;
+  border-right: 1px solid var(--line);
+}
+.reader-seal {
+  width: 130px;
+  height: 160px;
+  border: 3px double var(--ink);
+  border-radius: 50% 50% 42% 42%;
+  outline: 1px solid var(--line);
+  outline-offset: 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11px;
+  gap: 4px;
+  transform: rotate(-4deg);
+}
+.reader-seal > span,
+.reader-seal > small {
+  font-size: 6px;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
+.reader-seal img {
+  width: 38px;
+  height: 38px;
+  background: var(--ink);
+  border-radius: 50%;
+  padding: 4px;
+  margin-top: 4px;
+}
+.reader-seal strong {
+  font: 400 42px / 1 var(--serif);
+  color: var(--red);
+}
+.sanctuary-level h2,
+.sanctuary-annual h2 {
+  font: 400 34px / 1.1 var(--serif);
+  margin: 10px 0;
+}
+.sanctuary-level p,
+.sanctuary-annual p {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.sanctuary-level .sanctuary-meter {
+  margin: 14px 0 12px;
+}
+.sanctuary-level > div > small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.sanctuary-annual-count {
+  font: 400 44px / 1 var(--serif);
+  margin: 19px 0 14px;
+}
+.sanctuary-annual-count > small {
+  font-size: 22px;
+  color: var(--muted);
+}
+.sanctuary-annual > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 15px;
+  margin-top: 7px;
+}
+.sanctuary-achievements > .sanctuary-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 25px;
+  margin-bottom: 27px;
+}
+.sanctuary-achievements > .sanctuary-section-heading > p {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 4px;
+}
+.sanctuary-medals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.sanctuary-medal {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+.medal-seal {
+  width: 82px;
+  height: 82px;
+  border: 3px double var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  position: relative;
+  margin: 3px 0 19px;
+}
+.medal-seal::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px dashed var(--line);
+  border-radius: 50%;
+}
+.medal-mark {
+  width: 50px;
+  height: 52px;
+  stroke-width: 1.2;
+}
+.medal-seal > span {
+  position: absolute;
+  bottom: -8px;
+  background: var(--paper);
+  padding: 0 5px;
+  font-size: 15px;
+}
+.sanctuary-medal.is-earned .medal-seal,
+.sanctuary-medal.is-earned .medal-seal::before {
+  border-color: var(--red);
+  color: var(--red);
+}
+.sanctuary-medal.is-earned .medal-seal {
+  transform: rotate(-5deg);
+}
+.sanctuary-medal h3 {
+  font: 400 28px / 1.15 var(--serif);
+  margin: 0 0 9px;
+  overflow-wrap: anywhere;
+}
+.sanctuary-medal p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.sanctuary-medal .sanctuary-meter {
+  width: 100%;
+  margin-top: auto;
+  max-width: 220px;
+}
+.sanctuary-medal > small {
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 9px 0 13px;
+  color: var(--muted);
+}
+.medal-state {
+  font-size: 9px;
+  letter-spacing: 0.7px;
+  line-height: 1.5;
+}
+.sanctuary-medal.is-earned .medal-state {
+  color: var(--red);
+}
+.sanctuary-memory {
+  margin: 44px 0 20px;
+}
+.sanctuary-timeline {
+  padding: 0;
+  list-style: none;
+  margin: 25px 0 0;
+}
+.sanctuary-timeline > li {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr) auto;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  position: relative;
+}
+.journey-timeline-mark {
+  font-size: 25px;
+  color: var(--red);
+  text-align: center;
+}
+.sanctuary-timeline > li > div {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 8px 20px;
+}
+.sanctuary-timeline time,
+.sanctuary-timeline > li > div > span {
+  font-size: 9px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.sanctuary-timeline .text-button,
+.sanctuary-timeline > li > div > strong {
+  font: 400 24px / 1.2 var(--serif);
+  grid-column: 1 / -1;
+  width: fit-content;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.sanctuary-timeline > li > small {
+  font-size: 10px;
+  color: var(--red);
+  padding-top: 3px;
+  white-space: nowrap;
+}
+.journey-empty {
+  border-block: 1px solid var(--line);
+  text-align: center;
+  padding: 32px 20px;
+  margin-top: 25px;
+}
+.journey-empty > span {
+  font-size: 36px;
+  color: var(--red);
+}
+.journey-empty h3 {
+  font: 400 30px / 1.2 var(--serif);
+  margin: 13px 0;
+}
+.journey-empty p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.monthly-form-intro {
+  font: 400 24px / 1.3 var(--serif);
+  margin: 0 0 24px;
+}
+.monthly-form-note {
+  font-size: 10px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 21px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 1100px) {
+  .sanctuary-month-grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(230px, 1fr);
+    gap: 24px;
+  }
+  .monthly-ledger {
+    padding: 23px;
+  }
+  .monthly-overview {
+    grid-template-columns: 135px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .monthly-ring strong {
+    font-size: 46px;
+  }
+  .monthly-intro h3 {
+    font-size: 29px;
+  }
+  .sanctuary-calendar-column {
+    padding-left: 18px;
+  }
+  .sanctuary-level {
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 20px;
+    padding-right: 20px;
+  }
+  .reader-seal {
+    width: 105px;
+    height: 143px;
+  }
+}
+@media (max-width: 850px) {
+  .sanctuary-month-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .monthly-overview {
+    grid-template-columns: 165px minmax(0, 1fr);
+    gap: 28px;
+  }
+  .sanctuary-calendar-column {
+    border-left: 0;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 35px;
+    align-items: start;
+  }
+  .sanctuary-empty-note,
+  .monthly-archive {
+    margin-top: 0;
+  }
+  .sanctuary-year {
+    gap: 25px;
+  }
+  .sanctuary-level {
+    display: block;
+  }
+  .reader-seal {
+    margin: 10px auto 28px;
+  }
+  .sanctuary-annual {
+    align-self: center;
+  }
+  .sanctuary-medals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sanctuary-medal {
+    padding: 23px 20px;
+  }
+}
+@media (max-width: 550px) {
+  .sanctuary-stat-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 12px 0 24px;
+  }
+  .sanctuary-stat-strip > div {
+    padding: 18px 15px;
+  }
+  .sanctuary-stat-strip > div:nth-child(2) {
+    border-right: 0;
+  }
+  .sanctuary-stat-strip > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+  .sanctuary-stat-strip span {
+    font-size: 8px;
+  }
+  .monthly-ledger {
+    padding: 20px 17px;
+  }
+  .monthly-heading {
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .monthly-heading .eyebrow {
+    font-size: 7px;
+    letter-spacing: 0.7px;
+    line-height: 1.5;
+  }
+  .monthly-heading h2 {
+    font-size: 27px;
+  }
+  .monthly-navigation {
+    gap: 4px;
+  }
+  .monthly-arrow {
+    width: 30px;
+    height: 35px;
+    font-size: 18px;
+  }
+  .monthly-overview {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin: 24px 0;
+    gap: 18px;
+  }
+  .monthly-ring {
+    max-width: 155px;
+    margin: auto;
+  }
+  .monthly-ring strong {
+    font-size: 52px;
+  }
+  .monthly-intro p {
+    max-width: 300px;
+    margin-inline: auto;
+  }
+  .monthly-metrics {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .monthly-metric > div:first-child {
+    min-height: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 9px;
+  }
+  .monthly-metric > div > span {
+    margin: 0;
+  }
+  .monthly-metric strong {
+    font-size: 27px;
+    text-align: right;
+  }
+  .monthly-metric strong small {
+    font-size: 16px;
+  }
+  .monthly-metric > small {
+    margin-top: 7px;
+  }
+  .sanctuary-calendar-column {
+    display: block;
+  }
+  .reading-calendar {
+    max-width: 360px;
+    margin: auto;
+  }
+  .habit-weekdays,
+  .habit-calendar {
+    gap: 9px;
+  }
+  .habit-day {
+    font-size: 11px;
+  }
+  .monthly-archive,
+  .sanctuary-empty-note {
+    margin-top: 28px;
+  }
+  .sanctuary-year {
+    grid-template-columns: 1fr;
+    margin: 30px 0;
+    gap: 24px;
+  }
+  .sanctuary-level {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    padding-right: 0;
+    border-right: 0;
+    gap: 20px;
+  }
+  .reader-seal {
+    width: 96px;
+    height: 141px;
+    margin: 0;
+  }
+  .reader-seal > span,
+  .reader-seal > small {
+    font-size: 5px;
+  }
+  .sanctuary-level h2,
+  .sanctuary-annual h2 {
+    font-size: 29px;
+  }
+  .sanctuary-level .eyebrow {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+  .sanctuary-annual {
+    padding-top: 23px;
+    border-top: 1px solid var(--line);
+  }
+  .sanctuary-achievements > .sanctuary-section-heading {
+    display: block;
+    margin-bottom: 24px;
+  }
+  .sanctuary-achievements > .sanctuary-section-heading > p {
+    margin-top: 13px;
+  }
+  .sanctuary-medal {
+    padding: 22px 12px;
+  }
+  .medal-seal {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 19px;
+  }
+  .medal-mark {
+    width: 40px;
+    height: 42px;
+  }
+  .sanctuary-medal h3 {
+    font-size: 23px;
+  }
+  .sanctuary-medal p {
+    font-size: 12px;
+  }
+  .sanctuary-medal > small {
+    font-size: 11px;
+  }
+  .medal-state {
+    font-size: 9px;
+  }
+  .sanctuary-timeline > li {
+    grid-template-columns: 23px minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+  .sanctuary-timeline > li > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .journey-timeline-mark {
+    font-size: 22px;
+  }
+  .sanctuary-timeline .text-button,
+  .sanctuary-timeline > li > div > strong {
+    font-size: 23px;
+    margin-top: 4px;
+  }
+  .monthly-goal-form .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body:not(.motion-full) .sanctuary-meter > span,
+  body:not(.motion-full) .monthly-arrow {
+    transition: none;
+  }
+}
+body.motion-reduced .sanctuary-meter > span,
+body.motion-reduced .monthly-arrow {
+  transition: none;
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="480" viewBox="0 0 320 480" role="img" aria-labelledby="title desc">
+  <title id="title">A metamorfose, Franz Kafka</title>
+  <desc id="desc">Capa editorial original verde oliva escuro, com besouro abstrato em linhas creme e título clássico em duas linhas.</desc>
+  <defs>
+    <pattern id="paper" width="19" height="31" patternUnits="userSpaceOnUse"><path d="M2 7h1M13 20h1M7 29h1" stroke="#e3d5b3" stroke-width=".7" opacity=".18"/></pattern>
+  </defs>
+  <rect width="320" height="480" fill="#414737"/>
+  <rect x="11" width="7" height="480" fill="#30382b" opacity=".6"/>
+  <rect x="25" y="24" width="270" height="432" fill="none" stroke="#e6d8b8" stroke-width=".6"/>
+  <path d="M40 72H280M40 399H280" stroke="#e6d8b8" stroke-width=".75"/>
+  <text x="160" y="53" text-anchor="middle" fill="#e6d8b8" font-family="Arial, sans-serif" font-size="12" letter-spacing="2.8">FRANZ KAFKA</text>
+  <text x="160" y="105" text-anchor="middle" fill="#efe1c3" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-style="italic">A</text>
+  <text x="160" y="152" text-anchor="middle" fill="#efe1c3" font-family="Georgia, 'Times New Roman', serif" font-size="44" letter-spacing="3">META</text>
+  <text x="160" y="197" text-anchor="middle" fill="#efe1c3" font-family="Georgia, 'Times New Roman', serif" font-size="37" textLength="235" lengthAdjust="spacingAndGlyphs">MORFOSE</text>
+  <g fill="none" stroke="#d9c798" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M160 242v124" stroke-width="1"/>
+    <path d="M160 264c-37 0-46 25-43 56 3 32 24 49 43 49s40-17 43-49c3-31-6-56-43-56Z" stroke-width="1.6"/>
+    <path d="M160 268c-22 18-28 52-25 81m25-81c22 18 28 52 25 81" stroke-width=".7"/>
+    <path d="M139 268c-12-29 3-43 21-43s33 14 21 43" stroke-width="1.4"/>
+    <path d="m148 229-11-17-19-6m54 23 11-17 19-6" stroke-width="1.2"/>
+    <path d="m119 284-22-13-13-25m117 38 22-13 13-25M116 311l-28 6-15 22m131-28 28 6 15 22M125 342l-20 20-3 20m93-40 20 20 3 20" stroke-width="1.5"/>
+    <path d="M120 293c11 5 25 8 40 8s29-3 40-8M118 309c13 4 27 6 42 6s29-2 42-6M121 327c12 3 25 5 39 5s27-2 39-5M129 345c9 2 19 3 31 3s22-1 31-3" stroke-width=".6"/>
+    <circle cx="152" cy="243" r="2" fill="#d9c798" stroke="none"/>
+    <circle cx="168" cy="243" r="2" fill="#d9c798" stroke="none"/>
+  </g>
+  <text x="160" y="425" text-anchor="middle" fill="#e6d8b8" font-family="Arial, sans-serif" font-size="9" letter-spacing="2.9">BIBLIOTECA ATHENEUM</text>
+  <text x="160" y="441" text-anchor="middle" fill="#e6d8b8" font-family="Arial, sans-serif" font-size="8" letter-spacing="1.4">LITERATURA UNIVERSAL · 1915</text>
+  <rect width="320" height="480" fill="url(#paper)" pointer-events="none"/>
+</svg>

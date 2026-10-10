@@ -1,0 +1,436 @@
+/* The same rules, ink and folios connect every newspaper section. */
+.edition-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 3px double var(--paper);
+  box-shadow: 0 0 0 1px var(--ink);
+}
+.edition-mark img {
+  width: 31px;
+  height: 31px;
+}
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.footer-brand img {
+  background: var(--ink);
+  padding: 2px;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+}
+.hero-art {
+  position: relative;
+}
+.hero-art > img {
+  background: #c7bca8;
+}
+.hero-art .paper-ribbon {
+  position: absolute;
+  top: 17px;
+  left: 14px;
+  z-index: 1;
+  background: var(--red);
+  color: var(--paper);
+  padding: 9px 23px 9px 17px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  transform: rotate(-3deg);
+  clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0 100%);
+  filter: drop-shadow(1px 2px 0 #28251f33);
+}
+.hero-art .newspaper-stamp {
+  position: absolute;
+  right: 12px;
+  bottom: 35px;
+  z-index: 1;
+  width: 91px;
+  height: 91px;
+  border: 3px double var(--red);
+  border-radius: 50%;
+  background: #ddd5c6ef;
+  color: var(--red);
+  transform: rotate(11deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 7px;
+  letter-spacing: 1.2px;
+  line-height: 1;
+  box-shadow: 1px 2px 0 #28251f1a;
+}
+.hero-art .newspaper-stamp img {
+  width: 31px;
+  height: 31px;
+  padding: 2px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  object-fit: contain;
+  filter: none;
+  mix-blend-mode: normal;
+}
+.newspaper-stamp strong {
+  font-weight: 600;
+}
+.newspaper-index {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 3px double var(--ink);
+  padding: 20px 0;
+}
+.desk-link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  text-align: left;
+  padding: 0 24px;
+  border-right: 1px solid var(--line);
+  gap: 7px 16px;
+}
+.desk-link:first-child {
+  padding-left: 0;
+}
+.desk-link:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+.desk-link .eyebrow,
+.desk-link p {
+  grid-column: 1 / -1;
+}
+.desk-link h2,
+.desk-link h3,
+.desk-link strong {
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 400;
+  margin: 0;
+}
+.desk-link p {
+  font-size: 10px;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--muted);
+}
+.desk-link .arrow {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 22px;
+  align-self: center;
+}
+.desk-link:hover h2,
+.desk-link:hover h3,
+.desk-link:hover strong {
+  color: var(--red);
+}
+.edition-related {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  border-top: 3px double var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding: 15px 0;
+  margin-top: 32px;
+}
+.edition-related > span {
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+}
+.edition-related a {
+  font-family: var(--serif);
+  font-size: 21px;
+  display: inline-flex;
+  gap: 9px;
+  align-items: baseline;
+}
+.edition-related a span {
+  font-family: var(--sans);
+  font-size: 8px;
+  color: var(--red);
+}
+.edition-related a:hover {
+  color: var(--red);
+}
+.desk-count {
+  font-size: 9px;
+  letter-spacing: 0.4px;
+  grid-column: 1 / -1;
+  margin-top: 6px;
+}
+.desk-count span {
+  color: var(--red);
+  padding-left: 5px;
+}
+.edition-related > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex: 1;
+  gap: 20px;
+}
+.edition-related a {
+  flex-direction: column;
+  gap: 5px;
+}
+.edition-related a strong {
+  font-weight: 400;
+  font-size: 23px;
+}
+.edition-related a small {
+  font-family: var(--sans);
+  font-size: 9px;
+  color: var(--muted);
+}
+.edition-related .eyebrow {
+  font-size: 7px;
+}
+.page-folio {
+  display: inline-block;
+  color: var(--red);
+  font-size: 8px;
+  letter-spacing: 1.3px;
+  border-left: 3px double var(--red);
+  padding-left: 10px;
+  margin-top: 9px;
+}
+.page-folio {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 5px;
+  line-height: 1.6;
+}
+.reader-placeholder > .cover {
+  width: 140px;
+  aspect-ratio: 2 / 3;
+  flex-shrink: 0;
+}
+.sidebar-subgroups {
+  margin-top: 12px;
+}
+.sidebar-subgroups summary {
+  font-size: 10px;
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+/* Original typeset jackets keep unprovided covers part of this edition. */
+.cover-fallback {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: #bba988;
+  color: #332f25;
+  border: 1px solid #28251f55;
+  padding: 15% 10% 12%;
+  font-family: var(--serif);
+}
+.cover-fallback::before {
+  content: "";
+  position: absolute;
+  inset: 5%;
+  border: 3px double currentColor;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.cover-fallback .cover-kicker {
+  font-family: var(--sans);
+  font-size: clamp(5px, 0.55vw, 9px);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.cover-fallback .cover-title {
+  font-size: clamp(12px, 1.65vw, 30px);
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  font-weight: 400;
+  max-width: 100%;
+}
+.cover-fallback .cover-author {
+  font-family: var(--sans);
+  font-size: clamp(6px, 0.65vw, 10px);
+  line-height: 1.4;
+  max-width: 100%;
+}
+.cover-fallback .cover-ornament {
+  font-size: 20px;
+  line-height: 1;
+}
+.cover-fallback .cover-colophon {
+  font-family: var(--sans);
+  font-size: 7px;
+  letter-spacing: 1.3px;
+  line-height: 1.4;
+}
+.cover-fallback .cover-rule {
+  width: 25%;
+  border-top: 1px solid currentColor;
+  opacity: 0.6;
+  margin: 3px 0;
+}
+.cover-fallback .cover-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.editorial-card .cover-colophon {
+  font-size: 5px;
+}
+.marquee-book .cover-colophon,
+.marquee-book .cover-rule {
+  display: none;
+}
+.cover-classics {
+  background: #ad8b72;
+  color: #302923;
+}
+.cover-fiction {
+  background: #7c8878;
+  color: #232c25;
+}
+.cover-career {
+  background: #b9ac8b;
+  color: #302d26;
+}
+.editorial-card .cover-fallback {
+  padding: 13px 9px;
+}
+.editorial-card .cover-fallback .cover-title {
+  font-size: 16px;
+}
+.editorial-card .cover-fallback .cover-kicker {
+  font-size: 5px;
+}
+.editorial-card .cover-fallback .cover-author {
+  font-size: 6px;
+}
+.marquee-book .cover-fallback {
+  padding: 8px 4px;
+}
+.marquee-book .cover-fallback .cover-title {
+  font-size: 8px;
+}
+.marquee-book .cover-fallback .cover-kicker,
+.marquee-book .cover-fallback .cover-author,
+.marquee-book .cover-fallback .cover-ornament {
+  display: none;
+}
+.detail-cover.cover-fallback .cover-title {
+  font-size: 30px;
+}
+@media (max-width: 720px) {
+  .edition-mark {
+    width: 34px;
+    height: 34px;
+  }
+  .edition-mark img {
+    width: 25px;
+    height: 25px;
+  }
+  .hero-art .paper-ribbon {
+    left: -7px;
+  }
+  .hero-art .newspaper-stamp {
+    width: 80px;
+    height: 80px;
+    right: -3px;
+  }
+  .newspaper-index {
+    padding: 16px 0;
+  }
+  .desk-link {
+    padding: 0 12px;
+    gap: 7px 5px;
+  }
+  .desk-link h2,
+  .desk-link h3,
+  .desk-link strong {
+    font-size: 25px;
+  }
+  .desk-link p {
+    font-size: 9px;
+  }
+  .desk-link .eyebrow {
+    font-size: 6px;
+    letter-spacing: 0.7px;
+  }
+  .desk-link .arrow {
+    font-size: 16px;
+  }
+  .edition-related {
+    gap: 13px 18px;
+  }
+  .edition-related > span {
+    width: 100%;
+  }
+  .edition-related a {
+    font-size: 20px;
+  }
+  .edition-related > div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .edition-related a strong {
+    font-size: 22px;
+  }
+  .edition-related a small {
+    font-size: 8px;
+  }
+  .page-folio {
+    font-size: 6px;
+  }
+  .reader-placeholder > .cover {
+    width: 90px;
+  }
+  .reader-placeholder > .cover .cover-title {
+    font-size: 14px;
+  }
+  .reader-placeholder > .cover .cover-author {
+    font-size: 6px;
+  }
+  .cover-fallback .cover-title {
+    font-size: 24px;
+  }
+  .cover-fallback .cover-kicker {
+    font-size: 7px;
+  }
+  .cover-fallback .cover-author {
+    font-size: 9px;
+  }
+  .editorial-card .cover-fallback {
+    padding: 10px 7px;
+  }
+  .editorial-card .cover-fallback .cover-title {
+    font-size: 12px;
+  }
+  .editorial-card .cover-fallback .cover-kicker {
+    font-size: 4px;
+  }
+  .editorial-card .cover-fallback .cover-author {
+    font-size: 5px;
+  }
+  .editorial-card .cover-fallback .cover-ornament {
+    font-size: 11px;
+  }
+  .detail-cover.cover-fallback .cover-title {
+    font-size: 15px;
+  }
+  .detail-cover.cover-fallback .cover-author {
+    font-size: 5px;
+  }
+}

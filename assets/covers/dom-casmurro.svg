@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="480" viewBox="0 0 320 480" role="img" aria-labelledby="title desc">
+  <title id="title">Dom Casmurro, Machado de Assis</title>
+  <desc id="desc">Capa editorial original em terracota, com dois olhos desenhados em linhas creme e uma composição tipográfica clássica.</desc>
+  <defs>
+    <pattern id="paper" width="23" height="29" patternUnits="userSpaceOnUse"><path d="M4 3h1M18 17h1M9 25h1" stroke="#f2dfbc" stroke-width=".7" opacity=".2"/></pattern>
+  </defs>
+  <rect width="320" height="480" fill="#ad523b"/>
+  <rect x="11" width="7" height="480" fill="#8d3c2e" opacity=".5"/>
+  <rect x="25" y="24" width="270" height="432" fill="none" stroke="#f1dec1" stroke-width=".6"/>
+  <path d="M40 72H280M40 399H280" stroke="#f1dec1" stroke-width=".75"/>
+  <text x="160" y="53" text-anchor="middle" fill="#f1dec1" font-family="Arial, sans-serif" font-size="12" letter-spacing="2.1">MACHADO DE ASSIS</text>
+  <text x="160" y="141" text-anchor="middle" fill="#f8e8ce" font-family="Georgia, 'Times New Roman', serif" font-size="64" letter-spacing="2">DOM</text>
+  <text x="160" y="195" text-anchor="middle" fill="#f8e8ce" font-family="Georgia, 'Times New Roman', serif" font-size="40" textLength="249" lengthAdjust="spacingAndGlyphs">CASMURRO</text>
+  <path d="M58 226h83M179 226h83" stroke="#f1dec1" stroke-width=".8"/>
+  <path d="m160 219 5 7-5 7-5-7Z" fill="#f1dec1"/>
+  <g stroke="#f1dec1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 306c26-30 65-30 92 0-29 25-65 25-92 0Z" stroke-width="1.4"/>
+    <path d="M188 306c27-30 66-30 92 0-28 25-64 25-92 0Z" stroke-width="1.4"/>
+    <ellipse cx="88" cy="306" rx="16" ry="24" stroke-width="1.2"/>
+    <ellipse cx="234" cy="306" rx="16" ry="24" stroke-width="1.2"/>
+    <path d="M44 278c27-17 56-17 82-4M194 274c26-13 55-13 82 4M44 337c25 13 51 13 75 3M201 340c24 10 50 10 75-3" stroke-width=".75"/>
+    <path d="m58 289-6-9m24 3-3-12m23 13 2-12m19 20 7-10m77 10-7-10m27 2-2-12m22 12 3-12m19 18 6-9" stroke-width=".9"/>
+    <path d="M149 270c-9 22-12 51-2 65m25-65c9 22 12 51 2 65M147 339c9 5 17 5 27 0" stroke-width=".75"/>
+  </g>
+  <ellipse cx="88" cy="306" rx="7" ry="16" fill="#f1dec1"/>
+  <ellipse cx="234" cy="306" rx="7" ry="16" fill="#f1dec1"/>
+  <circle cx="91" cy="301" r="2" fill="#ad523b"/>
+  <circle cx="237" cy="301" r="2" fill="#ad523b"/>
+  <text x="160" y="380" text-anchor="middle" fill="#f1dec1" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic">olhos de ressaca</text>
+  <text x="160" y="425" text-anchor="middle" fill="#f1dec1" font-family="Arial, sans-serif" font-size="9" letter-spacing="2.9">BIBLIOTECA ATHENEUM</text>
+  <text x="160" y="441" text-anchor="middle" fill="#f1dec1" font-family="Arial, sans-serif" font-size="8" letter-spacing="1.4">LITERATURA BRASILEIRA · 1899</text>
+  <rect width="320" height="480" fill="url(#paper)" pointer-events="none"/>
+</svg>

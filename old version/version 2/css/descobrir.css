@@ -1,12 +1,3 @@
-/* ==========================================================================
-   DESCOBRIR  (animação dos livros 3D + abas Descobrir e Ler agora)
-
-   Seções:  1. Livro 3D animado   2. Início   3. Páginas novas (cabeçalho)
-            4. Descobrir          5. Ler agora   6. Navegação com 5 abas
-            7. Movimento reduzido
-   ========================================================================== */
-
-/* ---------- 1. Livro 3D animado ---------- */
 
 /* O ângulo do livro vira uma variável animável: assim ele balança e volta de frente ao passar o mouse. */
 @property --giro-y { syntax: "<angle>"; inherits: false; initial-value: 32deg; }
