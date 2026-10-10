@@ -15,10 +15,6 @@ e acompanhar cada capítulo da sua jornada de leitura.
 ![Módulos ES](https://img.shields.io/badge/m%C3%B3dulos-ES-8a3a4a?style=flat-square)
 ![Dados locais](https://img.shields.io/badge/dados-no_navegador-c9a85c?style=flat-square)
 
-[Conheça o Atheneum](https://atheneum-julio.julioandre754.chatgpt.site/)
-
-<sub>A versão hospedada pode solicitar autenticação: seu acesso atual é privado.</sub>
-
 </div>
 
 ---
@@ -103,73 +99,6 @@ A consulta à Open Library e o carregamento de imagens externas precisam de inte
 
 Esses controles são parte da implementação atual e devem ser preservados ao modificar os formulários, o armazenamento ou o tratamento de arquivos.
 
-## 🚀 Executar localmente
-
-O projeto usa **HTML, CSS e JavaScript com módulos ES nativos**, sem framework e sem etapa de compilação. Para executá-lo, sirva a pasta por **HTTP**: abrir `index.html` diretamente pelo explorador de arquivos pode impedir o carregamento dos módulos e da coleção.
-
-### Com Python 3
-
-Abra um terminal na pasta que contém `index.html` e execute:
-
-```bash
-python -m http.server 4173 --bind 127.0.0.1
-```
-
-Acesse **http://127.0.0.1:4173/** e mantenha o terminal aberto durante o uso. Se o Python estiver disponível pelo comando `python3`, substitua `python` por `python3`.
-
-### Com um servidor estático no editor
-
-Também é possível abrir a pasta em um editor e usar uma extensão de servidor estático, como o Live Server. Sirva a raiz da versão atual, onde estão `index.html`, `app.js`, `styles/` e `lib/`.
-
-O `INICIAR.cmd` remanescente da estrutura anterior depende de arquivos da pasta `.dev`. Como essa pasta foi removida desta cópia, esse atalho precisa ser ajustado antes de voltar a ser usado.
-
-## 🗺️ Estrutura atual
-
-```text
-Atheneum/
-├── index.html                  Estrutura principal e entrada da aplicação
-├── 404.html                    Página de erro para hospedagem estática
-├── app.js                      Navegação, inicialização e integração dos módulos
-├── store.js                    Estado, persistência, validações e regras da biblioteca
-├── styles.css                  Entrada dos estilos
-├── styles/                     Estilos separados por página e componente
-├── pages/                      Início, biblioteca, descoberta, santuário e erro
-├── lib/
-│   ├── actions.js              Eventos e ações da interface
-│   ├── collection.js           Importação da coleção inicial
-│   ├── catalog.js              Curadoria e citações
-│   ├── dialogs.js              Formulários e diálogos
-│   ├── reader.js               Leitor, sessões e cronômetro
-│   ├── uploads.js              Validação e preparação dos arquivos
-│   ├── tags.js                 Componentes e formulários de tags
-│   ├── goals.js                Formulários e navegação das metas mensais
-│   ├── motion.js               Ciclo de vida das animações
-│   ├── motion/paper.js         Geometria e movimento da folha de jornal
-│   ├── page-renderer.js        Renderização e preservação de foco e formulários
-│   ├── feedback.js             Mensagens e tratamento de erros na interface
-│   └── ui.js                   Componentes e funções compartilhadas
-├── data/
-│   └── personal-library.json   Coleção inicial transcrita do Obsidian
-├── assets/
-│   ├── logo.svg                Identidade do Atheneum
-│   ├── library-engraving.png   Gravura da primeira página
-│   └── covers/                 Capas ilustrativas locais
-├── old version/                Arquivo histórico, sem participação na aplicação atual
-├── INICIAR.cmd                 Atalho legado de inicialização
-└── README.md                   Apresentação e orientações do projeto
-```
-
-### Recursos ausentes nesta cópia
-
-As pastas abaixo foram removidas da versão local, mas continuam referenciadas pelo código:
-
-| Recurso | Arquivos esperados | Efeito da ausência |
-| --- | --- | --- |
-| **PDF.js** | `assets/pdfjs/pdf.mjs` e `assets/pdfjs/pdf.worker.mjs`, com os recursos necessários da mesma distribuição | O leitor interno não consegue abrir PDFs. O registro de leituras físicas permanece disponível. |
-| **Fontes locais** | `assets/fonts/bodoni-moda-900-latin.woff2`, `instrument-serif-latin.woff2` e `dm-sans-latin.woff2` | O navegador usa fontes substitutas, alterando a tipografia e possivelmente o layout. |
-
-Para distribuir a experiência completa, restaure esses recursos com suas licenças e avisos de origem. O CSS das fontes está em `styles/fonts.css`; o carregamento do PDF.js está em `lib/reader.js`.
-
 ## 🎨 Personalizar
 
 **Livros e organização:** prefira os formulários da biblioteca para cadastrar obras, editar capas, criar listas e gerenciar tags. As alterações ficam na biblioteca daquele navegador.
@@ -179,36 +108,6 @@ Para distribuir a experiência completa, restaure esses recursos com suas licen�
 **Identidade visual:** cores, tipografia e regras gerais ficam em `styles/base.css` e nos demais arquivos de `styles/`. A marca e a gravura ficam em `assets/`; as citações e a curadoria, em `lib/catalog.js`.
 
 **Animações:** o comportamento geral está em `lib/motion.js`, a folha em `lib/motion/paper.js` e os estilos em `styles/motion.css`. As animações usam Web Animations API e CSS, sem seletor de intensidade na interface.
-
-## 🌐 Hospedagem
-
-Publique os arquivos da aplicação em uma hospedagem estática com HTTPS, mantendo os caminhos relativos. Nesta estrutura, `index.html` fica na raiz da publicação. Configure `404.html` como a página de erro do serviço.
-
-As seções usam navegação por fragmentos, como `#biblioteca` e `#santuario`. Não há etapa de build. A pasta `old version/` é apenas histórica e pode ficar fora da publicação.
-
-Mantenha o mesmo endereço ao atualizar o site para que o navegador continue encontrando a biblioteca já salva.
-
-## 🤝 Contribuir
-
-Sugestões de leitura, melhorias de interface e correções são bem-vindas.
-
-1. Abra uma Issue descrevendo a ideia ou o problema, com os passos para reproduzi-lo.
-2. Para alterações no código, crie uma branch no seu fork.
-3. Verifique a navegação, os filtros e o funcionamento em telas pequenas.
-4. Se alterar o armazenamento, confirme a preservação dos dados e a exportação e importação de backups.
-5. Abra um Pull Request explicando a mudança e como ela foi verificada.
-
-## 📄 Créditos e licença
-
-- **Criação e desenvolvimento:** Julio André Cimarosti.
-- **Coleção inicial:** lista pessoal mantida no Obsidian, organizada em Clássicos, Ficção e Carreira.
-- **Identidade visual:** composição editorial inspirada em jornais antigos e bibliotecas clássicas; marca com a coruja de Atena.
-- **Gravura da biblioteca:** imagem criada com auxílio de IA para o projeto.
-- **Busca bibliográfica:** Open Library.
-- **Leitor de PDF:** PDF.js, quando incluído na distribuição.
-- **Tipografia prevista:** Bodoni Moda, Instrument Serif e DM Sans.
-
-O README anterior indicava licença MIT para o código. Esta cópia ainda não contém o arquivo `LICENSE`; ele deve acompanhar o repositório para formalizar essa indicação. Bibliotecas, fontes e imagens de terceiros mantêm suas próprias licenças e créditos.
 
 ---
 
